@@ -13,11 +13,9 @@ class Header extends React.Component {
           <Menu secondary>
             <Menu.Item>
               <a className="" to="/">
-                <span className="logoAzul">Creatu</span><span className="logoVerde">viaje</span>
+                <img src="/images/creatuviaje-logo.png" alt=""/>
+                
               </a>
-            </Menu.Item>
-            <Menu.Item >
-              <Image src="/images/creaturlogo.jpg" size="tiny" verticalAlign='middle' />
             </Menu.Item>
               <Navigation />
           </Menu>
