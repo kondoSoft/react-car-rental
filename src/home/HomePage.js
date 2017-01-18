@@ -14,7 +14,7 @@ class HomePage extends Component {
   render() {
     return (
       <Layout>
-        <SingleCar/>
+        
         <MainSlider/>
 
       </Layout>
