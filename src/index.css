@@ -1,7 +1,24 @@
+/*semantic css OVERWRITE*/
+.button{
+  font-family: 'Montserrat' !important;
+  font-size: 1.2em !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+}
+.primary{
+  background: #2b5bac !important;
+}
+.secundary{
+  background: #87b672 !important;
+  color:white !important;
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: helvetica !important;
 }
 .grid{
   margin-top: 0 !important;
@@ -195,11 +212,101 @@ i.bordered.icon{
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
 
 }
+
 /********* End DatePicker and Form *************/
 /*PROMO*/
 .titlePromo{
   margin-bottom: 0 !important;
 }
+
+/*flex styles*/
+.one{
+  flex:1;
+}
+.two{
+  flex: 2;
+}
+.three{
+  flex: 3;
+}
+.four{
+  flex:4;
+}
+/*single car css*/
+.creatur-row{
+  display: flex;
+}
+.ct-price{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  font-weight: 70000;
+  color:#2b5bac;
+}
+.ct-usd{
+  font-family: 'Roboto', sans-serif;
+  color: #6d6d6d;
+  font-size: 1.3em;
+  font-weight: 400;
+}
+.singleCarContainer{
+  border: 1px solid #E9F0F4;
+  display: flex;
+  flex-flow: column;
+  margin: 2em;
+}
+.singleCarContainer-carImage>img{
+  border: 1px solid #E9F0F4;
+  margin: 1em;
+
+}
+.singleCarContainer .diasRenta{
+  font-family: 'Monserrat', sans-serif;
+  font-size: .8em;
+  color:#363636;
+  font-weight: 700;
+}
+.singleCarContainer .rentDesc{
+  font-family: 'Roboto', sans-serif;
+  font-size: .8em;
+  color:#989898;
+}
+.singleCarContainer .km{
+  font-family: 'Roboto', sans-serif;
+  font-size: .8em;
+  color:#989898;
+}
+.singleCarContainer .centralData{
+  margin: 2em 0;
+}
+.singleCarContainer-title{
+  height: 37px;
+  flex: 1;
+}
+.singleCarContainer-title h2{
+  display: inline-block;
+  padding-left: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.singleCarContainer-title img{
+  float: right;
+}
+.singleCarContainer-data{
+  flex: 3;
+  margin: 1.2em;
+  padding-left: 1em;
+}
+.ct-row{
+  display: flex;
+}
+.singleCarContainer-carImage{
+  flex: 1;
+}
+.singleCarContainer-title{
+  border-bottom: 1px solid #E9F0F4;
+}
+/*single car css*/
+
 /*CARDS*/
 .ui.card{
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
