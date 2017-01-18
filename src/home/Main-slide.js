@@ -10,11 +10,11 @@ class MainSlider extends Component {
     return (
       <Container fluid style={{backgroundImage:'url("images/slide.jpg")', backgroundSize:' cover',backgroundRepeat: 'no-repeat'}}>
         <Container>
-          <Grid columns={2} verticalAlign='middle' style={{marginTop:'0'}}>
-            <Grid.Column mobile={16} tablet={5} computer={5} textAlign='center'>
+          <Grid verticalAlign='middle' style={{marginTop:'0'}}>
+            <Grid.Column mobile={16} tablet={8} computer={6} textAlign='center'>
               <FormMain />
             </Grid.Column>
-            <Grid.Column mobile={16} tablet={11} computer={11}>
+            <Grid.Column mobile={16} tablet={8} computer={10}>
               <Promo/>
             </Grid.Column>
           </Grid>

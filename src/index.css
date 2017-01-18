@@ -3,7 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+.grid{
+  margin-top: 0 !important;
+}
 .input *{
   border-radius: 0 !important;
 }
@@ -14,8 +16,14 @@ body {
 .title {
   text-decoration: none;
 }
+.selection {
+  border-radius: 0 !important;
+}
+.divHora{
+  max-height: 20px;
+}
 a{
-  color: #696969 !important;
+  color: #b2b2b2 !important;
 }
 .logoVerde{
   color: #87b672;
@@ -24,6 +32,10 @@ a{
 }
 .logoAzul{
   color: #2b5bad;
+  font-size: 27px;
+}
+.logoBlanco{
+  color: #FFF;
   font-size: 27px;
 }
 .login{
@@ -40,8 +52,11 @@ a{
 
 .content {
   margin: 0 auto;
-
   width: 100%;
+}
+.buttonGreen{
+  background-color: #87b672 !important;
+  color:white !important;
 }
 
 .slide{
@@ -51,12 +66,10 @@ a{
 
 .form{
   background-color: rgba(44,72,194,0.8);
-  height: 400px;
-  padding-right: 30px;
 }
 
 .inputCenter{
-margin: 5px auto 0 auto !important;
+  margin: 5px auto 0 auto !important;
 
 }
 .textYellow{
@@ -67,11 +80,75 @@ margin: 5px auto 0 auto !important;
   position: relative;
   bottom: -100px;
 }
-h1, #spanWhite{
+
+h1, #spanWhite, h4{
   color: #fff !important;
+}
+i.green.icon{
+  color: #87b672 !important;
+}
+i.bordered.icon{
+  box-shadow: 0 0 0 0.1em #fff inset;
+}
+.spanColor{
+  color: white !important;
 }
 .ui.basic.button{
   color: #fff !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
 
 }
+/*CARDS*/
+.ui.card{
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
+}
+.ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
+  border-top: none !important;
+}
+
+/*FOOTER*/
+footer{
+  background:#2b5bac;
+  height: 285px;
+  margin-top: 20px;
+}
+footer>.container, .containerComments{
+  padding-top: 27px;
+}
+.menuFooter a{
+  margin-right: 50px;
+  padding-bottom: 10px;
+  color: #fff !important;
+  position: relative;
+  left: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: .6em;
+}
+
+.trianguloDer{
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-left: 5px solid #87b672;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  top: 4px;
+}
+/*.trianguloDer:before{
+  content: ' ';
+  width: 10%;
+  height: 10px;
+  border-bottom: 1px solid #fff;
+  position: absolute;
+  top: 4px;
+
+}*/
+
+/********* Main Available *************/
+#rowAvailable>.column{
+  padding-bottom: 14px;
+}
+/*.ui.card>.content>.description, .ui.card .meta{
+  text-align: right;
+}*/
