@@ -65,7 +65,16 @@ a{
 }
 
 .form{
+  margin-top: 10px;
   background-color: rgba(44,72,194,0.8);
+  margin-bottom: 15px;
+}
+.ui.checkbox{
+  position: absolute;;
+}
+
+#return{
+  display: none;
 }
 
 .inputCenter{
@@ -101,7 +110,7 @@ i.bordered.icon{
 /*CARDS*/
 .ui.card{
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
-  background:url('/images/comillas.png') no-repeat; 
+  background:url('/images/comillas.png') no-repeat;
 }
 .ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
   border-top: none !important;

@@ -22,7 +22,7 @@ class FormMain extends Component {
                 />
                 </Grid.Column>
             </Grid.Row>
-            <Grid.Row centered>
+            <Grid.Row centered id='return'>
               <Input
                 action={{color:'teal',icon:'globe'}}
                 actionPosition='left'
@@ -31,9 +31,10 @@ class FormMain extends Component {
               />
             </Grid.Row>
 
-            <Grid.Row centered >
+            <Grid.Row >
               <Form.Field
                 control={Checkbox}
+                defaultChecked
                 label={<label className="spanColor">Entregar en la misma ubicacion</label>}
               />
             </Grid.Row>
