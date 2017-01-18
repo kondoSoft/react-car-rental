@@ -14,7 +14,7 @@ class FormMain extends Component {
   render() {
     return (
         <Form>
-          <Header as='h1'>Bienvenido</Header>
+          <Header as='h1' className='titleForm'>Bienvenido</Header>
           <Grid>
             <Grid.Row centered>
               <Grid.Column mobile={16} tablet={16} computer={16}>

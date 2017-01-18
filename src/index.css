@@ -56,12 +56,6 @@ a{
   margin: 0 auto;
   width: 100%;
 }
-.buttonGreen{
-  background-color: #87b672 !important;
-  color:white !important;
-  border-radius: 0 !important;
-  height: 50px !important;
-}
 
 .slide{
   width: 100%;
@@ -74,6 +68,10 @@ a{
   margin-bottom: 15px;
   width: 366px !important;
   height: 485px !important;
+}
+.titleForm{
+  padding-top: 23px !important;
+  margin-bottom: 0px !important;
 }
 
 .DatePickerForm{
@@ -90,7 +88,7 @@ a{
 }
 
 .columnPaddingzero{
-  padding: 0 0 20px 0 !important;
+  padding: 0 0 18px 0 !important;
 
 }
 .dividerForm{
@@ -133,8 +131,31 @@ a{
 #return{
   display: none;
 }
-/********* End DatePicker and Form *************/
 
+.buttonGreen{
+  background-color: #87b672 !important;
+  color:white !important;
+  border-radius: 0 !important;
+  height: 50px !important;
+}
+@media only screen and (max-width: 767px) and (min-width: 320px){
+
+  .form{
+    width: 100% !important;
+  }
+  .inputFormSize{
+    width: 79%;
+  }
+  .DatePickerForm{
+    top: -10px;
+    left: -51px;
+    width: 143px !important;
+  }
+  .fontDatePicker{
+    position: relative;
+    left: -47px;
+  }
+}
 .inputCenter{
   margin: 5px auto 0 auto !important;
 
@@ -173,6 +194,11 @@ i.bordered.icon{
   color: #fff !important;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
 
+}
+/********* End DatePicker and Form *************/
+/*PROMO*/
+.titlePromo{
+  margin-bottom: 0 !important;
 }
 /*CARDS*/
 .ui.card{

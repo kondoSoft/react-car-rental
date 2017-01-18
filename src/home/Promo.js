@@ -12,10 +12,10 @@ class Promo extends Component {
         <Grid>
           <Grid.Row verticalAlign='bottom'>
             <Grid.Column >
-              <Header as='h1'>
-                "EL CAMINO AL <span className="textYellow">EXITO</span>  ES LA ACTITUD"
+              <Header as='h1' className="titlePromo">
+                "EL CAMINO AL <span className="textYellow">EXITO,</span><br/>  ES LA ACTITUD"
               </Header>
-              <span id='spanWhite'>Checa tu auto para el fin de semana</span>
+              <span className='spanWhite'>Checa tu auto para el fin de semana</span>
               <br/>
               <Button basic>
                 Reservar
