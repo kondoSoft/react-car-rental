@@ -18,8 +18,7 @@ class Comments extends Component {
               <Card.Content extra>
                 <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
                 <a>
-                  <Icon name='user' />
-                  Matthew
+                  YAHIR GARCIA
                 </a>
                 <p>Abogado</p>
               </Card.Content>
@@ -35,10 +34,9 @@ class Comments extends Component {
               <Card.Content extra>
                 <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
                 <a>
-                  <Icon name='user' />
-                  Matthew
+                  MAYRA BADHY
                 </a>
-                <p>Abogado</p>
+                <p>Locutora</p>
               </Card.Content>
             </Card>
           </Grid.Column>
@@ -52,10 +50,9 @@ class Comments extends Component {
               <Card.Content extra>
                 <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
                 <a>
-                  <Icon name='user' />
-                  Matthew
+                  JAVIER PEREZ
                 </a>
-                <p>Abogado</p>
+                <p>Chef</p>
               </Card.Content>
             </Card>
           </Grid.Column>
@@ -69,14 +66,17 @@ class Comments extends Component {
               <Card.Content extra>
                 <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
                 <a>
-                  <Icon name='user' />
-                  Matthew
+                  JAVIER PEREZ
                 </a>
-                <p>Abogado</p>
+                <p>Chef</p>
               </Card.Content>
             </Card>
           </Grid.Column>
-
+          <Grid.Column width={16}>
+            <Icon color='green' name='circle' size='mini' />
+            <Icon color='blue' name='circle' size='mini' />
+            <Icon color='blue' name='circle' size='mini' />
+          </Grid.Column>
         </Grid>
       </Container>
     )

@@ -101,11 +101,36 @@ i.bordered.icon{
 /*CARDS*/
 .ui.card{
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
+  background:url('/images/comillas.png') no-repeat; 
 }
 .ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
   border-top: none !important;
 }
+/* COMMENTS */
+.containerComments h2{
+  margin-top: 1em !important;
+  margin-bottom: 0 !important;
+  font-stretch: condensed;
+}
 
+.containerComments span{
+  color: #b2b2b2 !important;
+  font-size: 13px;
+  font-style: italic;
+}
+.containerComments .description{
+  font-size: 12px;
+  color: #b2b2b2 !important;
+}
+.containerComments a{
+  margin-left: 20px;
+  color: #000 !important;
+}
+ .containerComments p{
+   margin-left: 65px !important;
+   color: #000 !important;
+   font-size: 12px;
+ }
 /*FOOTER*/
 footer{
   background:#2b5bac;
