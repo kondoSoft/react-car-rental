@@ -18,6 +18,8 @@ body {
 }
 .selection {
   border-radius: 0 !important;
+  line-height: 10px !important;
+  min-height: 0 !important
 }
 .divHora{
   max-height: 20px;
@@ -57,16 +59,81 @@ a{
 .buttonGreen{
   background-color: #87b672 !important;
   color:white !important;
+  border-radius: 0 !important;
+  height: 50px !important;
 }
 
 .slide{
   width: 100%;
 
 }
-
+/********* DatePicker and Form *************/
 .form{
-  background-color: rgba(44,72,194,0.8);
+  margin-top: 10px;
+  background-color: rgba(45,72,192,0.8);
+  margin-bottom: 15px;
+  width: 366px !important;
+  height: 485px !important;
 }
+
+.DatePickerForm{
+  border-radius: 0 !important;
+  height: 34px;
+  position: relative;
+  top: -10px;
+  left: -4px;
+  width: 143px !important;
+}
+
+.fontDatePicker{
+  font-size: 17px !important;
+}
+
+.columnPaddingzero{
+  padding: 0 0 20px 0 !important;
+
+}
+.dividerForm{
+  width: 50% !important;
+  margin: 0px 10% auto !important;
+  border-top: 2px solid #70a0ec !important;
+  border-bottom: 1px solid #70a0ec !important;
+}
+.topDatePicker{
+  padding-top: 24px !important;
+}
+
+.checkboxForm{
+  left: 32px;
+  bottom: 13px;
+  padding-left: 2em !important;
+}
+
+.checkboxForm:before{
+  background: rgba(255, 255, 255, 0.0) !important;
+  border: .2em solid #87b672 !important;
+  width: 20px !important;
+  height: 20px !important;
+  top: -5px !important
+
+}
+.checkboxForm:after{
+  color: #87b672 !important;
+  width: 28px !important;
+  font-size: 20px !important;
+  top: -5px !important
+
+}
+
+.inputFormSize{
+  width: 70%;
+  right: 24px;
+}
+
+#return{
+  display: none;
+}
+/********* End DatePicker and Form *************/
 
 .inputCenter{
   margin: 5px auto 0 auto !important;
@@ -81,17 +148,26 @@ a{
   bottom: -100px;
 }
 
-h1, #spanWhite, h4{
+h1, #spanWhite, h4, .spanWhite{
   color: #fff !important;
+}
+.divLabelDate{
+  padding-bottom: 12px !important;
+  padding-left: 0 !important;
+  right: 67px;
+}
+
+.selectDivHour{
+  right: 15px;
 }
 i.green.icon{
   color: #87b672 !important;
 }
+i.inverted.bordered.green.icon, i.inverted.circular.green.icon{
+  background: #87b672 !important;
+}
 i.bordered.icon{
   box-shadow: 0 0 0 0.1em #fff inset;
-}
-.spanColor{
-  color: white !important;
 }
 .ui.basic.button{
   color: #fff !important;
@@ -101,7 +177,7 @@ i.bordered.icon{
 /*CARDS*/
 .ui.card{
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
-  background:url('/images/comillas.png') no-repeat; 
+  background:url('/images/comillas.png') no-repeat;
 }
 .ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
   border-top: none !important;
@@ -174,6 +250,3 @@ footer>.container, .containerComments{
 #rowAvailable>.column{
   padding-bottom: 14px;
 }
-/*.ui.card>.content>.description, .ui.card .meta{
-  text-align: right;
-}*/
