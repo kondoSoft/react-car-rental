@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header,Button, Container} from 'semantic-ui-react'
+import { Grid, Header,Button, Container, Icon} from 'semantic-ui-react'
 // import s from './Main-slide.css'
 const options=[
   {text:'00:00', value:'00:00'},
@@ -17,10 +17,17 @@ class Promo extends Component {
               </Header>
               <span className='spanWhite'>Checa tu auto para el fin de semana</span>
               <br/>
-              <Button basic>
+              <Button basic className="buttonReservar" >
                 Reservar
               </Button>
+              <Grid.Column width={16}>
+                <Icon  name='circle' size='tiny' className='whiteIco'/>
+                <Icon  name='circle' size='tiny' className='whiteIco'/>
+                <Icon  name='circle' size='small' className='whiteIco'/>
+                <Icon name='circle' size='tiny' className='whiteIco'/>
+              </Grid.Column>
             </Grid.Column>
+
           </Grid.Row>
         </Grid>
       </Container>

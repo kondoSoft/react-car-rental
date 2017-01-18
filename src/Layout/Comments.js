@@ -9,7 +9,7 @@ class Comments extends Component {
         <span>Que dicen nuestros clientes</span>
         <Grid>
           <Grid.Column mobile={16} tablet={8} computer={4}>
-            <Card>
+            <Card className="spaceComillas">
               <Card.Content>
                 <Card.Description>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -25,7 +25,7 @@ class Comments extends Component {
             </Card>
           </Grid.Column>
           <Grid.Column mobile={16} tablet={8} computer={4}>
-            <Card>
+            <Card className="spaceComillas">
               <Card.Content>
                 <Card.Description>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -41,7 +41,7 @@ class Comments extends Component {
             </Card>
           </Grid.Column>
           <Grid.Column mobile={16} tablet={8} computer={4}>
-            <Card>
+            <Card className="spaceComillas">
               <Card.Content>
                 <Card.Description>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -57,7 +57,7 @@ class Comments extends Component {
             </Card>
           </Grid.Column>
           <Grid.Column mobile={16} tablet={8} computer={4}>
-            <Card>
+            <Card className="spaceComillas">
               <Card.Content>
                 <Card.Description>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
