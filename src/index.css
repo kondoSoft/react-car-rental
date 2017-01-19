@@ -234,6 +234,7 @@ i.bordered.icon{
 }
 .spaceComillas{
   padding-top: 20px !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
 }
 
 /*flex styles*/
@@ -325,9 +326,9 @@ i.bordered.icon{
 /*single car css*/
 
 /*CARDS*/
-.ui.card{
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
-  background:url('/images/comillas.png') no-repeat;
+
+.backgroundCar{
+  background:url('/images/comillas.png') no-repeat !important;
 }
 .ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
   border-top: none !important;
@@ -411,4 +412,88 @@ footer>.container, .containerComments{
 /********* Main Available *************/
 #rowAvailable>.column{
   padding-bottom: 14px;
+}
+.titleCar{
+  border-left: 4px solid #87b672 !important;
+}
+
+.segmentAvail .ui.segment{
+  box-shadow: 0 0 0 white !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0px !important;
+}
+.segmentAvail h2{
+  color: #2b5bac;
+  position: relative;
+  right: 25px !important;
+}
+.segmentAvail>div label{
+  color: #b2b2b2;
+}
+.segmentAvail .ui.segment label{
+  position: relative;
+  bottom: 6px;
+}
+
+.checkboxAvail{
+  margin-top: 15px !important;
+}
+.checkboxAvail label{
+  font-size: 10px !important;
+  color: #2b5bac !important;
+}
+.checkboxAvail label:before{
+  background: rgba(255, 255, 255, 0.0) !important;
+  border: .1em solid #87b672 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.checkboxAvail label:after{
+  color: #87b672 !important;
+  width: 20px !important;
+  font-size: 14px !important;
+  top: -2px !important
+}
+.columAlignR{
+  text-align: right !important;
+}
+.cardCar{
+  border: 1px solid #b2b2b2 inset !important;
+}
+.buttonCotizar{
+  width: 100% !important;
+  margin: 0 !important;
+}
+.cardCar>div div:first-child{
+  padding-bottom: 0px !important;
+}
+.cardCar>div div:first-child>div:last-child img{
+  height: 25px;
+  width: 50px;
+  left: 25px;
+  position: relative;
+}
+.divImageCar {
+  padding: 0 0 !important;
+}
+.columAlignR{
+  padding-left: 0 !important;
+}
+.divImageCar img{
+  top: 12px;
+  position: relative;
+}
+.cardCar>div div:last-child{
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.cardCar>div div:last-child>div span{
+  padding-right: 11px !important;
+}
+.cardCar>.grid{
+  margin: 0 !important;
+}
+.letterCarFeatures{
+  font-size: 10px;
 }
