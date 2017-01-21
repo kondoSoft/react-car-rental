@@ -25,10 +25,10 @@ class DatePickerForm extends Component {
   render(){
     return (
       <Grid.Row centered className="topDatePicker">
-        <Grid.Column  className="divLabelDate" width={16}>
+        <Grid.Column  className="divLabelDate" mobile={12} tablet={9} computer={16}>
           <label className="spanWhite">Cuando lo va a recoger?</label>
         </Grid.Column>
-        <Grid.Column width={9} className='columnPaddingzero'>
+        <Grid.Column mobile={8} tablet={9} computer={9} className='columnPaddingzero columnDatePicker'>
           <Icon className='fontDatePicker' bordered inverted color='green' name='calendar' />
           <DatePicker
             className = 'DatePickerForm'
@@ -36,17 +36,17 @@ class DatePickerForm extends Component {
             onChange={this.handleChange}
           />
         </Grid.Column>
-        <Grid.Column width={5} className="selectDivHour">
+        <Grid.Column mobile={5} tablet={5} computer={5} className="selectDivHour">
           <Form.Select
             options={options}
             placeholder='Hora'
             style={{minWidth:'0'}}
           />
         </Grid.Column>
-        <Grid.Column width={16} className="divLabelDate">
+        <Grid.Column mobile={12} tablet={9} computer={16} className="divLabelDate">
           <label className="spanWhite">Cuando lo va a entregar</label>
         </Grid.Column>
-        <Grid.Column width={9} className='columnPaddingzero'>
+        <Grid.Column mobile={8} tablet={9} computer={9} className='columnPaddingzero'>
           <Icon bordered className='fontDatePicker' inverted color='green' name='calendar'/>
           <DatePicker
             className = 'DatePickerForm'
@@ -54,7 +54,7 @@ class DatePickerForm extends Component {
             onChange={this.handleChange}
           />
         </Grid.Column>
-        <Grid.Column width={5} className="selectDivHour">
+        <Grid.Column mobile={5} tablet={5} computer={5} className="selectDivHour">
           <Form.Select
             options={options}
             placeholder='Hora'

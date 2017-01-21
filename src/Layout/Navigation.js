@@ -9,37 +9,36 @@
  */
 
 import React from 'react';
-import s from './Header.css';
 import { Icon, Menu } from 'semantic-ui-react'
 
 class Navigation extends React.Component {
 
   render() {
     return (
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <a className="" to="/">Servicios</a>
-          </Menu.Item>
-          <Menu.Item>
-            <a className="" to="/about">Mi Reserva</a>
-          </Menu.Item>
-          <Menu.Item>
-            <a className="" to="/about">Tu Viaje</a>
-          </Menu.Item>
-          <Menu.Item className="itemMenu">
-            <a className="login" to="/about">Inicia Sesion</a>
-          </Menu.Item>
-          <Menu.Item className="itemMenu">
-            <a className="travel" to="">
-              <Icon name='travel'/>
-            </a>
-          </Menu.Item>
-          <Menu.Item className="itemMenu">
-            <a className="logout" to="">
-              <Icon name='log out'/>
-            </a>
-          </Menu.Item>
-        </Menu.Menu>
+      <Menu.Menu position='right' className='menuNav'>
+        <Menu.Item>
+          <a className="" to="/">Servicios</a>
+        </Menu.Item>
+        <Menu.Item>
+          <a className="" to="/about">Mi Reserva</a>
+        </Menu.Item>
+        <Menu.Item>
+          <a className="" to="/about">Tu Viaje</a>
+        </Menu.Item>
+        <Menu.Item className="itemMenu">
+          <a className="login" to="/about">Inicia Sesion</a>
+        </Menu.Item>
+        <Menu.Item className="itemMenu">
+          <a className="travel" to="">
+            <Icon name='travel'/>
+          </a>
+        </Menu.Item>
+        <Menu.Item className="itemMenu">
+          <a className="logout" to="">
+            <Icon name='log out'/>
+          </a>
+        </Menu.Item>
+      </Menu.Menu>
     );
   }
 

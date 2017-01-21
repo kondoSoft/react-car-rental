@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Comments from './Comments'
+import Comments from '../components/comments/Comments'
 import Footer from './Footer'
-import { Card, Image, Icon, Grid, Container } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 
 class Layout extends Component {

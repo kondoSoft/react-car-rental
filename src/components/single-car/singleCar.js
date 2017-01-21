@@ -7,7 +7,7 @@ class SingleCar extends Component{
     return(
       <div className='singleCarContainer'>
         <div className='singleCarContainer-title'>
-          <h2>Car name</h2><img src="/images/proveedor.png" alt="Nombre del proveedor"/>
+          <h2>Ford KA</h2><img src="/images/proveedor.png" alt="Nombre del proveedor"/>
         </div>
         <div className='creatur-row'>
           <div className='singleCarContainer-data'>
@@ -18,6 +18,9 @@ class SingleCar extends Component{
               </span>
               <span className='one km'>
                 Km ilimitado
+              </span>
+              <span className='one icon-km'>
+                <i className="icon cri-kilometraje" ></i>
               </span>
 
             </div>
@@ -33,19 +36,30 @@ class SingleCar extends Component{
                 </span>
               </div>
           </div>
-            <div className='ct-row'>
-              <Icon name='home' size='small' />
-              <Icon name='home' size='small' />
-              <Icon name='home' size='small' />
-              <Icon name='home' size='small' />
-            </div>
-          </div>
-          <div className='singleCarContainer-carImage'>
-            <img src="/images/generic-car.png" alt="Ford Ka"/>
+          <div className="contentIconSingleCar colorGreen">
+            <i className="fa fa-users" >
+              <span className="colorGreen letterCarFeatures">5</span>
+            </i>
+            <i className="fa fa-suitcase" >
+              <span className="colorGreen letterCarFeatures">5</span>
+            </i>
+            <i className="fa fa-snowflake-o" >
+              <span className="colorGreen letterCarFeatures">SI</span>
+            </i>
+            <i className="icon cri-transmision" >
+              <span className="colorGreen letterCarFeatures">5</span>
+            </i>
+            <i className="icon cri-puerta" >
+              <span className="colorGreen letterCarFeatures">5</span>
+            </i>
           </div>
         </div>
-        <Button primary> Reservar </Button>
+        <div className='singleCarContainer-carImage'>
+          <img src="/images/generic-car.png" alt="Ford Ka"/>
+        </div>
       </div>
+      <Button primary className='buttonCotizar'><span>Reservar</span></Button>
+    </div>
     )
   }
 }

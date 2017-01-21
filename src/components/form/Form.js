@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Grid, Form, Input, Checkbox, Button, Icon, Divider} from 'semantic-ui-react'
-import DatePickerForm from './DatePickerForm'
+import DatePickerForm from '../date-picker/DatePickerForm'
 require ('react-datepicker/dist/react-datepicker.css')
 
 const options=[
@@ -10,7 +10,6 @@ const options=[
 ]
 
 class FormMain extends Component {
-
   render() {
     return (
         <Form>
@@ -53,7 +52,6 @@ class FormMain extends Component {
               <Button className="buttonGreen">BUSCAR EL MEJOR PRECIO!</Button>
             </Grid.Row>
           </Grid>
-
         </Form>
     );
   }

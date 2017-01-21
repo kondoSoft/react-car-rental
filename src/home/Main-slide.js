@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import FormMain from './Form'
-import Promo from './Promo'
+import FormMain from '../components/form/Form'
+import Promo from '../components/promo/Promo'
 import { Image, Icon, Grid, Container } from 'semantic-ui-react'
 
 class MainSlider extends Component {

@@ -8,7 +8,7 @@ class Footer extends Component {
         <Container>
             <Grid>
               <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={4}>
+                <Grid.Column mobile={16} tablet={16} computer={3}>
                   <span className="logoBlanco">Creatu</span><span className="logoVerde">Viaje</span>
                   <br/>
                   <span className='colorGreen'>2017 Creatur</span>
