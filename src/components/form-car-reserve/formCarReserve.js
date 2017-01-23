@@ -12,7 +12,6 @@ class FormCarReserve extends Component{
             <span className='textUbication'>Los Angeles International Airport</span>
             <span><i className='fa fa-calendar colorGreen'></i>23 de diciembre 2016</span>
             <span><i className='fa fa-clock-o colorGreen'></i>12:00pm</span>
-
           </div>
           <div className='placeReturnReserve'>
             <h3 className='colorBlue'>Lugar de Retorno</h3>

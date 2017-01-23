@@ -3,12 +3,6 @@ import { Header, Grid, Form, Input, Checkbox, Button, Icon, Divider} from 'seman
 import DatePickerForm from '../date-picker/DatePickerForm'
 require ('react-datepicker/dist/react-datepicker.css')
 
-const options=[
-  {text:'12:30', value:'12:30'},
-  {text:'00:00', value:'00:00'},
-  {text:'00:30', value:'00:30'}
-]
-
 class FormMain extends Component {
   render() {
     return (

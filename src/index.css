@@ -268,30 +268,31 @@ i.bordered.icon{
 }
 .contentReserveSingleCar{
  flex: 1;
- max-height: 420px;
 }
 .contentFormReserves{
   flex: 1;
   max-width: 365px;
-  max-height: 880px;
+
 }
 .containerPlaceReserve{
   display: flex;
   flex-direction: row;
 }
-.reserveSingleCar{
-  margin: -2em 0 -2em -2em;
 
-}
-.placeRentReserve, .placeReturnReserve, .selectedRateReserve{
+.placeRentReserve, .placeReturnReserve{
   display: flex;
-  padding: 1em .570em .5em 1em ;
+  padding: 1em .550em .5em 1em ;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+.selectedRateReserve{
+  display: flex;
+  padding: 1em 2em .5em 1em ;
   flex-direction: column;
   border: 1px solid #ccc;
 }
 .backReserve{
   background: #ebebeb;
-  border: none !important;
 }
 .placeRentReserve h3, .placeReturnReserve h3, {
   margin-bottom: 6px;
@@ -406,6 +407,15 @@ i.bordered.icon{
   box-shadow: none;
   background-color: transparent;
 
+}
+@media only screen and (max-width: 1199px) and (min-width: 320px){
+ .containerPlaceReserve, .contentReserveSingleCar {
+    flex-direction: column;
+  }
+
+  .reserveSingleCar{
+    margin: 0;
+  }
 }
 /***********QUOTATION*******************/
 .containerQuotation{
@@ -587,7 +597,7 @@ border: 1px solid #ccc;
   content: '\2014\a0';
   font-size: 10px
 }
-/*single car css*/
+/***********Single car css*****************/
 .creatur-row{
   display: flex;
 }
