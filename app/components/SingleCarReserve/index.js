@@ -12,7 +12,7 @@ function SingleCarReserve() {
   return (
     <div className='singleCarContainer'>
       <div className='singleCarContainer-title'>
-        <h2>Ford KA</h2><img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/proveedor.png" alt="Nombre del proveedor"/>
+        <h2>Ford KA</h2><img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/ proveedor.png" alt="Nombre del proveedor"/>
       </div>
       <div className='creatur-row'>
         <div className='singleCarContainer-data'>
