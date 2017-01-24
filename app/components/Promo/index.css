@@ -1,0 +1,928 @@
+/*semantic css OVERWRITE*/
+.button{
+  font-family: 'Montserrat' !important;
+  font-size: 1.2em !important;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+}
+.primary{
+  background: #2b5bac !important;
+}
+.secundary{
+  background: #87b672 !important;
+  color:white !important;
+}
+.underline{
+  text-decoration: underline !important;
+}
+.colorGreen{
+  color: #87b672;
+}
+.colorBlue{
+  color: #2b5bad;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica !important;
+}
+
+.grid{
+  margin-top: 0 !important;
+}
+.input *{
+  border-radius: 0 !important;
+}
+.input button{
+  background: #87b672 !important;
+}
+
+.title {
+  text-decoration: none;
+}
+.selection {
+  border-radius: 0 !important;
+  line-height: 10px !important;
+  min-height: 0 !important
+}
+.divHora{
+  max-height: 20px;
+}
+a{
+  color: #b2b2b2 !important;
+}
+.logoVerde{
+  color: #87b672;
+  font-size: 27px;
+  padding-right: 20px;
+}
+.logoAzul{
+  color: #2b5bad;
+  font-size: 27px;
+}
+.logoBlanco{
+  color: #FFF;
+  font-size: 27px;
+}
+.login{
+  font-size: 10px;
+  padding-right: 3px !important;
+  padding-left: 5em !important;
+}
+.travel, .logout{
+  padding: 0 !important;
+}
+.itemMenu{
+  padding: 0 !important;
+}
+@media only screen and (max-width: 1024px) and (min-width: 320px){
+  .menuNav{
+    display: none;
+    /*visibility: hidden;*/
+  }
+}
+.content {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.slide{
+  width: 100%;
+
+}
+/********* DatePicker and Form *************/
+.form{
+  margin-top: 10px;
+  background-color: rgba(45,72,192,0.8);
+  margin-bottom: 15px;
+  width: 366px !important;
+  height: 485px !important;
+}
+.titleForm{
+  padding-top: 23px !important;
+  margin-bottom: 0px !important;
+}
+
+.DatePickerForm{
+  border-radius: 0 !important;
+  height: 34px;
+  position: relative;
+  top: -10px;
+  left: -4px;
+  width: 143px !important;
+}
+
+.fontDatePicker{
+  font-size: 17px !important;
+}
+
+.columnPaddingzero{
+  padding: 0 0 18px 0 !important;
+
+}
+.dividerForm{
+  width: 50% !important;
+  margin: 0px 10% auto !important;
+  border-top: 2px solid #70a0ec !important;
+  border-bottom: 1px solid #70a0ec !important;
+}
+.topDatePicker{
+  padding-top: 24px !important;
+}
+
+.checkboxForm{
+  left: 32px;
+  bottom: 13px;
+  padding-left: 2em !important;
+}
+
+.checkboxForm:before{
+  background: rgba(255, 255, 255, 0.0) !important;
+  border: .2em solid #87b672 !important;
+  width: 20px !important;
+  height: 20px !important;
+  top: -5px !important
+
+}
+.checkboxForm:after{
+  color: #87b672 !important;
+  width: 28px !important;
+  font-size: 20px !important;
+  top: -5px !important
+
+}
+
+.inputFormSize{
+  width: 70%;
+  right: 24px;
+}
+
+#return{
+  display: none;
+}
+
+.buttonGreen{
+  background-color: #87b672 !important;
+  color:white !important;
+  border-radius: 0 !important;
+  height: 50px !important;
+}
+@media only screen and (max-width: 767px) and (min-width: 500px){
+
+  .form{
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 320px){
+  .topDatePicker{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+.inputCenter{
+  margin: 5px auto 0 auto !important;
+
+}
+.textYellow{
+  color: yellow !important;
+}
+
+.containerBottom{
+  position: relative;
+  bottom: -100px;
+}
+
+h1, #spanWhite, h4, .spanWhite{
+  color: #fff !important;
+}
+
+
+.divLabelDate{
+  padding-bottom: 12px !important;
+  padding-left: 0 !important;
+  right: 67px;
+}
+
+.selectDivHour{
+  right: 15px;
+}
+
+i.green.icon{
+  color: #87b672 !important;
+}
+i.inverted.bordered.green.icon, i.inverted.circular.green.icon{
+  background: #87b672 !important;
+}
+i.bordered.icon{
+  box-shadow: 0 0 0 0.1em #fff inset;
+}
+.ui.basic.button{
+  color: #fff !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
+
+}
+
+
+
+/********* End DatePicker and Form *************/
+/*PROMO*/
+.titlePromo{
+  margin-bottom: 0 !important;
+}
+.buttonReservar{
+  margin-top: 22px !important;
+  margin-bottom: 15px !important;
+}
+.whiteIco{
+  color: white !important;
+}
+.spaceComillas{
+  padding-top: 20px !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) inset !important;
+}
+
+/*flex styles*/
+.one{
+  flex:1;
+}
+.two{
+  flex: 2;
+}
+.three{
+  flex: 3;
+}
+.four{
+  flex:4;
+}
+/***********RESERVE*******************/
+.containerReserve{
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.formSingleCarReserve{
+  margin-top: 1em;
+}
+.contentReserveSingleCar{
+ flex: 1;
+}
+.contentFormReserves{
+  flex: 1;
+  max-width: 365px;
+
+}
+.containerPlaceReserve{
+  display: flex;
+  flex-direction: row;
+}
+
+.placeRentReserve, .placeReturnReserve{
+  display: flex;
+  padding: 1em .550em .5em 1em ;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+.selectedRateReserve{
+  display: flex;
+  padding: 1em 2em .5em 1em ;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+.backReserve{
+  background: #ebebeb;
+}
+.placeRentReserve h3, .placeReturnReserve h3, {
+  margin-bottom: 6px;
+}
+.placeRentReserve .textUbication, .placeReturnReserve .textUbication, .selectedRateReserve .textUbication{
+  color: #6d6d6d !important;
+  margin-bottom: 2em;
+  line-height: 1.2em;
+}
+.selectedRateReserve .textUbication{
+  margin-bottom: 5px;
+  padding-right: 19px;
+}
+.selectedRateReserve .listText{
+  margin-top: 0;
+  font-size: 12px;
+}
+.placeRentReserve span i, .placeReturnReserve span i{
+  padding-right: 5px;
+  font-size: 1.5em;
+}
+.placeRentReserve span, .placeReturnReserve span{
+  font-size: 12px;
+  color: #b2b1b1;
+}
+.dataClient, .dataCard {
+   margin: 1em 0;
+}
+.dividerFormReserve{
+  width: 80% !important;
+  margin: 0px 10% auto !important;
+  border-top: 2px solid #70a0ec !important;
+  border-bottom: 1px solid #70a0ec !important;
+}
+.formDataClient{
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .8em 0;
+}
+.spanFormData{
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+}
+.formDataClient .ui.selection.dropdown{
+  min-width: 70%;
+}
+
+.formDataClient .ui.input{
+  position: inherit;
+  margin-bottom: 10px;
+}
+
+.formDataCard{
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .8em 0;
+}
+.spanDataCard{
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  color: #ccc;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+.formDataCard .ui.input{
+  position: inherit;
+  margin-bottom: 10px;
+}
+.formDataCard .sizeInput{
+  width: 30% !important;
+}
+
+.input-group-addon {
+    width: 1%;
+    vertical-align: middle;
+    padding: .5em 1em;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #87b672;
+    border: 1px solid #ccc;
+}
+.input-group-addon i{
+  text-align: center;
+  width: 1em;
+  margin-left: -0.5em;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.select{
+  border: 1px solid #ccc;
+  width: 70%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.selectCity{
+  height: 2.23em;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+}
+@media only screen and (max-width: 1199px) and (min-width: 320px){
+ .containerPlaceReserve, .contentReserveSingleCar {
+    flex-direction: column;
+  }
+
+  .reserveSingleCar{
+    margin: 0;
+  }
+}
+/***********QUOTATION*******************/
+.containerQuotation{
+  display: flex !important;
+  flex-wrap: wrap-reverse;
+}
+@media only screen and (max-width: 999px) and (min-width: 768px){
+  .containerQuotation{
+    flex-direction: row;
+    width: 100% !important;
+    padding-left: 15px !important;
+    margin-right: 15px !important;
+  }
+
+
+}
+@media only screen and (max-width: 999px) and (min-width: 320px){
+  .formSingleCar{
+    max-width: 100% !important;
+  }
+  .contentSingleCar{
+    padding-right: .5em;
+    padding-top: 1em;
+  }
+  .singleCarContainer{
+    width: 100% !important;
+    margin: 0 0 .5em 0 !important;
+
+  }
+  .singleCarContainer-title{
+    max-height: 40px;
+  }
+
+  .singleCarContainer-data{
+    margin: 0 0 1.2em 0 !important;
+    padding-left: .8em !important;
+  }
+  .singleCarContainer-carImage>img{
+    width: 190px !important;
+    height: 120px !important;
+  }
+  .price-row{
+    margin-top: 1.5em;
+  }
+  .km, .icon-km{
+    visibility: hidden;
+  }
+  .menuNav{
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 560px) and (min-width: 320px){
+  .singleCarContainer .centralData{
+    margin: 1em 0 1em 0 !important;
+  }
+  .singleCarContainer-data{
+    /*max-width: 50%;*/
+  }
+  .singleCarContainer-carImage>img{
+    border: none !important;
+  }
+  .singleCarContainer{
+    height: 100% !important;
+  }
+  .singleCarContainer-title{
+    /*max-width: 50%;*/
+  }
+  .creatur-row{
+    flex-direction: column-reverse;
+  }
+
+}
+/*form-single car*/
+.contentSingleCar{
+  flex: 2;
+  /*height: 624px;*/
+
+}
+.formSingleCar{
+  flex: 1;
+  max-width: 365px;
+}
+.newSearch{
+  background: #2b5bac;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+  height: 45px;
+}
+.newSearch i{
+  margin-left: 10px;
+  color: #c2c9e5;
+  font-size: 1em;
+}
+.containerPlace{
+  display: flex;
+  flex-direction: column;
+}
+.placeRent, .placeReturn{
+display: flex;
+padding: 2em 1em 1.5em 3.2em ;
+flex-direction: column;
+border: 1px solid #ccc;
+}
+.placeRent h3, .placeReturn h3{
+  margin-bottom: 6px;
+}
+.placeRent span i{
+  padding-right: 5px;
+  font-size: 1.5em;
+}
+.placeRent div>span{
+  font-size: 12px;
+  margin-right: 10px;
+  color: #b2b1b1;
+}
+
+.placeReturn span i{
+  padding-right: 5px;
+  font-size: 1.5em ;
+}
+.placeReturn div>span{
+  font-size: 12px;
+  margin-right: 10px;
+  color: #b2b1b1;
+}
+.placeRent div, .placeReturn div{
+  margin-left: 17px;
+}
+.selectedRate{
+  display: flex;
+  padding: 2em 1em .5em 3.2em ;
+  flex-direction: column;
+  background: #ebebeb;
+  border-top: 1px solid #ccc;
+}
+.selectedRate span{
+  color: #909090;
+  font-weight: 15px;
+}
+.selectedRate span i{
+  padding-right: 5px;
+  font-size: 1.6em;
+}
+
+.formQuotation{
+  margin-top: 15px;
+  display: flex;
+  padding: 1em 1em 2em 3.2em ;
+  flex-direction: column;
+  background: #ebebeb;
+}
+.formQuotation .ui.small.input{
+  margin-top: -10px;
+  margin-left: 1.9em;
+  width: 90%;
+}
+.formQuotation .ui.button{
+  margin-top: 15px;
+  max-width: 90%;
+  margin-right: 0 !important;
+}
+.cri-seguro:before{
+  max-height: 18px;
+}
+
+.textUbication{
+  color: #6d6d6d;
+  max-height: 18px;
+}
+.listText{
+  margin-top: 10px;
+  margin-left: -10px;
+  color: #909090;
+  list-style: none;
+}
+.listText li:before{
+  content: '\2014\a0';
+  font-size: 10px
+}
+/***********Single car css*****************/
+.creatur-row{
+  display: flex;
+}
+.ct-price{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8em;
+  font-weight: 500;
+  color:#2b5bac;
+  word-spacing: -0.2em;
+}
+.ct-usd{
+  font-family: 'Roboto', sans-serif;
+  color: #6d6d6d;
+  font-size: 1.3em;
+  font-weight: 400;
+
+}
+.icon-km{
+  color: #2b5bac;
+}
+.contentSingleCar{
+  display: flex;
+  flex-direction: column;
+
+}
+.singleCarContainer{
+  border: 1px solid #E9F0F4;
+  display: flex;
+  flex-flow: column;
+  margin: 2em;
+  flex: 3;
+  height: 252px;
+  width: 572px;
+}
+.singleCarContainer-carImage>img{
+  border: 1px solid #E9F0F4;
+  width: 215px;
+  height: 140px;
+  margin: 1em 1em 1em 0;
+
+}
+.singleCarContainer .diasRenta{
+  font-family: 'Monserrat', sans-serif;
+  font-size: .8em;
+  color:#363636;
+  font-weight: 700;
+}
+.singleCarContainer .rentDesc{
+  font-family: 'Roboto', sans-serif;
+  font-size: .8em;
+  color:#989898;
+
+}
+.singleCarContainer .km{
+  font-family: 'Roboto', sans-serif;
+  font-size: .7em;
+
+  color:#989898;
+}
+.singleCarContainer .centralData{
+  margin: 2em 0;
+  width: 225px;
+}
+.singleCarContainer-title{
+  height: 37px;
+  flex: 1;
+}
+.singleCarContainer-title h2{
+  display: inline-block;
+  padding-left: .5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+.singleCarContainer-title img{
+  float: right;
+}
+.singleCarContainer-data{
+  flex: 3;
+  margin: 1.2em 0 1.2em 1.2em;
+  padding-left: 1em;
+}
+.ct-row{
+  display: flex;
+
+}
+.singleCarContainer-carImage{
+  flex: 1;
+}
+.singleCarContainer-title{
+  border-bottom: 1px solid #E9F0F4;
+}
+.contentIconSingleCar{
+  display: flex;
+  justify-content: space-around;
+  width: 225px;
+  flex-wrap: wrap;
+  word-spacing: 1em;
+}
+.contentIconSingleCar i{
+  font-size: 1.3em;
+}
+.contentIconSingleCar i.icon{
+  width: -20px;
+}
+.contentIconSingleCar .letterCarFeatures{
+  font-size: 12px !important;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  word-spacing: 1em;
+  padding-left: 5px;
+}
+.cri-kilometraje:before, .cri-paloma:before, .cri-puerta:before, .cri-seguro:before, .cri-transmision:before {
+  display: inline;
+}
+.singleCarContainer .buttonCotizar{
+  margin: 0;
+}
+/*single car css*/
+
+/*CARDS*/
+
+.backgroundCar{
+  background:url('/images/comillas.png') no-repeat !important;
+}
+.ui.cards>.extra, .ui.card>.content, .ui.cards>.card>.extra{
+  border-top: none !important;
+}
+/* COMMENTS */
+.containerComments h2{
+  margin-top: 1em !important;
+  margin-bottom: 0 !important;
+  font-stretch: condensed;
+}
+
+.containerComments span{
+  color: #b2b2b2 !important;
+  font-size: 13px;
+  font-style: italic;
+}
+.containerComments .description{
+  font-size: 12px;
+  color: #b2b2b2 !important;
+}
+.containerComments a{
+  margin-left: 20px;
+  color: #000 !important;
+}
+ .containerComments p{
+   margin-left: 65px !important;
+   color: #000 !important;
+   font-size: 12px;
+ }
+/*FOOTER*/
+footer{
+  background:#2b5bac;
+  margin-top: 20px;
+}
+footer>.container, .containerComments{
+  padding-top: 27px;
+}
+.menuFooter a{
+  margin-right: 10%;
+  color: #fff !important;
+  position: relative;
+  left: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: .6em;
+}
+
+.trianguloDer{
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-left: 5px solid #87b672;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  top: 4px;
+}
+.dividerGreen{
+  border-top: 0px solid #87b672 !important;
+  border-bottom: 1px solid #87b672 !important;
+  margin: 0 0 5px 0!important;
+}
+.aviso{
+  font-size: 10px;
+  color: white;
+  margin-right: 10px;
+  position: relative;
+  bottom: 10px;
+}
+.gridPaddingTop{
+  padding-top: 0px !important;
+}
+.footerPrivacidad{
+  text-align: right !important;
+  padding-top: 5px !important;
+}
+.footerPrivacidad a{
+  color: white !important;
+  font-size: 10px !important;
+}
+@media only screen and (max-width: 991px) and (min-width: 320px){
+  .menuFooter{
+    display: flex !important;
+    flex-direction: column;
+  }
+  .menuFooter a{
+    border-bottom: none;
+  }
+  .trianguloDer{
+    position: relative;;
+    top: 14px;
+  }
+}
+/********* Main Available *************/
+
+
+
+.contentCardCar{
+  width: 220px !important;
+  padding-right: 0px !important;
+  /*height: 218.38px !important;*/
+}
+
+#rowAvailable>.column{
+  padding-bottom: 14px;
+}
+.titleCar{
+  border-left: 4px solid #87b672 !important;
+  padding-left: 10px !important;
+  font-style: italic;
+  padding-top: 15px !important;
+  font-weight: 500 !important
+}
+.imgMarca{
+  width: 50px;
+  height: 25px;
+}
+.imgCar{
+  width: 85.88px;
+  /*height: 81.86px;*/
+  /*width: 100%;*/
+  margin: 0 !important;
+}
+.contentReserve{
+  padding-bottom: 0 !important;
+}
+.contentCarPrice{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  /*flex-wrap: nowrap;*/
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.contentImgCar{
+  flex: 1;
+  align-self: flex-end;
+}
+.contentPrice{
+  flex: 1;
+}
+.contentPrice h2{
+  margin: 0 !important;
+  line-height: 1em;
+}
+.contentPrice h4{
+  margin: 0 0 20px 0 !important;
+  color: #b2b2b2 !important;
+  text-align: right;
+}
+.checkboxAvail{
+  display: flex !important;
+  justify-content: flex-end;
+}
+.checkboxAvail label{
+  font-size: 10px !important;
+  color: #2b5bac !important;
+}
+.checkboxAvail label:before{
+  background: rgba(255, 255, 255, 0.0) !important;
+  border: .1em solid #87b672 !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.checkboxAvail label:after{
+  color: #87b672 !important;
+  width: 20px !important;
+  font-size: 14px !important;
+  top: -2px !important
+}
+.contentIcon{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+.contentIcon{
+
+}
+.cardCar{
+  border: 1px solid #b2b2b2 inset !important;
+  width: 206px !important;
+  height: 218.38px !important;
+}
+
+.buttonCotizar span{
+  border-bottom: 1px solid #fff;
+  padding-bottom: .2em;
+}
+.cardCar>div div:first-child{
+  padding-bottom: 0px !important;
+}
+
+.cardCar>div div:last-child{
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+.cardCar>div div:last-child>div span{
+  padding-right: 11px !important;
+}
+.cardCar>.grid{
+  margin: 0 !important;
+}
+.letterCarFeatures{
+  font-size: 10px;
+}

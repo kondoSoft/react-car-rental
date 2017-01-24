@@ -33,11 +33,40 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+
+    },{
+      path: 'available',
+      name: 'available',
+      getComponent(nextState, cb){
+        import('containers/Available')
+        .then(loadModule(cb))
+        .catch(errorLoading)
+      }
+    },{
+      path: 'quotation',
+      name: 'quotation',
+      getComponent(nextState, cb){
+        import('containers/Quotation')
+        .then(loadModule(cb))
+        .catch(errorLoading)
+      }
+    },
+    {
+      path: 'reserve',
+      name: 'reserve',
+      getComponent(nextState, cb){
+        import('containers/Reserve')
+        .then(loadModule(cb))
+        .catch(errorLoading)
+      }
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
-        import('containers/NotFoundPage')
+
+          import('containers/NotFoundPage')
+
           .then(loadModule(cb))
           .catch(errorLoading);
       },

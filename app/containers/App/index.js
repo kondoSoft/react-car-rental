@@ -12,6 +12,14 @@
  */
 
 import React from 'react';
+import {Container, Menu, Grid, Icon, Divider} from 'semantic-ui-react'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import MainSearch from '../../components/MainSearch'
+// import '../../assets/css/index.css'
+import 'semantic-ui-css/semantic.min.css'
+import '../../main.sass'
+
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -22,7 +30,14 @@ export default class App extends React.PureComponent { // eslint-disable-line re
   render() {
     return (
       <div>
-        {React.Children.toArray(this.props.children)}
+        <Header />
+        
+
+          {React.Children.toArray(this.props.children)}
+
+
+        <Footer/>
+
       </div>
     );
   }
