@@ -8,6 +8,140 @@ body
   background: #FFF !important
 /*semantic css OVERWRITE
 
+/****** NAVIGATION ************/
+.inner_toggle
+  max-width: 1000px
+  margin: 0 auto
+  padding: 0px 20px
+  position: relative
+
+
+.logo
+  text-decoration: none
+  color: #777
+  font-weight: 800
+  font-size: 30px
+  line-height: 40px
+
+
+h1
+  text-align: center
+  width: 100%
+  margin-top: 120px
+  color: #eee
+  font-weight: 800
+  font-size: 40px
+
+
+nav > ul
+  float: right
+
+  li
+    text-align: center
+    line-height: 65px
+    margin-left: 70px
+
+  li:hover
+    cursor: pointer
+    position: relative
+
+nav > ul li ul li
+  width: 100%
+  text-align: left
+
+nav ul li:hover > ul
+  display: block
+
+nav ul li:hover > a
+  color: #777
+
+nav > ul > li > a
+  cursor: pointer
+  display: block
+  outline: none
+  width: 100%
+  text-decoration: none
+
+nav > ul > li
+  float: left
+
+nav a
+  color: white
+
+nav > ul li ul
+   display: none
+   position: absolute
+   left: 0
+   top: 100%
+   width: 100%
+   z-index: 2000
+
+nav > ul li ul li > a
+  text-decoration: none
+
+
+[type="checkbox"], label
+  display: none
+
+
+@media only screen and (max-width: 900px)
+  nav ul
+    display: none
+  label
+    display: block
+    background: #ccc
+    width: 40px
+    height: 40px
+    cursor: pointer
+    position: absolute
+    right: 20px
+    top: 0px
+    &:after
+      content: ''
+      display: block
+      width: 30px
+      height: 5px
+      background: #777
+      margin: 7px 5px
+      box-shadow: 0px 10px 0px #777, 0px 20px 0px #777
+  [type="checkbox"]:checked ~ ul
+    display: block
+    z-index: 9999
+    position: absolute
+    right: 20px
+    left: 20px
+  nav
+    a
+      color: #777
+    ul li
+      display: block
+      float: none
+      width: 100%
+      text-align: left
+      background: #222
+      text-indent: 20px
+    > ul
+      > li
+        margin-left: 0px
+      li ul
+        li
+          display: block
+          float: none
+        display: block
+        position: relative
+        width: 100%
+        z-index: 9999
+        float: none
+  h1
+    font-size: 26px
+
+.travel, .logout
+  padding: 0 !important
+
+.liTravel, .liLogout
+  margin-left: 5px !important
+
+/******* End Navigation ********/
 .singleCarContainer
   border: 1px solid #E9F0F4
 
@@ -74,20 +208,18 @@ a
   padding-right: 3px !important
   padding-left: 5em !important
 
-.travel, .logout, .itemMenu
-  padding: 0 !important
 
 @media only screen and (max-width: 1024px) and (min-width: 320px)
   .menuNav
     display: none
     /*visibility: hidden
 
-.content
-  margin: 0 auto
-  width: 100%
+  .content
+    margin: 0 auto
+    width: 100%
 
-.slide
-  width: 100%
+  .slide
+    width: 100%
 
 /********* DatePicker and Form ************
 

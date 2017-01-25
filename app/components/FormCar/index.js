@@ -7,14 +7,13 @@
 import React from 'react';
 // import styled from 'styled-components';
 import { Input, Button } from 'semantic-ui-react'
+import NewSearch from '../NewSearch'
 
 
 function FormCar() {
   return (
     <div className='formSingleCar'>
-      <div className='newSearch'>
-        <span>Busqueda Nueva<i className='fa fa-search'></i></span>
-      </div>
+      <NewSearch />
       <div className='containerPlace'>
       <div className='placeRent'>
         <h3 className='colorBlue'>Lugar de Renta</h3>

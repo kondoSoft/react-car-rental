@@ -7,6 +7,8 @@
 import React from 'react';
 // import styled from 'styled-components';
 import {Container, Menu} from 'semantic-ui-react'
+import Navigation from '../Navigation'
+import { Link } from 'react-router'
 
 
 function Header() {
@@ -15,12 +17,12 @@ function Header() {
       <Container>
         <Menu secondary>
           <Menu.Item>
-            <a className="" to="/">
+            <Link className="" to="/">
               <img src='https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/creatuviaje-logo.png' alt=""/>
 
-            </a>
+            </Link>
           </Menu.Item>
-            {/* <Navigation /> */}
+          <Navigation />
         </Menu>
       </Container>
     </header>
