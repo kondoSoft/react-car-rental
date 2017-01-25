@@ -23,7 +23,7 @@ function Comments() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
+              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
               <a>
                 YAHIR GARCIA
               </a>
@@ -39,7 +39,7 @@ function Comments() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
+              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
               <a>
                 MAYRA BADHY
               </a>
@@ -55,7 +55,7 @@ function Comments() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
+              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
               <a>
                 JAVIER PEREZ
               </a>
@@ -71,7 +71,7 @@ function Comments() {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='bottom' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
+              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
               <a>
                 JAVIER PEREZ
               </a>

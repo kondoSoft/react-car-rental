@@ -11,7 +11,7 @@ import { browserHistory } from 'react-router'
 
 function FormSearch() {
   return (
-    <Form>
+    <Form id="inputSearchDisplay">
       <Header as='h1' className='titleForm'>Bienvenido</Header>
       <Grid>
         <Grid.Row centered>

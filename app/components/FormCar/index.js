@@ -13,7 +13,9 @@ import NewSearch from '../NewSearch'
 function FormCar() {
   return (
     <div className='formSingleCar'>
-      <NewSearch />
+      <div className='divSearch'>
+        <NewSearch />
+      </div>
       <div className='containerPlace'>
       <div className='placeRent'>
         <h3 className='colorBlue'>Lugar de Renta</h3>

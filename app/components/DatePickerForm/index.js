@@ -13,7 +13,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
 
   render() {
     return (
-      <div centered className="row topDatePicker centered">
+      <div  className="row topDatePicker centered">
         <div  className="divLabelDate">
           <label className="spanWhite">Cuando lo va a recoger?</label>
         </div>

@@ -13,7 +13,9 @@ import NewSearch from '../NewSearch'
 function FormCarReserveRight() {
   return (
     <div className='formReserveRight'>
-      <NewSearch/>
+      <div className="divSearch">
+        <NewSearch/>
+      </div>
       <div className="dataClient">
         <div className='titleDataClient newSearch'>
           <span>Datos del arrendador</span>

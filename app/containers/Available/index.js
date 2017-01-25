@@ -15,7 +15,7 @@ export default class Available extends React.PureComponent { // eslint-disable-l
 
     return (
       <Container>
-        <div style={{display:'flex', justifyContent:'flex-end', width:'96.3%'}}>
+        <div className="divSearchAvailable">
           <NewSearch />
         </div>
         <Header as="h3" className="titleCar">Mini</Header>
