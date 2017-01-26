@@ -9,10 +9,10 @@ import {Form, Grid, Input, Button, Header, Checkbox, Divider} from 'semantic-ui-
 import DatePickerForm from '../DatePickerForm/'
 import { browserHistory } from 'react-router'
 
-function FormSearch() {
+function FormSearch(props) {
   return (
     <Form id="inputSearchDisplay">
-      <Header as='h1' className='titleForm'>Bienvenido</Header>
+      <Header as='h1' className='titleForm'>{props.title}</Header>
       <Grid>
         <Grid.Row centered>
           <div className='selectFormSearch'>

@@ -21,7 +21,7 @@ function MainSearch() {
         <Container>
           <Grid verticalAlign='middle' style={{marginTop:'0'}}>
             <Grid.Column mobile={16} tablet={8} computer={6} textAlign='center'>
-              <FormSearch />
+              <FormSearch title="Bienvenido"/>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={10}>
               <Promo/>

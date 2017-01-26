@@ -8,9 +8,13 @@ import React from 'react';
 import { Icon,Image, Grid, Container, Header, Card, Button,Segment } from 'semantic-ui-react'
 import CardCar from '../../components/CardCar'
 import NewSearch from '../../components/NewSearch'
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { IntlProvider } from 'react-intl';
+// import { makeSelectLocale } from './selectors';
 
 
-export default class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
 
     return (
@@ -52,3 +56,14 @@ export default class Available extends React.PureComponent { // eslint-disable-l
     );
   }
 }
+const mapStateToProps = createSelector(
+  (locale) => ({ locale })
+);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Available);

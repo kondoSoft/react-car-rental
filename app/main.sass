@@ -452,11 +452,10 @@ i
   justify-content: flex-start
 
 .formDataClient .ui
-  &.selection.dropdown
-    min-width: 70%
   &.input
     position: inherit
     margin-bottom: 10px
+    width: 70%
 
 .formDataCard
   border: 1px solid #ccc
@@ -478,6 +477,7 @@ i
   .ui.input
     position: inherit
     margin-bottom: 10px
+    width: 70%
   .sizeInput
     width: 30% !important
 
@@ -502,7 +502,7 @@ i
 
 .select
   border: 1px solid #ccc
-  width: 174px
+  width: 254px
   overflow: hidden
   display: flex
   justify-content: space-around
@@ -600,13 +600,15 @@ i
     font-size: 1em
 
 .divSearchAvailable .newSearch
-  width: 40% !important
+  width: 20% !important
+  position: absolute
+  z-index: 2
+  background-color: rgba(45, 72, 192, 0.9)
 
 .divSearch, .divSearchAvailable
   display: flex
   flex-direction: row
   justify-content: flex-end
-  z-index: 1000
   .form
     background: transparent
   .newSearch

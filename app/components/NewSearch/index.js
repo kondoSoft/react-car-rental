@@ -19,9 +19,9 @@ function showSearch(){
 function NewSearch() {
 
   return (
-    <div className='newSearch'>
-      <span onClick={()=> showSearch()} >Busqueda Nueva<i className='fa fa-search' ></i></span>
-      <FormSearch />
+    <div onClick={()=> showSearch()} className='newSearch'>
+      <span  >Busqueda Nueva<i className='fa fa-search' ></i></span>
+      <FormSearch/>
     </div>
   );
 }
