@@ -1,18 +1,18 @@
-import { fromJS } from 'immutable';
-import {
-  LOAD_ACTION,
-} from './constants';
-import cars from '../../data/cars';
+import { fromJS } from 'inmutable';
+import Cars from '../../data/cars'
+
+
 const initialState = fromJS({
-  cars: cars
+  cars: Cars
 });
 
 function availableReducer(state = initialState, action){
   switch (action.type) {
-    case LOAD_ACTION:
+    case GET_CARS:
       return state
     default:
       return state
   }
 }
+
 export default availableReducer;

@@ -1,1 +1,7 @@
-export const GET_CARS = 'app/available/GET_CARS';
+/*
+ *
+ * Available constants
+ *
+ */
+
+export const LOAD_ACTION = 'app/Available/LOAD_ACTION';

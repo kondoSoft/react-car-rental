@@ -35,32 +35,46 @@ export default function createRoutes(store) {
       },
 
     },{
-      path: 'available',
+      path: '/prueba',
+      name: 'prueba',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Prueba/reducer'),
+          import('containers/Prueba/sagas'),
+          import('containers/Prueba'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('prueba', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/available',
       name: 'available',
-      getComponent(nextState, cb){
-        import('containers/Available')
-        .then(loadModule(cb))
-        .catch(errorLoading)
-      }
-    },{
-      path: 'quotation',
-      name: 'quotation',
-      getComponent(nextState, cb){
-        import('containers/Quotation')
-        .then(loadModule(cb))
-        .catch(errorLoading)
-      }
-    },
-    {
-      path: 'reserve',
-      name: 'reserve',
-      getComponent(nextState, cb){
-        import('containers/Reserve')
-        .then(loadModule(cb))
-        .catch(errorLoading)
-      }
-    },
-    {
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Available/reducer'),
+          import('containers/Available/sagas'),
+          import('containers/Available'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('available', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

@@ -4,27 +4,21 @@
  *
  */
 
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import Helmet from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
-import makeSelectAvailable from './selectors';
-import { loadAction } from './actions'
+import React from 'react';
 import { Icon,Image, Grid, Container, Header, Card, Button,Segment } from 'semantic-ui-react'
 import CardCar from '../../components/CardCar'
 import NewSearch from '../../components/NewSearch'
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { IntlProvider } from 'react-intl';
+// import { makeSelectLocale } from './selectors';
 
 
 export class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+
     return (
       <Container>
-        <Helmet
-          title="Available"
-          meta={[
-            { name: 'description', content: 'Description of Available' },
-          ]}
-        />
         <div className="divSearchAvailable">
           <NewSearch />
         </div>
@@ -62,20 +56,12 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
     );
   }
 }
-
-Available.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = createStructuredSelector({
-  Available: makeSelectAvailable(),
-});
+const mapStateToProps = createSelector(
+  (locale) => ({ locale })
+);
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAction: (type)=>{
-      dispatch(loadAction(type))
-    },
     dispatch,
   };
 }

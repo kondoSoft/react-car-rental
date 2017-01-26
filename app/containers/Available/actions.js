@@ -1,9 +1,15 @@
+/*
+ *
+ * Available actions
+ *
+ */
+
 import {
-  GET_CARS,
+  LOAD_ACTION,
 } from './constants';
 
-export funcion getCars(){
-  return{
-    type: GET_CARS,
-  }
+export function loadAction() {
+  return {
+    type: LOAD_ACTION,
+  };
 }
