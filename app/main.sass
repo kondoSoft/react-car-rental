@@ -7,6 +7,63 @@ body
 #app
   background: #FFF !important
 /*semantic css OVERWRITE
+/* ANIMATIONS */
+
+@keyframes fadeSearchOpen
+    0%
+      height: 0px
+
+    100%
+      height: 450px
+
+.fadeSearchOpen
+  height: 450px!important
+  animation: 500ms fadeSearchOpen
+
+@keyframes fadeSearchClose
+    0%
+      height: 450px
+
+    100%
+      height: 0px
+
+.fadeSearchClose
+  height: 0px
+  animation: 500ms fadeSearchClose
+
+
+
+/***** starting state of animation *******/
+.fade-appear
+  opacity: 0.01
+  transform: rotateX(80deg) rotateY(80deg)
+  // transition: 1000ms cubic-bezier(0.000, 0.000, 0.780, 1.000) all
+.fadesearch-enter
+  opacity: 0.01
+
+.fadesearch-enter.fadesearch-enter-active
+  opacity: 1
+  transition: opacity 500ms ease-in
+
+.fadesearch-leave
+  opacity: 0.01
+
+.fadesearch-leave.fadesearch-leave-active
+  opacity: 1
+  transition: opacity 500ms ease-in
+
+/* end state of animation */
+.fade-appear.fade-appear-active
+  opacity: 1
+  transition: 800ms ease-out all
+  transform: rotateX(0deg) rotateY(0deg)
+
+.form-appear
+   opacity: 0.01
+
+.form-appear.form-appear-active
+   opacity: 1
+   transition: opacity 500ms ease-in
 
 /****** NAVIGATION ************/
 .inner_toggle
@@ -583,6 +640,11 @@ i
   flex: 1
   max-width: 365px
 
+.newSearch>div:first-child
+  width: 100%
+  height: 45px
+  padding-top: 1em 
+
 .newSearch
   display: flex
   justify-content: center
@@ -591,7 +653,6 @@ i
   color: #fff
   font-size: 16px
   text-align: center
-  padding-top: 10px
   min-height: 45px
   align-items: center
   i
@@ -599,11 +660,15 @@ i
     color: #c2c9e5
     font-size: 1em
 
+.divSearchAvailable
+  height: 40px
+
 .divSearchAvailable .newSearch
   width: 20% !important
   position: absolute
   z-index: 2
   background-color: rgba(45, 72, 192, 0.9)
+
 
 .divSearch, .divSearchAvailable
   display: flex
@@ -614,8 +679,8 @@ i
   .newSearch
     width: 100%
   #inputSearchDisplay
-    display: none
-    margin-bottom: 1em
+    height: 0
+    overflow: hidden
     transition: 0.2s
   .input-group-addon-standar
     width: 40px

@@ -78,6 +78,46 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/quotation',
+      name: 'quotation',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Quotation/reducer'),
+          import('containers/Quotation/sagas'),
+          import('containers/Quotation'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('quotation', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/reserve',
+      name: 'reserve',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/Reserve/reducer'),
+          import('containers/Reserve/sagas'),
+          import('containers/Reserve'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('reserve', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

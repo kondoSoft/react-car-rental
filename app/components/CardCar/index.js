@@ -10,7 +10,6 @@ import { Icon, Image, Grid, Card, Button, Checkbox } from 'semantic-ui-react'
 import { browserHistory } from 'react-router'
 
 function CardCar(props) {
-  console.log(props.car.Amount);
   return (
     <Grid.Column className='contentCardCar'>
       <Card className='cardCar'>

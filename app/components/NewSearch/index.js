@@ -6,22 +6,25 @@
 
 import React from 'react';
 import FormSearch from '../FormSearch/'
+
+
 // import styled from 'styled-components';
 function showSearch(){
   var block = document.getElementById('inputSearchDisplay')
-  if (block.style.display=='block') {
-    block.style.display = 'none'
+
+  if (block.className=='fadeSearchOpen') {
+    block.className = "fadeSearchClose"
   }else{
-    block.style.display = 'block'
+    block.className = "fadeSearchOpen"
   }
 }
 
 function NewSearch() {
 
   return (
-    <div onClick={()=> showSearch()} className='newSearch'>
-      <span  >Busqueda Nueva<i className='fa fa-search' ></i></span>
-      <FormSearch/>
+    <div className='newSearch'>
+      <div onClick={()=> showSearch()}>Busqueda Nueva<i className='fa fa-search' ></i></div>
+        <FormSearch/>
     </div>
   );
 }
