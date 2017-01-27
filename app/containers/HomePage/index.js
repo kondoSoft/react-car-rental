@@ -12,7 +12,7 @@ import makeSelectHomePage from './selectors';
 import {loadAction } from './actions'
 import MainSearch from '../../components/MainSearch'
 import Comments from '../../components/Comments'
-import {Container} from 'semantic-ui-react'
+import {Container, Grid, Icon} from 'semantic-ui-react'
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){
@@ -31,8 +31,17 @@ export class HomePage extends React.PureComponent {
           ]}
         />
           <MainSearch/>
-          <Container>
+          <Container className="containerComments">
+            <h2>CLIENTES</h2>
+            <span>Que dicen nuestros clientes</span>
+            <Grid>
             {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
+            <Grid.Column width={16}>
+              <Icon color='green' name='circle' size='mini' />
+              <Icon color='blue' name='circle' size='mini' />
+              <Icon color='blue' name='circle' size='mini' />
+            </Grid.Column>
+            </Grid>
           </Container>
       </div>
     );
