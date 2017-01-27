@@ -4,7 +4,7 @@ import {
 } from './constants';
 import cars from '../../data/cars';
 const initialState = fromJS({
-  cars: cars
+  cars: cars[0]
 });
 
 function availableReducer(state = initialState, action){

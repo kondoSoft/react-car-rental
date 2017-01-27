@@ -9,7 +9,8 @@ import React from 'react';
 import { Card, Image, Icon, Grid, Container } from 'semantic-ui-react'
 
 
-function Comments() {
+function Comments(props) {
+  console.log(props.comment.comments.description)
   return (
     <Container className="containerComments">
       <h2>CLIENTES</h2>
@@ -19,71 +20,24 @@ function Comments() {
           <Card className="backgroundCar spaceComillas">
             <Card.Content>
               <Card.Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                {props.comment.comments.description}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
+              <Image shape='circular' floated='left' size='mini' src={props.comment.photo} />
               <a>
-                YAHIR GARCIA
+                {props.comment.name}
               </a>
-              <p>Abogado</p>
+              <p>{props.comment.profession}</p>
             </Card.Content>
           </Card>
         </Grid.Column>
-        <Grid.Column mobile={16} tablet={8} computer={4}>
-          <Card className="backgroundCar spaceComillas">
-            <Card.Content>
-              <Card.Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
-              <a>
-                MAYRA BADHY
-              </a>
-              <p>Locutora</p>
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-        <Grid.Column mobile={16} tablet={8} computer={4}>
-          <Card className="backgroundCar spaceComillas">
-            <Card.Content>
-              <Card.Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
-              <a>
-                JAVIER PEREZ
-              </a>
-              <p>Chef</p>
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-        <Grid.Column mobile={16} tablet={8} computer={4}>
-          <Card className="backgroundCar spaceComillas">
-            <Card.Content>
-              <Card.Description>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' src='http://semantic-ui.com/images/avatar2/large/matthew.png' />
-              <a>
-                JAVIER PEREZ
-              </a>
-              <p>Chef</p>
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-        <Grid.Column width={16}>
+
+        {/* <Grid.Column width={16}>
           <Icon color='green' name='circle' size='mini' />
           <Icon color='blue' name='circle' size='mini' />
           <Icon color='blue' name='circle' size='mini' />
-        </Grid.Column>
+        </Grid.Column> */}
       </Grid>
     </Container>
   );

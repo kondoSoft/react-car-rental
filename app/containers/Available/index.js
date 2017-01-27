@@ -16,8 +16,33 @@ import NewSearch from '../../components/NewSearch'
 
 
 export class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  render() {
+  createCardCar(car,i,array){
+    // console.log(car)
     return (
+      <CardCar car={car} key={array[i]+i}/>
+    )
+  }
+  createGridCarRow(type,i){
+    const dataAry = this.props.Available.cars;
+    return(
+      <div key={'div'+i}>
+      <Header as="h3" className="titleCar" key={'Header'+i}>{type}</Header>
+      <Grid columns={5} className="contentAvailable" key={'Grid'+i} >
+        <Grid.Row id='rowAvailable' key={'GridRow'+i}>
+          {dataAry[type].map((item, i,array)=>{ return this.createCardCar(item,i,array) })}
+        </Grid.Row>
+      </Grid>
+    </div>
+    )
+  }
+
+  render() {
+
+    const dataInitial = Object.keys(this.props.Available.cars);
+
+    return (
+      <div>
+      {/* {JSON.stringify(this.props.Available.cars)} */}
       <Container>
         <Helmet
           title="Available"
@@ -28,37 +53,9 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
         <div className="divSearchAvailable">
           <NewSearch />
         </div>
-        <Header as="h3" className="titleCar">Mini</Header>
-        <Grid columns={5} className="contentAvailable">
-          <Grid.Row id='rowAvailable'>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-          </Grid.Row>
-        </Grid>
-        <Header as="h3" className="titleCar">Economico</Header>
-        <Grid columns={5} className="contentAvailable">
-          <Grid.Row id='rowAvailable'>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-            <CardCar/>
-          </Grid.Row>
-        </Grid>
+          {dataInitial.map((item,i)=>{ return this.createGridCarRow(item,i) })}
       </Container>
+    </div>
     );
   }
 }

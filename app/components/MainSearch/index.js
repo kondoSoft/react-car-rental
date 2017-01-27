@@ -29,9 +29,6 @@ function MainSearch() {
           </Grid>
         </Container>
       </Container>
-      <Container>
-        <Comments/>
-      </Container>
     </div>
   );
 }
