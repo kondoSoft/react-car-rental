@@ -13,7 +13,7 @@ import Back from 'assets/images/slide.jpg'
 import Comments from '../Comments'
 import { browserHistory } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
+import Test from '../../components/Test'
 function MainSearch() {
   return (
     <div>
@@ -32,7 +32,7 @@ function MainSearch() {
               </ReactCSSTransitionGroup>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={10}>
-
+                <Test/>
                 <Promo/>
 
             </Grid.Column>

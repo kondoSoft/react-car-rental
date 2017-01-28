@@ -13,6 +13,8 @@ import {loadAction } from './actions'
 import MainSearch from '../../components/MainSearch'
 import Comments from '../../components/Comments'
 import {Container, Grid, Icon} from 'semantic-ui-react'
+import Autocomplete from 'react-autocomplete'
+import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from 'react-autocomplete'
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){

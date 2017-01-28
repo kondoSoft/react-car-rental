@@ -10,7 +10,7 @@ import { Card, Image, Icon, Grid, Container } from 'semantic-ui-react'
 
 
 function Comments(props) {
-  console.log(props.comment.comments.description)
+  
   return (
 
 

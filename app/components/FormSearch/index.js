@@ -22,6 +22,7 @@ function FormSearch(props) {
           <div className='selectFormSearch'>
             <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
             <input className="inputFormSize" placeholder='Donde recogera el auto?'/>
+        
           </div>
         </Grid.Row>
         <Grid.Row centered id='return'>
