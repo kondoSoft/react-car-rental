@@ -15,7 +15,9 @@ import SingleCarReserve from '../../components/SingleCarReserve'
 import {Container} from 'semantic-ui-react'
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
   render() {
+    const dataInitial = this.props.Reserve.cars
     return (
         <Container className='containerReserve'>
           <Helmet
@@ -25,11 +27,12 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
             ]}
           />
           <div className='contentReserveSingleCar'>
-              <FormCarReserve/>
-              <SingleCarReserve/>
+              <FormCarReserve car={dataInitial}/>
+              <SingleCarReserve car={dataInitial} />
           </div>
           <div className='contentFormReserves'>
             <FormCarReserveRight/>
+
           </div>
         </Container>
 
@@ -47,6 +50,9 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+    loadAction: (type)=>{
+      dispatch(loadAction(type))
+    },
     dispatch,
   };
 }

@@ -5,15 +5,21 @@
  */
 
 import { fromJS } from 'immutable';
+import cars from '../../data/cars';
 import {
-  DEFAULT_ACTION,
+  LOAD_ACTION,LOAD_LOCATION
 } from './constants';
 
-const initialState = fromJS({});
+const initialState = fromJS({
+	car: cars[0],
+	location:cars[0].Compacto[0]
+});
 
 function quotationReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case LOAD_ACTION:
+      return state;
+    case LOAD_LOCATION:
       return state;
     default:
       return state;

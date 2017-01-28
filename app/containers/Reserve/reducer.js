@@ -6,14 +6,17 @@
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
+  LOAD_ACTION,
 } from './constants';
+import cars from '../../data/cars';
 
-const initialState = fromJS({});
+const initialState = fromJS({
+	cars: cars[0].Compacto[0]
+});
 
 function reserveReducer(state = initialState, action) {
   switch (action.type) {
-    case DEFAULT_ACTION:
+    case LOAD_ACTION:
       return state;
     default:
       return state;

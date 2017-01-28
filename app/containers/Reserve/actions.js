@@ -5,11 +5,11 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  LOAD_ACTION,
 } from './constants';
 
 export function defaultAction() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_ACTION,
   };
 }

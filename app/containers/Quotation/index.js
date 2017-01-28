@@ -14,9 +14,22 @@ import SingleCar from '../../components/SingleCar'
 import FormCar from '../../components/FormCar'
 
 export class Quotation extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
+  createQuotationCar(car,i){
+    return(
+        <SingleCar cars={car} key={i}/>
+      )
+  }
+  createQuotationType(type,i){
+    const dataAry= this.props.Quotation.car
+    return(
+      dataAry[type].map((item,i)=>{return this.createQuotationCar(item,i)})
 
+    )
+  }
+  render() {
+    const dataInitial = Object.keys(this.props.Quotation.car);
+    const dataLocation = this.props.Quotation.location;
+    return (
       <Container className='containerQuotation'>
         <Helmet
           title="Quotation"
@@ -25,10 +38,10 @@ export class Quotation extends React.PureComponent { // eslint-disable-line reac
           ]}
         />
          <div className='contentSingleCar'>
-           <SingleCar/>
-           <SingleCar/>
+         {dataInitial.map((item,i)=>{return this.createQuotationType(item,i)})}
+
          </div>
-         <FormCar/>
+         <FormCar location={dataLocation}/>
        </Container>
 
     );
@@ -45,6 +58,12 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+    loadAction: (type)=>{
+      dispatch(loadAction(type))
+    },
+     loadLocation: (type)=>{
+      dispatch(loadLocation(type))
+    },
     dispatch,
   };
 }

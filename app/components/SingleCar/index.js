@@ -9,17 +9,18 @@ import React from 'react';
 import { Button, Icon } from 'semantic-ui-react'
 import { browserHistory } from 'react-router'
 
-function SingleCar() {
+function SingleCar(props) {
   return (
     <div className='singleCarContainer'>
       <div className='singleCarContainer-title'>
-        <h2>Ford KA</h2><img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/proveedor.png" alt="Nombre del proveedor"/>
+        <h2>{props.cars.Name}</h2>
+        <img src={props.cars.Vendor} alt="Nombre del proveedor"/>
       </div>
       <div className='creatur-row'>
         <div className='singleCarContainer-data'>
           <div className='ct-row price-row'>
             <span className='three'>
-              <span className='ct-price'>$ 349.56</span>
+              <span className='ct-price'>$ {props.cars.Amount}</span>
               <span className='ct-usd'> USD</span>
             </span>
             <span className='one km'>
@@ -44,24 +45,24 @@ function SingleCar() {
         </div>
         <div className="contentIconSingleCar colorGreen">
           <i className="fa fa-users" >
-            <span className="colorGreen letterCarFeatures">5</span>
+            <span className="colorGreen letterCarFeatures">{props.cars.PassengerQuantity}</span>
           </i>
           <i className="fa fa-suitcase" >
-            <span className="colorGreen letterCarFeatures">5</span>
+            <span className="colorGreen letterCarFeatures">{props.cars.BaggageQuantity}</span>
           </i>
           <i className="fa fa-snowflake-o" >
-            <span className="colorGreen letterCarFeatures">SI</span>
+            <span className="colorGreen letterCarFeatures">{(props.cars.AirConditionInd)=='true' ? 'Si' : 'No'}</span>
           </i>
           <i className="icon cri-transmision" >
-            <span className="colorGreen letterCarFeatures">5</span>
+            <span className="colorGreen letterCarFeatures">{(props.cars.TransmissionType) == 'Automatic' ? 'A' : 'M'}</span>
           </i>
           <i className="icon cri-puerta" >
-            <span className="colorGreen letterCarFeatures">5</span>
+            <span className="colorGreen letterCarFeatures">{props.cars.Doors}</span>
           </i>
         </div>
       </div>
       <div className='singleCarContainer-carImage'>
-        <img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/generic-car.png" alt="Ford Ka"/>
+        <img src={props.cars.PictureURL} alt="Auto"/>
       </div>
     </div>
     <Button primary className='buttonCotizar' onClick={() => browserHistory.push('/reserve')} ><span>Reservar</span></Button>

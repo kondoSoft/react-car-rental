@@ -10,7 +10,7 @@ import { Input, Button } from 'semantic-ui-react'
 import NewSearch from '../NewSearch'
 
 
-function FormCar() {
+function FormCar(props) {
   return (
     <div className='formSingleCar'>
       <div className='divSearch'>
@@ -19,18 +19,18 @@ function FormCar() {
       <div className='containerPlace'>
       <div className='placeRent'>
         <h3 className='colorBlue'>Lugar de Renta</h3>
-        <span className='textUbication'>Los Angeles International Airport</span>
+        <span className='textUbication'>{props.location.PickUpLocation_Code}</span>
         <div>
-          <span><i className='fa fa-calendar colorGreen'></i>23 de diciembre 2016</span>
-          <span><i className='fa fa-clock-o colorGreen'></i>12:00pm</span>
+          <span><i className='fa fa-calendar colorGreen'></i>{props.location.PickUp_Date}</span>
+          <span><i className='fa fa-clock-o colorGreen'></i>{props.location.PickUp_Date}</span>
         </div>
       </div>
       <div className='placeReturn'>
         <h3 className='colorBlue'>Lugar de Retorno</h3>
-        <span className='textUbication'>Los Angeles International Airport</span>
+        <span className='textUbication'>{props.location.ReturnLocation_Code}</span>
         <div>
-          <span><i className='fa fa-calendar colorGreen'></i>23 de diciembre 2016</span>
-          <span><i className='fa fa-clock-o colorGreen'></i>12:00pm</span>
+          <span><i className='fa fa-calendar colorGreen'></i>{props.location.Return_Date}</span>
+          <span><i className='fa fa-clock-o colorGreen'></i>{props.location.Return_Date}</span>
         </div>
       </div>
       <div className='selectedRate'>

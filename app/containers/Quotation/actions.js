@@ -5,11 +5,17 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  LOAD_ACTION,
+  LOAD_LOCATION,
 } from './constants';
 
-export function defaultAction() {
+export function loadAction() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_ACTION,
+  };
+}
+export function loadLocation() {
+  return {
+    type: LOAD_LOCATION,
   };
 }

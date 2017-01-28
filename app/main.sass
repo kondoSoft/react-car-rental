@@ -7,6 +7,7 @@ body
 #app
   background: #FFF !important
 /*semantic css OVERWRITE
+
 /* ANIMATIONS */
 
 @keyframes fadeSearchOpen
@@ -31,32 +32,12 @@ body
   height: 0px
   animation: 500ms fadeSearchClose
 
-
-
-/***** starting state of animation *******/
 .fade-appear
   opacity: 0.01
-  transform: rotateX(80deg) rotateY(80deg)
-  // transition: 1000ms cubic-bezier(0.000, 0.000, 0.780, 1.000) all
-.fadesearch-enter
-  opacity: 0.01
 
-.fadesearch-enter.fadesearch-enter-active
-  opacity: 1
-  transition: opacity 500ms ease-in
-
-.fadesearch-leave
-  opacity: 0.01
-
-.fadesearch-leave.fadesearch-leave-active
-  opacity: 1
-  transition: opacity 500ms ease-in
-
-/* end state of animation */
 .fade-appear.fade-appear-active
   opacity: 1
-  transition: 800ms ease-out all
-  transform: rotateX(0deg) rotateY(0deg)
+  transition: opacity 500ms ease-out
 
 .form-appear
    opacity: 0.01
