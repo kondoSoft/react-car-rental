@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Header,Button, Container, Icon} from 'semantic-ui-react'
-// import s from './Main-slide.css'
-const options=[
-  {text:'00:00', value:'00:00'},
-  {text:'00:30', value:'00:30'}
-]
+
 class Promo extends Component {
   render() {
     return (
