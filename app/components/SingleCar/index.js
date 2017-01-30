@@ -14,7 +14,7 @@ function SingleCar(props) {
     <div className='singleCarContainer'>
       <div className='singleCarContainer-title'>
         <h2>{props.cars.Name}</h2>
-        <img src={props.cars.Vendor} alt="Nombre del proveedor"/>
+        <img width='100' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/ico/${props.cars.Vendor}.png`} alt="Nombre del proveedor"/>
       </div>
       <div className='creatur-row'>
         <div className='singleCarContainer-data'>
@@ -62,7 +62,7 @@ function SingleCar(props) {
         </div>
       </div>
       <div className='singleCarContainer-carImage'>
-        <img src={props.cars.PictureURL} alt="Auto"/>
+        <img src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.cars.PictureURL}`} alt="Auto"/>
       </div>
     </div>
     <Button primary className='buttonCotizar' onClick={() => browserHistory.push('/reserve')} ><span>Reservar</span></Button>

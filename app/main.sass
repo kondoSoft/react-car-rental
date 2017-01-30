@@ -263,20 +263,77 @@ a
   display: flex
   justify-content: space-around
   flex-direction: row
+  input
+    border-radius: 0 !important
 
 .selectFormSearch
   border: 1px solid #ccc
   width: 70%
   overflow: hidden
   display: flex
-  justify-content: space-around
+  justify-content: flex-start
   flex-direction: row
 
-.inputFormSize
-  font-size: 1em
-  background: #FFF
-  border: none
-  border-radius: 0 !important
+.Select
+  width: 59.5%
+  left: 100px
+  position: absolute
+  .Select-menu-outer>div
+    text-align: left
+  .Select-control
+    background-color: #fff
+    border: none
+    border-radius: 0 !important
+    color: #333
+    cursor: default
+    display: table
+    height: 37px
+    outline: none
+    overflow: hidden
+    position: relative
+    width: 100%
+    .Select-multi-value-wrapper
+      width: 100%
+      display: inline-block
+      .Select-value, .Select-placeholder,
+        text-align: left !important
+      .Select-placeholder
+        bottom: 0
+        color: #aaa
+        left: 0
+        line-height: 34px
+        padding-left: 10px
+        padding-right: 10px
+        position: absolute
+        right: 0
+        top: 0
+        max-width: 100%
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+      .Select-input
+        font-size: 1em
+        background: #FFF
+        border: none
+        border-radius: none !important
+        width: 100%
+        vertical-align: middle
+        margin-left: 10px
+        padding: 0
+        input
+          width: 100% !important
+          background: none transparent
+          border: none
+          box-shadow: none
+          cursor: default
+          display: inline-block
+          font-family: inherit
+          font-size: inherit
+          margin: 0
+          outline: none
+          line-height: 14px
+          padding: 8px 0 12px
+          -webkit-appearance: none
 
 .input-group-addon-standar
   width: 40px
@@ -473,7 +530,7 @@ i
 
 .dividerFormReserve
   width: 80% !important
-  margin: 0px 10% auto !important
+  margin: 0px auto !important
   border-top: 2px solid #70a0ec !important
   border-bottom: 1px solid #70a0ec !important
 
@@ -624,7 +681,7 @@ i
 .newSearch>div:first-child
   width: 100%
   height: 45px
-  padding-top: 1em 
+  padding-top: 1em
 
 .newSearch
   display: flex
@@ -730,7 +787,6 @@ i
   .ui
     &.small.input
       margin-top: -10px
-      margin-left: 1.9em
       width: 90%
     &.button
       margin-top: 15px
@@ -1068,6 +1124,10 @@ footer
 .contentReserveSingleCar
   display: flex
   flex-direction: column
+  .singleCarContainer
+    margin: 0 !important
+    width: 77.2% !important
+
 
 .singleCarReserveContainer
   border: 1px solid #E9F0F4
@@ -1159,41 +1219,37 @@ footer
 @media only screen and (max-width: 1199px) and (min-width: 992px)
   .singleCarReserveContainer
     width: 98.3%
-
   .containerPlaceReserve
     margin-right: 10px
+  .contentReserveSingleCar
+    display: flex
+    flex-direction: column
+    .singleCarContainer
+      margin: 0 !important
+      width: 98.5% !important
+
 
 
 @media only screen and (max-width: 991px) and (min-width: 768px)
-  .singleCarReserveContainer
-    width: 97.8%
-
-  .singleCarReserveContainer-data
-    flex: 3
-    margin: 1em 0 1.2em 1.2em
-    padding-left: 1em
-
-  .singleCarReserveContainer-data .price-row
-    margin-top: 0
-
-  .singleCarReserveContainer-data .centralData
-    margin-top: 0
-
-  .containerPlaceReserve
-    margin-right: 10px
+  .contentReserveSingleCar
+    display: flex
+    flex-direction: column
+    .singleCarContainer
+      margin: 0 !important
+      width: 100% !important
+  .contentFormReserves
+    margin-top: 15px !important
+    width: 100%
+    max-width: none !important
+  .select
+    width: 70% !important
 
 
 @media only screen and (max-width: 767px) and (min-width:320px)
+  .select
+    width: 70% !important
   .containerReserve
     flex-direction: column !important
-
-  .singleCarReserveContainer
-    width: 100.0%
-    max-height: none
-
-  .singleCarReserveContainer-title
-    max-height: 37px
-    flex: 1
 
   .contentFormReserves
     width: 100%

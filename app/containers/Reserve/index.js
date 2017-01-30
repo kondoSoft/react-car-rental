@@ -11,7 +11,7 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectReserve from './selectors';
 import FormCarReserve from '../../components/FormCarReserve'
 import FormCarReserveRight from '../../components/FormCarReserveRight'
-import SingleCarReserve from '../../components/SingleCarReserve'
+import SingleCar from '../../components/SingleCar'
 import {Container} from 'semantic-ui-react'
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -28,7 +28,7 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
           />
           <div className='contentReserveSingleCar'>
               <FormCarReserve car={dataInitial}/>
-              <SingleCarReserve car={dataInitial} />
+              <SingleCar cars={dataInitial} />
           </div>
           <div className='contentFormReserves'>
             <FormCarReserveRight/>

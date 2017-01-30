@@ -7,21 +7,38 @@
 import React from 'react';
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
+import 'react-datepicker/dist/react-datepicker.css'
 // import styled from 'styled-components';
 
 class DatePickerForm extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+  constructor(props){
+    super(props)
+      this.state = {
+        startDate: moment()
+      }
+      this.handleChange = this.handleChange.bind(this)
+  }
+handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
 
   render() {
     return (
       <div  className="row topDatePicker centered">
         <div  className="divLabelDate">
-          <label className="spanWhite">Cuando lo va a recoger?</label>
+          <span className="spanWhite">Cuando lo va a recoger?</span>
         </div>
         <div className='divWhen'>
           <div className='columnPaddingzero columnDatePicker'>
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
-              <input className="inputFormSize" placeholder='12/Ene/2016'/>
+              <DatePicker
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+              />
             </div>
           </div>
           <div className="selectDivHour">
@@ -32,13 +49,16 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
           </div>
         </div>
         <div className="divLabelDate">
-          <label className="spanWhite">Cuando lo va a entregar</label>
+          <span className="spanWhite">Cuando lo va a entregar?</span>
         </div>
         <div className='divWhen'>
           <div className='columnPaddingzero'>
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
-              <input className="inputFormSize" placeholder='12/Ene/2016'/>
+              <DatePicker
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+              />
             </div>
           </div>
           <div className="selectDivHour">

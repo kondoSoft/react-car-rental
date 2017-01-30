@@ -1,50 +1,47 @@
-/**
-*
-* FormAutocomplete
-*
-*/
-
 import React from 'react';
 // import styled from 'styled-components';
-import Autocomplete from 'react-autocomplete'
-import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from 'react-autocomplete'
+import Select from 'react-select';
+import fetch from 'isomorphic-fetch';
+import 'react-select/dist/react-select.css'
 
+class FormAutocomplete extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
-function FormAutocomplete(props) {
+  constructor(props){
+    super(props)
+      this.state = {
+        value: ''
+      }
+      this.onChange = this.onChange.bind(this)
+  }
+  onChange (value) {
+		this.setState({
+			value: value,
+		});
+	}
+	getUsers (input) {
+		if (!input) {
+			return Promise.resolve({ options: [] });
+		}
 
-  return (
-    <div>
-    	<Autocomplete
-	     	value={this.state.value}
-		    inputProps={{name: "US state", id: "states-autocomplete", className:"inputFormSize"}}
-		    items={this.state.unitedStates}
-		    getItemValue={(item) => item.name}
-		    onSelect={(value, state) => this.setState({ value, unitedStates: [state] }) }
-		    onChange={(event, value) => {
-		      this.setState({ value, loading: true })
-		      fakeRequest(value, (items) => {this.setState({ unitedStates: items, loading: false })})
-		      }}
-	          renderItem={(item, isHighlighted) => (
-	            <div
-	              style={isHighlighted ? styles.highlightedItem : styles.item}
-	              key={item.abbr}
-	              id={item.abbr}
-	            >{item.name}</div>
-	          )}
-	          renderMenu={(items, value, style) => (
-	            <div style={{...styles.menu, ...style}}>
-	              {value === '' ? (
-	                <div style={{padding: 6}}>Type of the name of a United State</div>
-	              ) : this.state.loading ? (
-	                <div style={{padding: 6}}>Loading...</div>
-	              ) : items.length === 0 ? (
-	                <div style={{padding: 6}}>No matches for {value}</div>
-	              ) : this.renderItems(items)}
-	            </div>
-	          )}
-    	/>
-    </div>
-  );
+		return fetch(`https://api.github.com/search/users?q=${input}`)
+		.then((response) => response.json())
+		.then((json) => {
+			return { options: json.items };
+		});
+	}
+  render() {
+    const AsyncComponent = Select.Async;
+    return (
+				<AsyncComponent
+					value={this.state.value}
+					onChange={this.onChange}
+					valueKey="id" labelKey="login"
+					loadOptions={this.getUsers}
+          className=""
+          clearable = {true}
+          />
+    );
+  }
 }
 
 FormAutocomplete.propTypes = {

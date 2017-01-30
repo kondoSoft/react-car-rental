@@ -14,14 +14,14 @@ function CardCar(props) {
     <Grid.Column className='contentCardCar'>
       <Card className='cardCar'>
         <Card.Content className='contentReserve'>
-          <Image floated='right' alt='company' className='imgMarca' src={props.car.Vendor} />
+          <Image floated='right' alt='company' className='imgMarca' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/ico/${props.car.Vendor}.png`} />
           <Card.Header>
             {props.car.Name}
           </Card.Header>
           <div className='contentCarPrice'>
 
             <div className='contentImgCar'>
-              <img className='imgCar' alt='car' src={props.car.PictureURL}/>
+              <img className='imgCar' alt='car' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.car.PictureURL}`}/>
             </div>
             <div className='contentPrice'>
               <h2 className='colorBlue'>${props.car.Amount}</h2>

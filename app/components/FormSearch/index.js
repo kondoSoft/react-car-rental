@@ -8,7 +8,7 @@ import React from 'react';
 import {Form, Grid, Input, Button, Header, Checkbox, Divider} from 'semantic-ui-react'
 import DatePickerForm from '../DatePickerForm/'
 import { browserHistory } from 'react-router'
-
+import FormAutocomplete from '../../components/FormAutocomplete'
 
 
 
@@ -19,10 +19,9 @@ function FormSearch(props) {
       <Header as='h1' className='titleForm'>{props.title}</Header>
       <Grid>
         <Grid.Row centered>
-          <div className='selectFormSearch'>
+          <div className="selectFormSearch">
             <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
-            <input className="inputFormSize" placeholder='Donde recogera el auto?'/>
-        
+            <FormAutocomplete/>
           </div>
         </Grid.Row>
         <Grid.Row centered id='return'>

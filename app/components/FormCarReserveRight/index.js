@@ -56,7 +56,7 @@ function FormCarReserveRight() {
       </div>
       <div className="dataCard">
         <div className="titleDataCard newSearch">
-            <span>Datos del arrendador</span>
+            <span>Datos de la tarjeta</span>
         </div>
         <div className="formDataCard colorBlue">
           <div className='spanFormData'>
