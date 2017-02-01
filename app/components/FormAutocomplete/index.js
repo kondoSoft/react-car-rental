@@ -14,19 +14,19 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
       this.onChange = this.onChange.bind(this)
   }
   onChange (value) {
+
 		this.setState({
 			value: value,
 		});
 	}
-	getUsers (input) {
-		if (!input) {
+	getCity (city) {
+		if (!city) {
 			return Promise.resolve({ options: [] });
 		}
-
-		return fetch(`https://api.github.com/search/users?q=${input}`)
+		return fetch(`http://187.217.208.8:8000/autocomplete/?term=${city}`)
 		.then((response) => response.json())
 		.then((json) => {
-			return { options: json.items };
+			return { options: json };
 		});
 	}
   render() {
@@ -35,11 +35,13 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 				<AsyncComponent
 					value={this.state.value}
 					onChange={this.onChange}
-					valueKey="id" labelKey="login"
-					loadOptions={this.getUsers}
+					valueKey="id" labelKey="City"
+					loadOptions={this.getCity}
           className=""
           clearable = {true}
+          autoload = {true}
           />
+
     );
   }
 }

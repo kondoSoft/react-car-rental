@@ -10,7 +10,7 @@ import { Card, Image, Icon, Grid, Container } from 'semantic-ui-react'
 
 
 function Comments(props) {
-  
+
   return (
 
 
@@ -18,15 +18,15 @@ function Comments(props) {
           <Card className="backgroundCar spaceComillas">
             <Card.Content>
               <Card.Description>
-                {props.comment.comments.description}
+                {props.comment.body}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' src={props.comment.photo} />
+              <Image shape='circular' floated='left' size='mini' />
               <a>
-                {props.comment.name}
+                {/* {props.comment.name} */}
               </a>
-              <p>{props.comment.profession}</p>
+              {/* <p>{props.comment.profession}</p> */}
             </Card.Content>
           </Card>
         </Grid.Column>

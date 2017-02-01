@@ -3,18 +3,15 @@
  * HomePage
  *
  */
-
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectHomePage from './selectors';
-import {loadAction } from './actions'
 import MainSearch from '../../components/MainSearch'
 import Comments from '../../components/Comments'
-import {Container, Grid, Icon} from 'semantic-ui-react'
-import Autocomplete from 'react-autocomplete'
-import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from 'react-autocomplete'
+import {Container, Grid, Icon, Button} from 'semantic-ui-react'
+import { loadingTrue } from './actions'
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){
@@ -22,8 +19,14 @@ export class HomePage extends React.PureComponent {
       <Comments comment={data} key={'Comment'+i}/>
     )
   }
+  loading(loading){
+    if(loading) {
+      return (<li><i className="fa-li fa fa-spinner fa-spin"></i>as bullets</li>)
+    }
+  }
   render() {
     const dataInitial = this.props.HomePage.comments
+
     return (
       <div>
         <Helmet
@@ -44,6 +47,8 @@ export class HomePage extends React.PureComponent {
               <Icon color='blue' name='circle' size='mini' />
             </Grid.Column>
             </Grid>
+            <Button onClick={this.props.loadingTrue}>Hola</Button>
+            <div>{this.loading(this.props.HomePage.UI.Loading)}</div>
           </Container>
       </div>
     );
@@ -60,9 +65,10 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAction: (type)=>{
-      dispatch(loadAction(type))
+    loadingTrue: (type)=>{
+      dispatch(loadingTrue(type))
     },
+
     dispatch,
   };
 }

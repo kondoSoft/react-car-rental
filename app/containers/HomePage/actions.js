@@ -5,11 +5,26 @@
  */
 
 import {
-  LOAD_ACTION,
+  SET_LOADING_TRUE,
+  LOAD_CARS_SUCCESS,
+  LOAD_COMMENTS_SECCESS,
 } from './constants';
 
-export function loadAction() {
+export function loadingTrue(){
   return {
-    type: LOAD_ACTION,
-  };
+    type: SET_LOADING_TRUE,
+  }
+}
+
+export function carsLoaded(cars){
+  return{
+    type: LOAD_CARS_SUCCESS,
+    cars,
+  }
+}
+export function commentsLoaded(comments){
+  return{
+    type: LOAD_COMMENTS_SECCESS,
+    comments,
+  }
 }
