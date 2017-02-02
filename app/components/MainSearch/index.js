@@ -14,7 +14,8 @@ import Comments from '../Comments'
 import { browserHistory } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-function MainSearch() {
+function MainSearch(props) {
+
   return (
     <div>
       <Container fluid className='slider'>
@@ -28,7 +29,7 @@ function MainSearch() {
                 transitionAppear = {true}
                 transitionAppearTimeout = {1000}
                 >
-                <FormSearch title="Bienvenido"/>
+                <FormSearch title="Bienvenido" saveDate={props.saveDate}/>
               </ReactCSSTransitionGroup>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={10}>

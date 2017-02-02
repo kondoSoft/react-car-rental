@@ -9,6 +9,7 @@ import {
   LOAD_CARS_SUCCESS,
   LOAD_COMMENTS_SECCESS,
   SUBMIT_SEARCH,
+  SAVE_DATE,
 } from './constants';
 
 export function loadingTrue(){
@@ -33,5 +34,12 @@ export function submitSearch(value){
   return{
     type: SUBMIT_SEARCH,
     value,
+  }
+}
+export function saveDate(data, input){
+  return{
+    type: SAVE_DATE,
+    data,
+    input,
   }
 }

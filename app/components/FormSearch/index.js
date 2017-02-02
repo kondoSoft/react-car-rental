@@ -18,7 +18,7 @@ function submitSearch(e){
 function FormSearch(props) {
   return (
     <div id="inputSearchDisplay">
-    <Form>
+    <Form onChange={(e)=>console.log(e.target)}>
       <Header as='h1' className='titleForm'>{props.title}</Header>
       <Grid>
         <Grid.Row centered>
@@ -43,7 +43,7 @@ function FormSearch(props) {
           </Grid.Column>
         </Grid.Row>
         <Divider className='dividerForm' />
-        <DatePickerForm />
+        <DatePickerForm  saveDate={props.saveDate} />
         <Grid.Row centered>
           <Button className="buttonGreen" >BUSCAR EL MEJOR PRECIO!</Button>
         </Grid.Row>

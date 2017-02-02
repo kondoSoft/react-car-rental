@@ -11,7 +11,7 @@ import makeSelectHomePage from './selectors';
 import MainSearch from '../../components/MainSearch'
 import Comments from '../../components/Comments'
 import {Container, Grid, Icon, Button} from 'semantic-ui-react'
-import { loadingTrue, submitSearch } from './actions'
+import { loadingTrue, submitSearch, saveDate } from './actions'
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){
@@ -35,7 +35,7 @@ export class HomePage extends React.PureComponent {
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-          <MainSearch/>
+          <MainSearch saveDate={this.props.saveDate}/>
           <Container className="containerComments">
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
@@ -68,9 +68,10 @@ function mapDispatchToProps(dispatch) {
     loadingTrue: (type)=>{
       dispatch(loadingTrue(type))
     },
-    submitSearch:(type)=>{
-      dispatch(submitSearch(type))
+    saveDate:(type)=>{
+      dispatch(saveDate(type))
     },
+
     dispatch,
   };
 }
