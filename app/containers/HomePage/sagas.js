@@ -9,8 +9,25 @@ import { makeSelectCars, makeSelectComments } from './selectors'
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
+  // const requestURL = `http://jsonplaceholder.typicode.com/posts`
   try {
-    const getcar = yield call(request, requestURL, {method:'POST'},)
+    const getcar = yield call(request, requestURL, {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      // mode: 'no-cors',
+      body:JSON.stringify({
+        // title: 'foo',
+        // body:  'bar',
+        // userId: 1,
+        "pickUPLocation":"LAX",
+        "returnLocation":"LAX",
+        "pickUPDateTimte":"2017-03-05T11:00",
+        "returnDateTimte":"2017-03-06T11:00",
+        "SpecialEquip":'0'
+      })
+    },)
     yield put(carsLoaded(getcar))
   }catch(err){
     console.log(err);

@@ -11,7 +11,10 @@ import { browserHistory } from 'react-router'
 import FormAutocomplete from '../../components/FormAutocomplete'
 
 
-
+function submitSearch(e){
+  e.prevenDefault
+  console.log(e.prevenDefault)
+}
 function FormSearch(props) {
   return (
     <div id="inputSearchDisplay">
@@ -25,15 +28,10 @@ function FormSearch(props) {
           </div>
         </Grid.Row>
         <Grid.Row centered id='return'>
-          <Grid.Column width={16}>
-            <Input
-              action={{color:'teal',icon:'globe'}}
-              actionPosition='left'
-              placeholder='Donde devolvera el auto'
-              size = 'small'
-              className='inputFormSize'
-            />
-          </Grid.Column>
+          <div className="selectFormSearch">
+            <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
+            <FormAutocomplete/>
+          </div>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={16}>
@@ -47,7 +45,7 @@ function FormSearch(props) {
         <Divider className='dividerForm' />
         <DatePickerForm />
         <Grid.Row centered>
-          <Button className="buttonGreen" onClick ={() => browserHistory.push('/available')} >BUSCAR EL MEJOR PRECIO!</Button>
+          <Button className="buttonGreen" >BUSCAR EL MEJOR PRECIO!</Button>
         </Grid.Row>
       </Grid>
     </Form>

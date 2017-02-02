@@ -13,6 +13,7 @@ import Back from 'assets/images/slide.jpg'
 import Comments from '../Comments'
 import { browserHistory } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 function MainSearch() {
   return (
     <div>

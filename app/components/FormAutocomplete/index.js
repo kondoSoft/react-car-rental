@@ -14,7 +14,8 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
       this.onChange = this.onChange.bind(this)
   }
   onChange (value) {
-
+    //TO DO
+    //al tercer dato, realizar el request
 		this.setState({
 			value: value,
 		});
@@ -39,9 +40,7 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 					loadOptions={this.getCity}
           className=""
           clearable = {true}
-          autoload = {true}
           />
-
     );
   }
 }
