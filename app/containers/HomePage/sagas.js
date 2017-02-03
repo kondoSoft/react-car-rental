@@ -16,19 +16,18 @@ export function* getAPI(){
       headers:{
         'Content-Type':'application/json'
       },
-      // mode: 'no-cors',
       body:JSON.stringify({
-        // title: 'foo',
-        // body:  'bar',
-        // userId: 1,
-        "pickUPLocation":"LAX",
-        "returnLocation":"LAX",
-        "pickUPDateTimte":"2017-03-05T11:00",
-        "returnDateTimte":"2017-03-06T11:00",
+        "pickUPLocation": cars.pickUPLocation,
+        "returnLocation":cars.returnLocation,
+        "pickUPDateTimte":cars.pickUPDateTimte,
+        "returnDateTimte":cars.returnDateTimte,
         "SpecialEquip":'0'
       })
     },)
+    console.log(getcar);
+
     yield put(carsLoaded(getcar))
+
   }catch(err){
     console.log(err);
   }

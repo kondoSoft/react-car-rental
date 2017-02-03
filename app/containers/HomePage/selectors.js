@@ -20,7 +20,7 @@ const makeSelectHomePage = () => createSelector(
 );
 const makeSelectCars = ()=> createSelector(
   selectHomePageDomain(),
-  (state) => state.get('cars')
+  (state) => state.get('values').toJS(),
 )
 const makeSelectComments = ()=> createSelector(
   selectHomePageDomain(),

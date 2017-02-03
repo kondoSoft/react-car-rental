@@ -7,8 +7,8 @@
 import {
   SET_LOADING_TRUE,
   LOAD_CARS_SUCCESS,
-  LOAD_COMMENTS_SECCESS,
-  SUBMIT_SEARCH,
+  LOAD_COMMENTS_SUCCESS,
+  SAVE_LOCATION,
   SAVE_DATE,
 } from './constants';
 
@@ -26,14 +26,14 @@ export function carsLoaded(cars){
 }
 export function commentsLoaded(comments){
   return{
-    type: LOAD_COMMENTS_SECCESS,
+    type: LOAD_COMMENTS_SUCCESS,
     comments,
   }
 }
-export function submitSearch(value){
+export function saveLocation(location){
   return{
-    type: SUBMIT_SEARCH,
-    value,
+    type: SAVE_LOCATION,
+    location,
   }
 }
 export function saveDate(data, input){

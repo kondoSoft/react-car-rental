@@ -30,14 +30,12 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
     this.setState({
       startDate: date
     })
-    console.log(date.format('YYYY M D'));
     this.props.saveDate([date.format('YYYY M D'), 'pickUPDateTimte'])
   }
   handleChangeReturn(date) {
     this.setState({
       endDate: date
     })
-    console.log(date.format('YYYY M D'));
     this.props.saveDate([date.format('YYYY M D'), 'returnDateTimte'])
   }
 
