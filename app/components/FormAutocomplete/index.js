@@ -12,10 +12,14 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
     super(props)
       this.state = {
         startLocation: '',
-        returnLocation: ''
+        returnLocation: '',
+        UI:{
+          checkbox : 'activeReturn'
+        }
       }
       this.onChange = this.onChange.bind(this)
       this.onChangeReturn = this.onChangeReturn.bind(this)
+      this.showReturn = this.showReturn.bind(this)
   }
   onChange (value ) {
     //TO DO
@@ -42,6 +46,18 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 			return { options: json };
 		});
 	}
+  showReturn(e , data){
+    if( data.checked == true){
+      this.setState({
+        UI: {checkbox:''}
+      })
+    }else{
+      this.setState({
+        UI: {checkbox:'activeReturn'}
+      })
+    }
+  }
+
   render() {
     const AsyncComponent = Select.Async;
     return (
@@ -51,16 +67,18 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                 <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
                 <AsyncComponent
         					value={this.state.startLocation}
+                  onValue={(e)=>showReturn(e)}
         					onChange={this.onChange}
         					valueKey="id" labelKey="City"
         					loadOptions={this.getCity}
                   className=""
                   clearable = {true}
                   />
+
               </div>
             </Grid.Row>
             <Grid.Row centered id='return'>
-              <div className="selectFormSearch">
+              <div className={`selectFormSearch ${this.state.UI.checkbox}`} >
                 <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
                 <AsyncComponent
         					value={this.state.returnLocation}
@@ -74,11 +92,13 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width={16}>
-                <Form.Field
+                <Form.Field id='checkLocation'
                   control={Checkbox}
+                  onClick={this.showReturn}
                   defaultChecked
                   label={<label className="spanWhite checkboxForm">Entregar en la misma ubicacion</label>}
                 />
+
               </Grid.Column>
             </Grid.Row>
           </Grid>

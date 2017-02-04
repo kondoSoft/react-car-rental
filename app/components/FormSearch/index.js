@@ -9,6 +9,7 @@ import {Form, Grid, Input, Button, Header, Checkbox, Divider} from 'semantic-ui-
 import DatePickerForm from '../DatePickerForm/'
 import { browserHistory } from 'react-router'
 import FormAutocomplete from '../../components/FormAutocomplete'
+import LoadingSpin from '../../components/LoadingSpin'
 
 function FormSearch(props) {
   return (
@@ -16,6 +17,7 @@ function FormSearch(props) {
     <div className='ui form' >
       <Header as='h1' className='titleForm'>{props.title}</Header>
       <Grid>
+        <LoadingSpin loading={props.loading}/>
         <FormAutocomplete saveLocation={props.saveLocation}/>
         <Divider className='dividerForm' />
         <DatePickerForm  saveDate={props.saveDate} />

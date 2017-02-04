@@ -12,7 +12,8 @@ import makeSelectHomePage from './selectors';
 import MainSearch from '../../components/MainSearch'
 import Comments from '../../components/Comments'
 import {Container, Grid, Icon, Button} from 'semantic-ui-react'
-import { loadingTrue, saveDate, saveLocation } from './actions'
+import { loadingTrue, saveDate, saveLocation, commentsLoaded } from './actions'
+
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){
@@ -20,14 +21,13 @@ export class HomePage extends React.PureComponent {
       <Comments comment={data} key={'Comment'+i}/>
     )
   }
-  loading(loading){
-    if(loading) {
-      return (<li><i className="fa-li fa fa-spinner fa-spin"></i>as bullets</li>)
-    }
+  componentDidMount(){
+      this.props.commentsLoaded()
   }
+
   render() {
     const dataInitial = this.props.HomePage.comments
-
+    console.log(this.props.HomePage);
     return (
       <div>
         <Helmet
@@ -36,14 +36,14 @@ export class HomePage extends React.PureComponent {
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-          <MainSearch saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
-
+          <MainSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
           <Container className="containerComments">
+
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
             <Grid>
-            <div>{this.loading(this.props.HomePage.UI.Loading)}</div>
-            {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
+
+            {/* {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) } */}
 
             <Grid.Column width={16}>
               <Icon color='green' name='circle' size='mini' />
@@ -75,6 +75,9 @@ function mapDispatchToProps(dispatch) {
     },
     saveLocation:(type)=>{
       dispatch(saveLocation(type))
+    },
+    commentsLoaded:(type)=>{
+      dispatch(commentsLoaded(type))
     },
     dispatch,
   };

@@ -40,8 +40,8 @@ function homePageReducer(state = initialState, action)
       return state.setIn(['UI','Loading'], true)
     case LOAD_CARS_SUCCESS:
       return state.setIn(['UI','Loading'], false).set('cars', action.cars)
-    // case LOAD_COMMENTS_SUCCESS:
-    //   return state.set('comments', action.comments)
+    case LOAD_COMMENTS_SUCCESS:
+      return state.set('comments', action.comments)
     case SAVE_DATE:
       return state.setIn(['values', action.data[1]], action.data[0])
     case SAVE_LOCATION:

@@ -29,7 +29,7 @@ function MainSearch(props) {
                 transitionAppear = {true}
                 transitionAppearTimeout = {1000}
                 >
-                <FormSearch title="Bienvenido" loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
+                <FormSearch title="Bienvenido" loading={props.loading} loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
               </ReactCSSTransitionGroup>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={10}>

@@ -9,21 +9,25 @@ body
 /*semantic css OVERWRITE
 
 /* ANIMATIONS */
+.activeReturn
+  display: none !important
+
 
 @keyframes fadeSearchOpen
     0%
       height: 0px
 
     100%
-      height: 450px
+      height: 505px
 
 .fadeSearchOpen
-  height: 450px!important
+  height: 505px !important
   animation: 500ms fadeSearchOpen
-
+  h1
+    display: none
 @keyframes fadeSearchClose
     0%
-      height: 450px
+      height: 505px
 
     100%
       height: 0px
@@ -31,6 +35,8 @@ body
 .fadeSearchClose
   height: 0px
   animation: 500ms fadeSearchClose
+  h1
+    display: none
 
 .fade-appear
   opacity: 0.01
@@ -214,7 +220,6 @@ a
   background-color: rgba(45, 72, 192, 0.8)
   margin-bottom: 15px
   width: 366px !important
-  height: 485px !important
 
 .titleForm
   padding-top: 23px !important
@@ -268,6 +273,7 @@ a
 
 .gridAutocomplete
   margin: 0 auto !important
+  width: 90%
 
 .selectFormSearch
   border: 1px solid #ccc
@@ -357,8 +363,6 @@ a
     font-weight: 500
     font-size: 1.5em
 
-// #return
-//   display: none
 
 .buttonGreen
   background-color: #87b672 !important
@@ -699,6 +703,7 @@ i
   text-align: center
   min-height: 45px
   align-items: center
+
   i
     margin-left: 10px
     color: #c2c9e5
@@ -726,6 +731,7 @@ i
     height: 0
     overflow: hidden
     transition: 0.2s
+    // height: 485px !important
   .input-group-addon-standar
     width: 40px
     vertical-align: middle
@@ -1094,9 +1100,24 @@ footer
 
 .contentIcon
   display: flex
+  margin-top: 20px
   justify-content: space-around
-  margin-top: 25px
+  width: 175px
   flex-wrap: wrap
+  i:nth-child(-n+3)
+    font-size: 17px
+  i
+    font-size: 15px
+    position: relative
+    right: 3%
+    &.icon
+      width: -20px
+  .letterCarFeatures
+    font-size: 12px !important
+    font-weight: 600
+    font-family: 'Montserrat'
+    word-spacing: 1em
+    padding-left: 5px
 
 .cardCar
   border: 1px solid #b2b2b2 inset !important
@@ -1260,3 +1281,22 @@ footer
   .contentFormReserves
     width: 100%
     max-width: none !important
+
+
+.divSpin
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: center
+  height: 505px
+  width: 366px
+  position: absolute
+  z-index: 100
+  top: -70px
+  i
+    font-size: 13em
+    color: #87b672
+    text-shadow: 2px 2px 2px #2b5bad, 2px 2px 12px white
+    text-shadow:
+    //2b5bad
+    //87b672

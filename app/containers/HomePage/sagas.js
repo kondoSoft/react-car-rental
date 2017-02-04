@@ -10,8 +10,17 @@ import { makeSelectCars, makeSelectComments } from './selectors'
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
+  function currentLocation(){
+    if(cars.returnLocation == undefined){
+      cars.returnLocation = pickUPLocation
+    }
+  }
+
+
   // const requestURL = `http://jsonplaceholder.typicode.com/posts`
   try {
+    yield currentLocation()
+
     const getcar = yield call(request, requestURL, {
       method:'POST',
       headers:{
