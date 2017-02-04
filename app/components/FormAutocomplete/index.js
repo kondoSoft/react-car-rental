@@ -23,13 +23,13 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 		this.setState({
       startLocation: value,
 		});
-    this.props.saveLocation([value.City, 'pickUPLocation'])
+    this.props.saveLocation([value.Code, 'pickUPLocation'])
 	}
   onChangeReturn (valueReturn){
     this.setState({
       returnLocation: valueReturn,
     })
-    this.props.saveLocation([valueReturn.City, 'returnLocation'])
+    this.props.saveLocation([valueReturn.Code, 'returnLocation'])
 
   }
 	getCity (city) {

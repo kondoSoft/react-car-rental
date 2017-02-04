@@ -5,11 +5,11 @@
  */
 
 import {
-  LOAD_ACTION,
+  LOAD_CARS,
 } from './constants';
 
-export function loadAction() {
+export function loadCar() {
   return {
-    type: LOAD_ACTION,
+    type: LOAD_CARS,
   };
 }

@@ -25,9 +25,11 @@ const initialState = fromJS({
   'values': {
     "pickUPLocation":"",
     "returnLocation":"",
-    "pickUPDateTimte":"",
-    "returnDateTimte":"",
-    "SpecialEquip":'',
+    "pickUpDate":"",
+    "pickupTime":"",
+    "returnDate":"",
+    "returnTime":"",
+    "SpecialEquip":'0',
   }
 });
 
@@ -35,14 +37,11 @@ function homePageReducer(state = initialState, action)
   {
   switch (action.type) {
     case SET_LOADING_TRUE:
-
       return state.setIn(['UI','Loading'], true)
     case LOAD_CARS_SUCCESS:
-      console.log(action.cars);
       return state.setIn(['UI','Loading'], false).set('cars', action.cars)
-
-    case LOAD_COMMENTS_SUCCESS:
-      return state.set('comments', action.comments)
+    // case LOAD_COMMENTS_SUCCESS:
+    //   return state.set('comments', action.comments)
     case SAVE_DATE:
       return state.setIn(['values', action.data[1]], action.data[0])
     case SAVE_LOCATION:

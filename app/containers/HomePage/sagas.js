@@ -18,16 +18,13 @@ export function* getAPI(){
       },
       body:JSON.stringify({
         "pickUPLocation": cars.pickUPLocation,
-        "returnLocation":cars.returnLocation,
-        "pickUPDateTimte":cars.pickUPDateTimte,
-        "returnDateTimte":cars.returnDateTimte,
+        "returnLocation": cars.returnLocation,
+        "pickUPDateTimte": cars.pickUpDate+cars.pickupTime,
+        "returnDateTimte": cars.returnDate+cars.returnTime,
         "SpecialEquip":'0'
       })
     },)
-    console.log(getcar);
-
     yield put(carsLoaded(getcar))
-
   }catch(err){
     console.log(err);
   }

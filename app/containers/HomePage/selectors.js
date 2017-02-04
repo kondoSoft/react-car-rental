@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
  * Direct selector to the homePage state domain
  */
 const selectHomePageDomain = () => (state) => state.get('homePage');
+console.log(selectHomePageDomain);
 
 /**
  * Other specific selectors
@@ -18,6 +19,10 @@ const makeSelectHomePage = () => createSelector(
   selectHomePageDomain(),
   (substate) => substate.toJS()
 );
+const makeSelectCarstoAvailable = ()=> createSelector(
+  selectHomePageDomain(),
+  (state) => state.get('cars'),
+)
 const makeSelectCars = ()=> createSelector(
   selectHomePageDomain(),
   (state) => state.get('values').toJS(),
@@ -31,4 +36,5 @@ export {
   selectHomePageDomain,
   makeSelectCars,
   makeSelectComments,
+  makeSelectCarstoAvailable,
 };

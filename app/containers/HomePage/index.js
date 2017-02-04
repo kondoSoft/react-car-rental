@@ -4,6 +4,7 @@
  *
  */
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
@@ -36,19 +37,22 @@ export class HomePage extends React.PureComponent {
           ]}
         />
           <MainSearch saveDate={this.props.saveDate} saveLocation={this.props.saveLocation}/>
+
           <Container className="containerComments">
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
             <Grid>
+            <Button onClick={this.props.loadingTrue}>Hola</Button>
+            <Link className="" to="/available">Tu Viaje</Link>
+            <div>{this.loading(this.props.HomePage.UI.Loading)}</div>
             {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
+
             <Grid.Column width={16}>
               <Icon color='green' name='circle' size='mini' />
               <Icon color='blue' name='circle' size='mini' />
               <Icon color='blue' name='circle' size='mini' />
             </Grid.Column>
             </Grid>
-            <Button onClick={this.props.loadingTrue}>Hola</Button>
-            <div>{this.loading(this.props.HomePage.UI.Loading)}</div>
           </Container>
       </div>
     );

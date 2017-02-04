@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectAvailable from './selectors';
-import { loadAction } from './actions'
+import { makeSelectCarstoAvailable } from '../HomePage/selectors'
+import { loadCar } from './actions'
 import { Icon,Image, Grid, Container, Header, Card, Button,Segment } from 'semantic-ui-react'
 import CardCar from '../../components/CardCar'
 import NewSearch from '../../components/NewSearch'
@@ -17,6 +18,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
 export class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount(){
+      this.props.loadCar()
+  }
   createCardCar(car,i,array){
     return (
       <ReactCSSTransitionGroup
@@ -32,7 +36,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
     )
   }
   createGridCarRow(type,i){
-    const dataAry = this.props.Available.cars;
+    const dataAry = this.props.Cars
     return(
     <div key={'div'+i}>
       <Header as="h3" className="titleCar" key={'Header'+i}>{type}</Header>
@@ -47,8 +51,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
 
   render() {
 
-    const dataInitial = Object.keys(this.props.Available.cars);
-
+    const dataInitial = Object.keys(this.props.Cars);
     return (
       <div>
       <Container>
@@ -74,12 +77,13 @@ Available.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   Available: makeSelectAvailable(),
+  Cars: makeSelectCarstoAvailable(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadAction: (type)=>{
-      dispatch(loadAction(type))
+    loadCar: (type)=>{
+      dispatch(loadCar(type))
     },
     dispatch,
   };

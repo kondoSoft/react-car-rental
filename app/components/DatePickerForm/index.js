@@ -8,6 +8,7 @@ import React from 'react';
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
+import Select from 'react-select';
 // import { saveDate } from '../../containers/HomePage/actions'
 // import styled from 'styled-components';
 // import { connect } from 'react-redux';
@@ -21,22 +22,94 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
     super(props)
       this.state = {
         startDate: moment(),
-        endDate: moment()
+        endDate: moment(),
+        startHour: null,
+        endHour: null,
+        options: [
+          {value: "T00:00", label: '00:00'},
+          {value: "T00:30", label: '00:30'},
+          {value: "T01:00", label: '01:00'},
+          {value: "T01:30", label: '01:30'},
+          {value: "T02:00", label: '02:00'},
+          {value: "T02:30", label: '02:30'},
+          {value: "T03:00", label: '03:00'},
+          {value: "T03:30", label: '03:30'},
+          {value: "T04:00", label: '04:00'},
+          {value: "T04:30", label: '04:30'},
+          {value: "T05:00", label: '05:00'},
+          {value: "T05:30", label: '05:30'},
+          {value: "T06:00", label: '06:00'},
+          {value: "T06:30", label: '06:30'},
+          {value: "T07:00", label: '07:00'},
+          {value: "T07:30", label: '07:30'},
+          {value: "T08:00", label: '08:00'},
+          {value: "T08:30", label: '08:30'},
+          {value: "T09:00", label: '09:00'},
+          {value: "T09:30", label: '09:30'},
+          {value: "T10:00", label: '10:00'},
+          {value: "T10:30", label: '10:30'},
+          {value: "T11:00", label: '11:00'},
+          {value: "T11:30", label: '11:30'},
+          {value: "T12:00", label: '12:00'},
+          {value: "T12:30", label: '12:30'},
+          {value: "T13:00", label: '13:00'},
+          {value: "T13:30", label: '13:30'},
+          {value: "T14:00", label: '14:00'},
+          {value: "T14:30", label: '14:30'},
+          {value: "T15:00", label: '15:00'},
+          {value: "T15:30", label: '15:30'},
+          {value: "T16:00", label: '16:00'},
+          {value: "T16:30", label: '16:30'},
+          {value: "T17:00", label: '17:00'},
+          {value: "T17:30", label: '17:30'},
+          {value: "T18:00", label: '18:00'},
+          {value: "T18:30", label: '18:30'},
+          {value: "T19:00", label: '19:00'},
+          {value: "T19:30", label: '19:30'},
+          {value: "T20:00", label: '20:00'},
+          {value: "T20:30", label: '20:30'},
+          {value: "T21:00", label: '21:00'},
+          {value: "T21:30", label: '21:30'},
+          {value: "T22:00", label: '22:00'},
+          {value: "T22:30", label: '22:30'},
+          {value: "T23:00", label: '23:00'},
+          {value: "T23:30", label: '23:30'}
+        ],
+
       }
       this.handleChange = this.handleChange.bind(this)
       this.handleChangeReturn = this.handleChangeReturn.bind(this)
+      this.onChangeStartHour = this.onChangeStartHour.bind(this)
+      this.onChangeEndHour = this.onChangeEndHour.bind(this)
+  }
+  componentWillUpdate(nextProps){
+    return{
+
+    }
+  }
+  onChangeStartHour(value) {
+		this.setState({
+			startHour: value
+		});
+  this.props.saveDate([value, 'pickupTime'])
+	}
+  onChangeEndHour(valueEndHour) {
+    this.setState({
+      endHour: valueEndHour
+    });
+  this.props.saveDate([valueEndHour,'returnTime'])
   }
   handleChange(date) {
     this.setState({
       startDate: date
     })
-    this.props.saveDate([date.format('YYYY M D'), 'pickUPDateTimte'])
+  this.props.saveDate([date.format('YYYY-MM-DD'), 'pickUpDate'])
   }
   handleChangeReturn(date) {
     this.setState({
       endDate: date
     })
-    this.props.saveDate([date.format('YYYY M D'), 'returnDateTimte'])
+  this.props.saveDate([date.format('YYYY-MM-DD'), 'returnDate'])
   }
 
   render() {
@@ -50,62 +123,19 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
               <DatePicker
+
                 selected={this.state.startDate}
                 onChange={this.handleChange}
               />
             </div>
           </div>
           <div className="selectDivHour">
-            <select className="" >
-              <option value="00:00">00:00</option>
-              <option value="00:30">00:30</option>
-              <option value="01:00">01:00</option>
-              <option value="01:30">01:30</option>
-              <option value="02:00">02:00</option>
-              <option value="02:30">02:30</option>
-              <option value="03:00">03:00</option>
-              <option value="03:30">03:30</option>
-              <option value="04:00">04:00</option>
-              <option value="04:30">04:30</option>
-              <option value="05:00">05:00</option>
-              <option value="05:30">05:30</option>
-              <option value="06:00">06:00</option>
-              <option value="06:30">06:30</option>
-              <option value="07:00">07:00</option>
-              <option value="07:30">07:30</option>
-              <option value="08:00">08:00</option>
-              <option value="08:30">08:30</option>
-              <option value="09:00">09:00</option>
-              <option value="09:30">09:30</option>
-              <option value="10:00">10:00</option>
-              <option value="10:30">10:30</option>
-              <option value="11:00">11:00</option>
-              <option value="11:30">11:30</option>
-              <option value="12:00">12:00</option>
-              <option value="12:30">12:30</option>
-              <option value="13:00">13:00</option>
-              <option value="13:30">13:30</option>
-              <option value="14:00">14:00</option>
-              <option value="14:30">14:30</option>
-              <option value="15:00">15:00</option>
-              <option value="15:30">15:30</option>
-              <option value="16:00">16:00</option>
-              <option value="16:30">16:30</option>
-              <option value="17:00">17:00</option>
-              <option value="17:30">17:30</option>
-              <option value="18:00">18:00</option>
-              <option value="18:30">18:30</option>
-              <option value="19:00">19:00</option>
-              <option value="19:30">19:30</option>
-              <option value="20:00">20:00</option>
-              <option value="20:30">20:30</option>
-              <option value="21:00">21:00</option>
-              <option value="21:30">21:30</option>
-              <option value="22:00">22:00</option>
-              <option value="22:30">22:30</option>
-              <option value="23:00">23:00</option>
-              <option value="23:30">23:30</option>
-            </select>
+            <Select className="selectHour"
+              onChange={this.onChangeStartHour}
+              options={this.state.options}
+              simpleValue
+              value={this.state.startHour}
+            />
           </div>
         </div>
         <div className="divLabelDate">
@@ -122,10 +152,12 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             </div>
           </div>
           <div className="selectDivHour">
-            <select className="" >
-              <option value="hola">00:00</option>
-              <option value="mundo">12:00</option>
-            </select>
+            <Select className="selectHour"
+              onChange={this.onChangeEndHour}
+              options={this.state.options}
+              simpleValue
+              value={this.state.endHour}
+            />
           </div>
         </div>
       </div>
@@ -136,21 +168,4 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
 DatePickerForm.propTypes = {
 
 };
-
-// const mapStateToProps = createStructuredSelector({
-//   HomePage: makeSelectHomePage(),
-// });
-//
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     saveDate: (type)=>{
-//       dispatch(saveDate(type))
-//     },
-//     dispatch,
-//   };
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(DatePickerForm);
-
-
 export default DatePickerForm;

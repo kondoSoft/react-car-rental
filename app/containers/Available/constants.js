@@ -4,4 +4,4 @@
  *
  */
 
-export const LOAD_ACTION = 'app/Available/LOAD_ACTION';
+export const LOAD_CARS = 'app/Available/LOAD_CARS';

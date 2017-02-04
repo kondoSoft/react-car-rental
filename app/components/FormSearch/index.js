@@ -18,7 +18,7 @@ function submitSearch(e){
 function FormSearch(props) {
   return (
     <div id="inputSearchDisplay">
-    <Form onChange={(e)=>console.log(e.target)}>
+    <Form >
       <Header as='h1' className='titleForm'>{props.title}</Header>
       <Grid>
         <FormAutocomplete saveLocation={props.saveLocation}/>
