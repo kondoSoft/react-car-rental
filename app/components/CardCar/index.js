@@ -42,7 +42,7 @@ function CardCar(props) {
             <span className="colorGreen letterCarFeatures">{props.car.Doors}</span>
           </div>
         </Card.Content>
-        <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/quotation')} ><span>Cotizar</span></Button>
+        <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/quotation')} ><span>Reservar</span></Button>
       </Card>
     </Grid.Column>
   );

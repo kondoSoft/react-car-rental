@@ -1,6 +1,7 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import { SET_LOADING_TRUE } from './constants'
 import { loadCars, carsLoaded, commentsLoaded } from './actions'
+import { browserHistory } from 'react-router'
 
 import request from 'utils/request'
 import { makeSelectCars, makeSelectComments } from './selectors'
@@ -25,6 +26,7 @@ export function* getAPI(){
       })
     },)
     yield put(carsLoaded(getcar))
+    browserHistory.push('/available')
   }catch(err){
     console.log(err);
   }

@@ -36,14 +36,12 @@ export class HomePage extends React.PureComponent {
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-          <MainSearch saveDate={this.props.saveDate} saveLocation={this.props.saveLocation}/>
+          <MainSearch saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
 
           <Container className="containerComments">
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
             <Grid>
-            <Button onClick={this.props.loadingTrue}>Hola</Button>
-            <Link className="" to="/available">Tu Viaje</Link>
             <div>{this.loading(this.props.HomePage.UI.Loading)}</div>
             {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
 
