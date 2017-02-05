@@ -4,7 +4,10 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  cars: []
+  'UI':{
+    Loading: false,
+    Error: false
+  },
 });
 
 function availableReducer(state = initialState, action){

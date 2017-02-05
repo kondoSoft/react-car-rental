@@ -7,6 +7,7 @@
 import {
   SET_LOADING_TRUE,
   LOAD_CARS_SUCCESS,
+  LOAD_COMMENTS,
   LOAD_COMMENTS_SUCCESS,
   SAVE_LOCATION,
   SAVE_DATE,
@@ -24,7 +25,12 @@ export function carsLoaded(cars){
     cars,
   }
 }
-export function commentsLoaded(comments){
+export function commentsLoaded(){
+  return {
+    type: LOAD_COMMENTS
+  }
+}
+export function commentsSucces(comments){
   return{
     type: LOAD_COMMENTS_SUCCESS,
     comments,

@@ -10,6 +10,7 @@ import { fromJS } from 'immutable';
 import {
   SET_LOADING_TRUE,
   LOAD_CARS_SUCCESS,
+  LOAD_COMMENTS,
   LOAD_COMMENTS_SUCCESS,
   SAVE_LOCATION,
   SAVE_DATE,
@@ -40,6 +41,8 @@ function homePageReducer(state = initialState, action)
       return state.setIn(['UI','Loading'], true)
     case LOAD_CARS_SUCCESS:
       return state.setIn(['UI','Loading'], false).set('cars', action.cars)
+    case LOAD_COMMENTS:
+      return state
     case LOAD_COMMENTS_SUCCESS:
       return state.set('comments', action.comments)
     case SAVE_DATE:

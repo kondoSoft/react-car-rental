@@ -78,7 +78,7 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
-      path: '/quotation',
+      path: '/quotation/:carId',
       name: 'quotation',
       getComponent(nextState, cb) {
         const importModules = Promise.all([

@@ -1,6 +1,6 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
-import { SET_LOADING_TRUE } from './constants'
-import { loadCars, carsLoaded, commentsLoaded } from './actions'
+import { SET_LOADING_TRUE, LOAD_COMMENTS } from './constants'
+import { loadCars, carsLoaded, commentsSucces } from './actions'
 import { browserHistory } from 'react-router'
 
 import request from 'utils/request'
@@ -27,12 +27,19 @@ export function* getAPI(){
         'Content-Type':'application/json'
       },
       body:JSON.stringify({
-        "pickUPLocation": cars.pickUPLocation,
-        "returnLocation": cars.returnLocation,
-        "pickUPDateTimte": cars.pickUpDate+cars.pickupTime,
-        "returnDateTimte": cars.returnDate+cars.returnTime,
-        "SpecialEquip":'0'
+        "pickUPLocation":"LAX",
+        "returnLocation":"LAX",
+        "pickUPDateTimte":"2017-02-17T10:00",
+        "returnDateTimte":"2017-02-20T11:00",
+        "SpecialEquip":0
       })
+      // body:JSON.stringify({
+      //   "pickUPLocation": cars.pickUPLocation,
+      //   "returnLocation": cars.returnLocation,
+      //   "pickUPDateTimte": cars.pickUpDate+cars.pickupTime,
+      //   "returnDateTimte": cars.returnDate+cars.returnTime,
+      //   "SpecialEquip":'0'
+      // })
     },)
     yield put(carsLoaded(getcar))
     browserHistory.push('/available')
@@ -45,7 +52,7 @@ export function* getAPIComments(){
   const requestURL = `https://jsonplaceholder.typicode.com/comments`
   try{
     const getcomment = yield call(request, requestURL)
-    yield put(commentsLoaded(getcomment))
+    yield put(commentsSucces(getcomment))
   }catch(err){
     console.log(err);
   }
@@ -58,7 +65,7 @@ export function* getCars() {
 }
 
 export function* getComments(){
-  const watcher = yield takeLatest(SET_LOADING_TRUE, getAPIComments)
+  const watcher = yield takeLatest(LOAD_COMMENTS, getAPIComments)
 }
 
 // All sagas to be loaded

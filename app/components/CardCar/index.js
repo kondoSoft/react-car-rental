@@ -54,7 +54,7 @@ function CardCar(props) {
             </i>
           </div>
         </Card.Content>
-        <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/quotation')} ><span>Reservar</span></Button>
+        <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push(`/quotation/${props.car.ID}`)} ><span>Reservar</span></Button>
       </Card>
     </Grid.Column>
   );

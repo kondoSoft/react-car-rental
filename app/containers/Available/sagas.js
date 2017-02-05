@@ -1,14 +1,14 @@
 import { take, call, put, select, takeLatest } from 'redux-saga/effects';
 import {selectLocationState} from 'containers/App/selectors'
 import {LOAD_CARS} from './constants'
-import { makeSelectCarstoAvailable } from '../HomePage/selectors'
+import { selectHomePageState } from '../HomePage/selectors'
 import { loadCar } from './actions'
 
 import request from 'utils/request'
 
 
 function* getState(){
-  const cars = yield select(makeSelectCarstoAvailable())
+  const cars = yield select(selectHomePageState())
 
 }
 

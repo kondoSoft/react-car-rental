@@ -19,12 +19,12 @@ function showSearch(){
   }
 }
 
-function NewSearch() {
-
+function NewSearch(props) {
   return (
     <div className='newSearch'>
       <div onClick={()=> showSearch()}>Busqueda Nueva<i className='fa fa-search' ></i></div>
-        <FormSearch/>
+        <FormSearch loading={props.loading} saveDate={props.saveDate} loadingTrue={props.loadingTrue}  saveLocation={props.saveLocation}/>
+        {/* loading={props.HomePage.UI.Loading} saveDate={props.saveDate} loadingTrue={props.loadingTrue}  saveLocation={props.saveLocation} */}
     </div>
   );
 }

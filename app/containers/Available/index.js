@@ -9,13 +9,13 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectAvailable from './selectors';
-import { makeSelectCarstoAvailable } from '../HomePage/selectors'
+import { selectHomePageState } from '../HomePage/selectors'
 import { loadCar } from './actions'
+import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
 import { Icon,Image, Grid, Container, Header, Card, Button,Segment } from 'semantic-ui-react'
 import CardCar from '../../components/CardCar'
 import NewSearch from '../../components/NewSearch'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
 
 export class Available extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   componentDidMount(){
@@ -31,12 +31,12 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
         transitionAppearTimeout = {1000}
         key={i}
          >
-      <CardCar car={car} key={array[i]+i}/>
+      <CardCar car={car} key={car.ID}/>
     </ReactCSSTransitionGroup>
     )
   }
   createGridCarRow(type,i){
-    const dataAry = this.props.Cars
+    const dataAry = this.props.HomePage.cars
     return(
     <div key={'div'+i}>
       <Header as="h3" className="titleCar" key={'Header'+i}>{type}</Header>
@@ -50,8 +50,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
   }
 
   render() {
-
-    const dataInitial = Object.keys(this.props.Cars);
+    const dataInitial = Object.keys(this.props.HomePage.cars);
     return (
       <div>
       <Container>
@@ -61,8 +60,9 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
             { name: 'description', content: 'Description of Available' },
           ]}
         />
+        {/* loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation} */}
         <div className="divSearchAvailable">
-          <NewSearch />
+          <NewSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
         </div>
         {dataInitial.map((item,i)=>{ return this.createGridCarRow(item,i) })}
       </Container>
@@ -77,13 +77,22 @@ Available.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   Available: makeSelectAvailable(),
-  Cars: makeSelectCarstoAvailable(),
+  HomePage: selectHomePageState(),
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     loadCar: (type)=>{
       dispatch(loadCar(type))
+    },
+    loadingTrue: (type)=>{
+      dispatch(loadingTrue(type))
+    },
+    saveDate:(type)=>{
+      dispatch(saveDate(type))
+    },
+    saveLocation:(type)=>{
+      dispatch(saveLocation(type))
     },
     dispatch,
   };
