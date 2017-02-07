@@ -3,7 +3,8 @@ import { createSelector } from 'reselect';
  * Direct selector to the available state domain
  */
 const selectAvailableDomain = () => (state) => state.get('available');
-// const selectHomePageDomain = () => (state) => state.get('homePage');
+
+const selectAvailableState = () => (state) => state.get('available').toJS();
 
 /**
  * Other specific selectors
@@ -24,5 +25,6 @@ const makeSelectAvailable = () => createSelector(
 export default makeSelectAvailable;
 export {
   selectAvailableDomain,
+  selectAvailableState,
   // makeSelectCarstoAvailable
 };

@@ -9,12 +9,6 @@ import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
 import Select from 'react-select';
-// import { saveDate } from '../../containers/HomePage/actions'
-// import styled from 'styled-components';
-// import { connect } from 'react-redux';
-
-// import { createStructuredSelector } from 'reselect';
-// import makeSelectHomePage from '../../containers/HomePage/selectors';
 
 class DatePickerForm extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

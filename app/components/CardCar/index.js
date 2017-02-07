@@ -18,26 +18,11 @@ function CardCar(props) {
 
     return result.toString().replace(/,/g," ")
   }
-  // function showButton(e, data){
-  //
-  //   console.log(props.checkbox);
-  //   // if( data.checked == true){}
-  //
-  //   //   return <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push(`/reserve/${props.car.ID}`)} ><span>Reservar</span></Button>
-  //   //   return <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push(`/reserve/${props.car.ID}`)} ><span>Cotizar</span></Button>
-  //   //
-  //
-  // }
   function getCarCheck(e, data){
-
-    console.log(data.checked);
-    props.car.checked = data.checked;
-    console.log(props.car.ID);
     props.addCarChecked(props.car.ID, data.checked)
   }
   return (
     <Grid.Column className='contentCardCar'>
-
       <Card className='cardCar'>
         <Card.Content className='contentReserve'>
           <Image floated='right' alt='company' className='imgMarca' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/ico/${props.car.Vendor}.png`} />
@@ -52,7 +37,7 @@ function CardCar(props) {
             <div className='contentPrice'>
               <h2 className='colorBlue'>${props.car.Amount}</h2>
               <h4>USD</h4>
-              <Checkbox className='checkboxAvail' label='Cotizar' onChange={getCarCheck.bind('sadf')}/>
+              <Checkbox className='checkboxAvail' label='Cotizar' onChange={getCarCheck.bind(this)}/>
             </div>
           </div>
           <div className="contentIcon colorGreen">
@@ -73,8 +58,10 @@ function CardCar(props) {
             </i>
           </div>
         </Card.Content>
-        {props.car.checked}
-        <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push(`/reserve/${props.car.ID}`)} ><span>Reservar</span></Button>
+        {(props.availableCar[props.car.ID]) ?
+          <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/')} ><span>Cotizar</span></Button>
+           :  <Button className="buttonCotizar primary" onClick ={() => browserHistory.push(`/reserve/${props.car.ID}`)} ><span>Reservar</span></Button>
+}
       </Card>
     </Grid.Column>
   );

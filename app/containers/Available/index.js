@@ -31,7 +31,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
         transitionAppearTimeout = {1000}
         key={i}
          >
-      <CardCar car={car} key={car.ID} addCarChecked={this.props.addCarChecked} checkbox={this.props.Available.car.Checkbox}/>
+      <CardCar car={car} key={car.ID} addCarChecked={this.props.addCarChecked} availableCar={this.props.Available.car}/>
     </ReactCSSTransitionGroup>
     )
   }
@@ -94,8 +94,8 @@ function mapDispatchToProps(dispatch) {
     saveLocation:(type)=>{
       dispatch(saveLocation(type))
     },
-    addCarChecked:(type)=>{
-      dispatch(addCarChecked(type))
+    addCarChecked:(type, state)=>{
+      dispatch(addCarChecked(type, state))
     },
     dispatch,
   };

@@ -22,9 +22,7 @@ export class HomePage extends React.PureComponent {
     )
   }
   componentDidMount(){
-    // This line get comments for API
       this.props.commentsLoaded()
-
   }
 
   render() {
