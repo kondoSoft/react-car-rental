@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectAvailable from './selectors';
 import { selectHomePageState } from '../HomePage/selectors'
-import { loadCar } from './actions'
+import { loadCar, addCarChecked } from './actions'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
 import { Icon,Image, Grid, Container, Header, Card, Button,Segment } from 'semantic-ui-react'
 import CardCar from '../../components/CardCar'
@@ -31,7 +31,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
         transitionAppearTimeout = {1000}
         key={i}
          >
-      <CardCar car={car} key={car.ID}/>
+      <CardCar car={car} key={car.ID} addCarChecked={this.props.addCarChecked} checkbox={this.props.Available.car.Checkbox}/>
     </ReactCSSTransitionGroup>
     )
   }
@@ -93,6 +93,9 @@ function mapDispatchToProps(dispatch) {
     },
     saveLocation:(type)=>{
       dispatch(saveLocation(type))
+    },
+    addCarChecked:(type)=>{
+      dispatch(addCarChecked(type))
     },
     dispatch,
   };

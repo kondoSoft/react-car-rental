@@ -1,5 +1,5 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
-import { SET_LOADING_TRUE, LOAD_COMMENTS } from './constants'
+import { SET_LOADING_TRUE, LOAD_COMMENTS, LOAD_COMMENTS_SUCCESS } from './constants'
 import { loadCars, carsLoaded, commentsSucces } from './actions'
 import { browserHistory } from 'react-router'
 
@@ -48,7 +48,6 @@ export function* getAPI(){
   }
 }
 export function* getAPIComments(){
-  const comments = yield select(makeSelectComments())
   const requestURL = `https://jsonplaceholder.typicode.com/comments`
   try{
     const getcomment = yield call(request, requestURL)

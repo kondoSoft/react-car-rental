@@ -23,7 +23,7 @@ export class HomePage extends React.PureComponent {
   }
   componentDidMount(){
     // This line get comments for API
-      // this.props.commentsLoaded()
+      this.props.commentsLoaded()
 
   }
 
@@ -43,9 +43,7 @@ export class HomePage extends React.PureComponent {
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
             <Grid>
-
             {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
-
             <Grid.Column width={16}>
               <Icon color='green' name='circle' size='mini' />
               <Icon color='blue' name='circle' size='mini' />
