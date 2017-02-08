@@ -20,6 +20,7 @@ function CardCar(props) {
   }
   function getCarCheck(e, data){
     props.addCarChecked(props.car.ID, data.checked)
+    
   }
   return (
     <Grid.Column className='contentCardCar'>
@@ -59,7 +60,7 @@ function CardCar(props) {
           </div>
         </Card.Content>
         {(props.availableCar[props.car.ID]) ?
-          <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/')} ><span>Cotizar</span></Button>
+          <Button className="buttonCotizar secundary" onClick ={() => browserHistory.push('/quotation/')} ><span>Cotizar</span></Button>
            :  <Button className="buttonCotizar primary" onClick ={() => browserHistory.push(`/reserve/${props.car.ID}`)} ><span>Reservar</span></Button>
 }
       </Card>
