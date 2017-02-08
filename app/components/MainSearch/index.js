@@ -9,17 +9,24 @@ import React from 'react';
 import FormSearch from '../FormSearch/'
 import {Container, Grid, } from 'semantic-ui-react'
 import Promo from '../Promo/'
+import MainSlider from '../MainSlider/'
 import Back from 'assets/images/slide.jpg'
 import Comments from '../Comments'
 import { browserHistory } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Test from '../../components/Test'
-function MainSearch() {
+
+
+function MainSearch(props) {
+
   return (
     <div>
       <Container fluid className='slider'>
-        <Container>
-          <Grid verticalAlign='middle' style={{marginTop:'0'}}>
+        <Container className= 'containerFormSearch' fluid>
+          <MainSlider />
+          <div className='ui container containerForm'>
+            <FormSearch title="Bienvenido" loading={props.loading} loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
+          </div>
+          {/* <Grid verticalAlign='middle' style={{marginTop:'0'}}>
             <Grid.Column mobile={16} tablet={8} computer={6} textAlign='center'>
               <ReactCSSTransitionGroup
                 transitionName="form"
@@ -28,15 +35,15 @@ function MainSearch() {
                 transitionAppear = {true}
                 transitionAppearTimeout = {1000}
                 >
-                <FormSearch title="Bienvenido"/>
+                <FormSearch title="Bienvenido" loading={props.loading} loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
               </ReactCSSTransitionGroup>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={8} computer={10}>
-                <Test/>
+
                 <Promo/>
 
             </Grid.Column>
-          </Grid>
+          </Grid> */}
         </Container>
       </Container>
     </div>

@@ -5,11 +5,19 @@
  */
 
 import {
-  LOAD_ACTION,
+  LOAD_CARS,
+  ADD_CAR_CHECKED,
 } from './constants';
 
-export function loadAction() {
+export function loadCar() {
   return {
-    type: LOAD_ACTION,
+    type: LOAD_CARS,
   };
+}
+export function addCarChecked(id, state){
+  return{
+    type: ADD_CAR_CHECKED,
+    id,
+    state,
+  }
 }

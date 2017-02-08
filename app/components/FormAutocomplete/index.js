@@ -1,50 +1,111 @@
-/**
-*
-* FormAutocomplete
-*
-*/
-
 import React from 'react';
 // import styled from 'styled-components';
-import Autocomplete from 'react-autocomplete'
-import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from 'react-autocomplete'
+import Select from 'react-select';
+import fetch from 'isomorphic-fetch';
+import 'react-select/dist/react-select.css'
+import { Grid, Form, Checkbox } from 'semantic-ui-react'
 
 
-function FormAutocomplete(props) {
+class FormAutocomplete extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
-  return (
-    <div>
-    	<Autocomplete
-	     	value={this.state.value}
-		    inputProps={{name: "US state", id: "states-autocomplete", className:"inputFormSize"}}
-		    items={this.state.unitedStates}
-		    getItemValue={(item) => item.name}
-		    onSelect={(value, state) => this.setState({ value, unitedStates: [state] }) }
-		    onChange={(event, value) => {
-		      this.setState({ value, loading: true })
-		      fakeRequest(value, (items) => {this.setState({ unitedStates: items, loading: false })})
-		      }}
-	          renderItem={(item, isHighlighted) => (
-	            <div
-	              style={isHighlighted ? styles.highlightedItem : styles.item}
-	              key={item.abbr}
-	              id={item.abbr}
-	            >{item.name}</div>
-	          )}
-	          renderMenu={(items, value, style) => (
-	            <div style={{...styles.menu, ...style}}>
-	              {value === '' ? (
-	                <div style={{padding: 6}}>Type of the name of a United State</div>
-	              ) : this.state.loading ? (
-	                <div style={{padding: 6}}>Loading...</div>
-	              ) : items.length === 0 ? (
-	                <div style={{padding: 6}}>No matches for {value}</div>
-	              ) : this.renderItems(items)}
-	            </div>
-	          )}
-    	/>
-    </div>
-  );
+  constructor(props){
+    super(props)
+      this.state = {
+        startLocation: '',
+        returnLocation: '',
+        UI:{
+          checkbox : 'activeReturn'
+        }
+      }
+      this.onChange = this.onChange.bind(this)
+      this.onChangeReturn = this.onChangeReturn.bind(this)
+      this.showReturn = this.showReturn.bind(this)
+  }
+  onChange (value ) {
+    //TO DO
+    //al tercer dato, realizar el request
+		this.setState({
+      startLocation: value,
+		});
+    this.props.saveLocation([value.Code, 'pickUPLocation'])
+	}
+  onChangeReturn (valueReturn){
+    this.setState({
+      returnLocation: valueReturn,
+    })
+    this.props.saveLocation([valueReturn.Code, 'returnLocation'])
+
+  }
+	getCity (city) {
+		if (!city) {
+			return Promise.resolve({ options: [] });
+		}
+		return fetch(`http://187.217.208.8:8000/autocomplete/?term=${city}`)
+		.then((response) => response.json())
+		.then((json) => {
+			return { options: json };
+		});
+	}
+  showReturn(e , data){
+    if( data.checked == true){
+      this.setState({
+        UI: {checkbox:''}
+      })
+    }else{
+      this.setState({
+        UI: {checkbox:'activeReturn'}
+      })
+    }
+  }
+
+  render() {
+    const AsyncComponent = Select.Async;
+    return (
+          <Grid className='gridAutocomplete'>
+            <Grid.Row centered>
+              <div className="selectFormSearch">
+                <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
+                <AsyncComponent
+        					value={this.state.startLocation}
+        					onChange={this.onChange}
+        					valueKey="id" labelKey="City"
+        					loadOptions={this.getCity}
+                  className=""
+                  clearable = {true}
+                  placeholder = 'Donde recogera el auto?'
+                  />
+
+              </div>
+            </Grid.Row>
+            <Grid.Row centered id='return'>
+              <div className={`selectFormSearch ${this.state.UI.checkbox}`} >
+                <span className="input-group-addon-standar"><i className="fa fa-globe"></i></span>
+                <AsyncComponent
+        					value={this.state.returnLocation}
+        					onChange={this.onChangeReturn}
+        					valueKey="id" labelKey="City"
+        					loadOptions={this.getCity}
+                  className=""
+                  clearable = {true}
+                  placeholder = 'Donde entregara el auto?'
+
+                  />
+              </div>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column width={16}>
+                <Form.Field id='checkLocation'
+                  control={Checkbox}
+                  onClick={this.showReturn}
+                  defaultChecked
+                  label={<label className="spanWhite checkboxForm">Entregar en la misma ubicacion</label>}
+                />
+
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+    );
+  }
 }
 
 FormAutocomplete.propTypes = {

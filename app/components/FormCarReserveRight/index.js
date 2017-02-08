@@ -10,11 +10,11 @@ import NewSearch from '../NewSearch'
 // import styled from 'styled-components';
 
 
-function FormCarReserveRight() {
+function FormCarReserveRight(props ) {
   return (
     <div className='formReserveRight'>
       <div className="divSearch">
-        <NewSearch/>
+        <NewSearch loading={props.loading} saveDate={props.saveDate} loadingTrue={props.loadingTrue}  saveLocation={props.saveLocation}/>
       </div>
       <div className="dataClient">
         <div className='titleDataClient newSearch'>
@@ -56,7 +56,7 @@ function FormCarReserveRight() {
       </div>
       <div className="dataCard">
         <div className="titleDataCard newSearch">
-            <span>Datos del arrendador</span>
+            <span>Datos de la tarjeta</span>
         </div>
         <div className="formDataCard colorBlue">
           <div className='spanFormData'>

@@ -98,7 +98,7 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
-      path: '/reserve',
+      path: '/reserve/:carId',
       name: 'reserve',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
