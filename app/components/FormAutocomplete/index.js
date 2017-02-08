@@ -72,6 +72,7 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
         					loadOptions={this.getCity}
                   className=""
                   clearable = {true}
+                  placeholder = 'Donde recogera el auto?'
                   />
 
               </div>
@@ -86,6 +87,8 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
         					loadOptions={this.getCity}
                   className=""
                   clearable = {true}
+                  placeholder = 'Donde entregara el auto?'
+
                   />
               </div>
             </Grid.Row>

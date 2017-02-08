@@ -111,6 +111,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               options={this.state.options}
               simpleValue
               value={this.state.startHour}
+              placeholder = {this.state.options[0].label}
             />
           </div>
         </div>
@@ -133,6 +134,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               options={this.state.options}
               simpleValue
               value={this.state.endHour}
+              placeholder = {this.state.options[0].label}
             />
           </div>
         </div>

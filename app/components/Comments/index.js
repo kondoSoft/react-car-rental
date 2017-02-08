@@ -18,15 +18,15 @@ function Comments(props) {
           <Card className="backgroundCar spaceComillas">
             <Card.Content>
               <Card.Description>
-                {props.comment.body}
+                {props.comment.Comment}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' />
+              <Image shape='circular' floated='left' size='mini' alt='User Photo' src={props.comment.Photo} />
               <a>
-                {/* {props.comment.name} */}
+                {props.comment.FullName}
               </a>
-              {/* <p>{props.comment.profession}</p> */}
+              <p>{props.comment.Job}</p>
             </Card.Content>
           </Card>
         </Grid.Column>

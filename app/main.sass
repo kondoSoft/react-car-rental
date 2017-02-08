@@ -203,7 +203,10 @@ a
 
 
 
-/********* DatePicker and Form ************
+/********* DatePicker and Form ************/
+
+h1.ui.header
+  font-size: 3em !important
 
 .form
   margin-top: 10px
@@ -227,7 +230,7 @@ a
   padding: 0 0 18px 0 !important
 
 .dividerForm
-  width: 50% !important
+  width: 100%
   margin: 0px 10% auto !important
   border-top: 2px solid #70a0ec !important
   border-bottom: 1px solid #70a0ec !important
@@ -252,26 +255,29 @@ a
     top: -7px !important
 
 .selectFormSearchWhen
-  border: 1px solid #ccc
   width: 100%
   overflow: hidden
   display: flex
   justify-content: space-around
   flex-direction: row
+  height: 30px
   input
     border-radius: 0 !important
+    text-align: center
+    padding-top: .400em !important
 
 .gridAutocomplete
   margin: 0 auto !important
   width: 90%
 
 .selectFormSearch
-  border: 1px solid #ccc
   width: 85%
   overflow: hidden
   display: flex
   justify-content: flex-start
   flex-direction: row
+
+
 
 .Select
   width: 73%
@@ -334,6 +340,11 @@ a
           padding: 8px 0 12px
           -webkit-appearance: none
 
+.selectFormSearchWhen
+  .input-group-addon-standar
+    padding: .35em 1.1em
+    font-size: .95em
+
 .input-group-addon-standar
   width: 40px
   vertical-align: middle
@@ -344,7 +355,7 @@ a
   color: #555
   text-align: center
   background-color: #87b672
-  border: 1px solid #ccc
+  border: 1px solid transparent
   i
     text-align: center
     width: 1.4em
@@ -385,15 +396,17 @@ h1, #spanWhite, h4, .spanWhite
   display: flex
   flex-direction: row
   justify-content: space-around
+  .Select-control
+    height: 30px
+    .Select-multi-value-wrapper
+      height: 30px
 
 .columnPaddingzero
   flex: 2
   margin-right: 5px
 
 .selectDivHour
-  right: 15px
-  border: 1px solid #ccc
-  height: 39px
+  height: 30px
   background: #fff
   flex: 1
   .selectHour
@@ -402,10 +415,14 @@ h1, #spanWhite, h4, .spanWhite
     border: none!important
     background: transparent!important
     padding: 0
-    height: 39px !important
     left: 244px !important
   .Select-menu-outer
     position: inherit
+  span
+    .Select-placeholder
+      left: 9% !important
+      line-height: 2em !important
+
 
 i
   &.green.icon
@@ -642,17 +659,25 @@ i
   background-color: rgba(45, 72, 192, 0.9)
 
 // SLIDE
+.containerFormSearch
+  height: 540px
 .containerFormSearch .slick-list
   height: 540px
 
+.containerForm
+  position: relative
+  bottom: 520px
+
+.ui .container .slider
+  height: 540px
+
 .slider #inputSearchDisplay
-  position: absolute
-  top: 15%
-  left: 10%
+  position: relative
 
 .slideImg img
   width: 100%
   height: 540px
+
 // ENDSLIDE
 .divSearch, .divSearchAvailable
   display: flex
@@ -666,7 +691,6 @@ i
     height: 0
     overflow: hidden
     transition: 0.2s
-    // height: 485px !important
   .input-group-addon-standar
     width: 40px
     vertical-align: middle
@@ -1279,8 +1303,9 @@ footer
   .trianguloDer
     position: relative
     top: 14px
+
   .ui .form
-    width: 90% !important
+    width: 100% !important
 
 // Medias Generales
 
@@ -1318,8 +1343,21 @@ footer
   .select
     width: 70% !important
 
+  .containerForm
+    width: 100%
+    margin-left: 0
+    margin-right: 0
+
+  .gridAutocomplete
+    padding-left: 0 !important
+    padding-right: 0  !important
+
   .inner_toggle
     display: none
+
+  .gridAutocomplete
+    position: relative
+    right: 1.3%
 
   .Select
     width: 79.3%
@@ -1327,13 +1365,66 @@ footer
   .selectFormSearchWhen
     justify-content: flex-start
     width: 96%
+  .divWhen
+    width: 76%
   .selectDivHour .selectHour
-    width: 24% !important
-    left: 62% !important
+    width: 25% !important
+    left: 63% !important
   .react-datepicker__input-container
     width: 100%
+
+  .divSearchAvailable
+    width: 100%
+    .newSearch
+      width: 60% !important
+      .fadeSearchOpen
+        height: 450px
+    .Select
+      width: 76.3%
+      left: 15.4%
+
+
+  @keyframes fadeSearchOpen
+      0%
+        height: 0px
+
+      100%
+        height: 450px
+
+  .fadeSearchOpen
+    height: 450px !important
+    animation: 500ms fadeSearchOpen
+    h1
+      display: none
+  @keyframes fadeSearchClose
+      0%
+        height: 450px
+
+      100%
+        height: 0px
+
+  .fadeSearchClose
+    height: 0px
+    animation: 500ms fadeSearchClose
+    h1
+      display: none
 // Mobile
 @media only screen and (max-width: 767px)
+  .ui.container
+    margin-right: 0 !important
+
+  .ui.fluid.container.slider
+    width: 100% !important
+    margin-left: 0 !important
+    margin-right: 0 !important
+  .ui.fluid.container.containerFormSearch
+    width: 100% !important
+    margin-left: 0 !important
+    margin-right: 0 !important
+    .ui.container
+      margin-left: 0 !important
+      margin-right: 0 !important
+
   .select
     width: 70% !important
   .containerReserve
@@ -1345,14 +1436,86 @@ footer
 
   .inner_toggle
     display: none
-  .Select
-    width: 77.5%
-    left: 15%
-  .selectFormSearchWhen
-    justify-content: flex-start
-    width: 90%
+
+  .slick-slider
+    display: none
+
+  .dividerForm
+    width: 100%
+
+  .containerForm
+    bottom: 0
+
+  .form
+    background-color: #2b5bac
+
+  .gridAutocomplete
+    position: relative
+    right: 0
+    width: 95.5%
+    .Select
+      width: 74%
+      left: 18.4%
+    .selectFormSearchWhen
+      justify-content: flex-start
+      width: 96%
+
+  .divWhen
+    width: 76%
   .selectDivHour .selectHour
-    width: 24% !important
-    left: 62% !important
+    width: 25% !important
+    left: 63% !important
   .react-datepicker__input-container
     width: 100%
+  .divButtonGreeen
+    padding: 0 !important
+    .buttonGreen
+      width: 100%
+
+  .ui.container.containerComments
+    margin-left: 3em !important
+
+
+  .divSearch
+    .newSearch
+      position: relative !important
+  .divSearchAvailable, .divSearch
+    width: 100%
+    .newSearch
+      width: 100% !important
+      position: absolute
+      z-index: 2
+      background-color: rgba(45, 72, 192, 0.9)
+      .fadeSearchOpen
+        height: 400px
+    .selectFormSearchWhen
+      .input-group-addon-standar
+        border: none
+        i
+          width: 1.6em
+          font-size: 1em
+
+  @keyframes fadeSearchOpen
+      0%
+        height: 0px
+
+      100%
+        height: 400px
+
+  .fadeSearchOpen
+    height: 400px !important
+    animation: 500ms fadeSearchOpen
+    h1
+      display: none
+  @keyframes fadeSearchClose
+      0%
+        height: 400px
+
+      100%
+        height: 0px
+
+  .fadeSearchClose
+    height: 0px
+    animation: 500ms fadeSearchClose
+    h1
+      display: none

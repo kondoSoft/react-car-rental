@@ -48,7 +48,7 @@ export function* getAPI(){
   }
 }
 export function* getAPIComments(){
-  const requestURL = `https://jsonplaceholder.typicode.com/comments`
+  const requestURL = `http://187.217.208.8:8000/commentsApi/`
   try{
     const getcomment = yield call(request, requestURL)
     yield put(commentsSucces(getcomment))

@@ -21,7 +21,7 @@ function FormSearch(props) {
           <FormAutocomplete saveLocation={props.saveLocation}/>
           <Divider className='dividerForm' />
           <DatePickerForm  saveDate={props.saveDate} />
-          <Grid.Row centered>
+          <Grid.Row centered className='divButtonGreeen'>
             <Button className="buttonGreen" onClick={props.loadingTrue} >BUSCAR EL MEJOR PRECIO!</Button>
           </Grid.Row>
         </Grid>
