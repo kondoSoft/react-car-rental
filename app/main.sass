@@ -53,13 +53,6 @@ body
    transition: opacity 500ms ease-in
 
 /****** NAVIGATION ************/
-.inner_toggle
-  width: 100%
-  margin: 0 auto
-  padding: 0px 20px
-  position: relative
-
-
 .logo
   text-decoration: none
   color: #777
@@ -67,7 +60,36 @@ body
   font-size: 30px
   line-height: 40px
 
+@media only screen and (max-width: 767px)
+  .navigation
+    width: 15em
+    right: -15em
+    position: absolute
+    overflow: hidden
+    display: block
+    height: 10000%
+    background-color: #000
 
+  .navigation-toggle
+    width: 50px
+    height: 50px
+    position: absolute
+    top: 10px
+    right: 0px
+
+.navigation
+  max-height: inherit
+  position: relative
+  right: inherit
+  width: auto
+  background: transparent
+  li
+    display: inline-block
+    padding: 2em
+  .navigation-toggle
+  width: 0
+  height: 0
+// @media only screen and (max-width: 767px)
 h1
   text-align: center
   width: 100%
@@ -1324,9 +1346,6 @@ footer
     .singleCarContainer
       margin: 0 !important
       width: 98.5% !important
-
-  .inner_toggle
-    display: none
 
 // Tablets
 @media only screen and (min-width: 768px) and (max-width: 991px)
