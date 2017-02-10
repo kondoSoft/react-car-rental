@@ -60,100 +60,139 @@ body
   font-size: 30px
   line-height: 40px
 
-@media only screen and (max-width: 767px)
-  .navigation
-    width: 15em
-    right: -15em
-    position: absolute
-    overflow: hidden
+.mainmenu
+  width: 100%
+  display: flex
+  ul
+    list-style: none
+    width: 100%
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: flex-end
+    li
+      margin-left: 5%
+      > ul
+        display: none
+
+        li
+          width: 100%
+      &:hover > ul
+        display: flex
+  a
     display: block
-    height: 10000%
-    background-color: #000
-
-  .navigation-toggle
-    width: 50px
-    height: 50px
-    position: absolute
-    top: 10px
-    right: 0px
-
-.navigation
-  max-height: inherit
-  position: relative
-  right: inherit
-  width: auto
-  background: transparent
-  li
-    display: inline-block
-    padding: 2em
-  .navigation-toggle
-  width: 0
-  height: 0
-// @media only screen and (max-width: 767px)
-h1
-  text-align: center
-  width: 100%
-  margin-top: 120px
-  color: #eee
-  font-weight: 800
-  font-size: 40px
-
-
-nav > ul
-  float: right
-
-  li
+    padding: 15px
+    width: 100%
+    color: white
+    text-decoration: none
     text-align: center
-    line-height: 65px
-    margin-left: 70px
+    &:hover
+      background: #87b672
+      color: #FFF !important
+  // .sub-menu
+  //   li > a
+  //     background: lightBlue
+  //     color: blue
+  //   > a:after
+  //     content: "+"
+  //     padding-left: 5px
 
-  li:hover
-    cursor: pointer
-    position: relative
-
-nav > ul li ul li
-  width: 100%
-  text-align: left
-
-nav ul li:hover > ul
-  display: block
-
-nav ul li:hover > a
-  color: #777
-
-nav > ul > li > a
-  cursor: pointer
-  display: block
-  outline: none
-  width: 100%
-  text-decoration: none
-
-nav > ul > li
-  float: left
-
-nav a
-  color: white
-
-nav > ul li ul
-   display: none
-   position: absolute
-   left: 0
-   top: 100%
-   width: 100%
-   z-index: 2000
-
-nav > ul li ul li > a
-  text-decoration: none
-
-
-[type="checkbox"], label
-  display: none
-
-.travel, .logout
-  padding: 0 !important
-
-.liTravel, .liLogout
-  margin-left: 5px !important
+// @media only screen and (max-width: 767px)
+//   .navigation
+//     width: 15em
+//     right: -15em
+//     position: absolute
+//     overflow: hidden
+//     display: block
+//     height: 10000%
+//     background-color: #000
+//
+//   .navigation-toggle
+//     width: 50px
+//     height: 50px
+//     position: absolute
+//     top: 10px
+//     right: 0px
+//
+// .navigation
+//   max-height: inherit
+//   position: relative
+//   right: inherit
+//   width: auto
+//   background: transparent
+//   li
+//     display: inline-block
+//     padding: 2em
+//   .navigation-toggle
+//   width: 0
+//   height: 0
+// // @media only screen and (max-width: 767px)
+// h1
+//   text-align: center
+//   width: 100%
+//   margin-top: 120px
+//   color: #eee
+//   font-weight: 800
+//   font-size: 40px
+//
+//
+// nav > ul
+//   float: right
+//
+//   li
+//     text-align: center
+//     line-height: 65px
+//     margin-left: 70px
+//
+//   li:hover
+//     cursor: pointer
+//     position: relative
+//
+// nav > ul li ul li
+//   width: 100%
+//   text-align: left
+//
+// nav ul li:hover > ul
+//   display: block
+//
+// nav ul li:hover > a
+//   color: #777
+//
+// nav > ul > li > a
+//   cursor: pointer
+//   display: block
+//   outline: none
+//   width: 100%
+//   text-decoration: none
+//
+// nav > ul > li
+//   float: left
+//
+// nav a
+//   color: white
+//
+// nav > ul li ul
+//    display: none
+//    position: absolute
+//    left: 0
+//    top: 100%
+//    width: 100%
+//    z-index: 2000
+//
+// nav > ul li ul li > a
+//   text-decoration: none
+//
+//
+// [type="checkbox"], label
+//   display: none
+//
+// .travel, .logout
+//   padding: 0 !important
+//
+// .liTravel, .liLogout
+//   margin-left: 5px !important
 
 /******* End Navigation ********/
 
@@ -918,6 +957,10 @@ i
 .ui
   &.cards > .extra, &.card > .content, &.cards > .card > .extra
     border-top: none !important
+.spaceComillas
+  width: 250px !important
+  margin-left: 40px
+  margin-right: -40px
 
 /* COMMENTS
 
