@@ -10,15 +10,19 @@ import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectHomePage from './selectors';
 import MainSearch from '../../components/MainSearch'
-import Comments from '../../components/Comments'
+// import Comments from '../../components/Comments'
+import Comments from '../../components/CommentSlide'
 import {Container, Grid, Icon, Button} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation, commentsLoaded } from './actions'
+import Slider from 'react-slick'
 
 
 export class HomePage extends React.PureComponent {
   createComments(data,i){
     return(
+      <div key={'DivComment'+i}>
       <Comments comment={data} key={'Comment'+i}/>
+      </div>
     )
   }
   componentDidMount(){
@@ -26,7 +30,44 @@ export class HomePage extends React.PureComponent {
   }
 
   render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      lazyLoad: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay:true,
+      responsive:[{
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+          infinite: true,
+          dots: true
+
+        }
+      }, {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }]
+    }
     const dataInitial = this.props.HomePage.comments
+
     return (
       <div>
         <Helmet
@@ -37,17 +78,15 @@ export class HomePage extends React.PureComponent {
         />
           <MainSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
           <Container className="containerComments">
-
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
-            <Grid>
-            {dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }
-            <Grid.Column width={16}>
-              <Icon color='green' name='circle' size='mini' />
-              <Icon color='blue' name='circle' size='mini' />
-              <Icon color='blue' name='circle' size='mini' />
-            </Grid.Column>
-            </Grid>
+            <br/>
+            <br/>
+            <Slider {...settings}>
+
+              <Grid>{dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }</Grid>
+
+            </Slider>
           </Container>
       </div>
     );

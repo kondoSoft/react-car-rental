@@ -19,7 +19,6 @@ function Header() {
           <Menu.Item>
             <Link className="" to="/">
               <img src='https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/creatuviaje-logo.png' alt=""/>
-
             </Link>
           </Menu.Item>
           <Navigation />
