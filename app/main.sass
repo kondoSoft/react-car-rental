@@ -3,6 +3,7 @@ body
   margin: 0
   padding: 0
   font-family: helvetica !important
+  color: black !important
 
 #app
   background: #FFF !important
@@ -59,38 +60,53 @@ body
   font-weight: 800
   font-size: 30px
   line-height: 40px
-
-.mainmenu
-  width: 100%
+.navBar
   display: flex
+  width: 100%
   ul
-    list-style: none
     width: 100%
-    margin: 0
-    padding: 0
     display: flex
-    align-items: center
-    flex-wrap: wrap
     justify-content: flex-end
+    list-style-type: none
+    align-items: center
     li
       margin-left: 5%
-      > ul
-        display: none
+#menu-toggle, .label-toggle
+  display: none
 
-        li
-          width: 100%
-      &:hover > ul
-        display: flex
-  a
-    display: block
-    padding: 15px
-    width: 100%
-    color: white
-    text-decoration: none
-    text-align: center
-    &:hover
-      background: #87b672
-      color: #FFF !important
+// .mainmenu
+//   width: 100%
+//   display: flex
+//   ul
+//     list-style: none
+//     width: 100%
+//     margin: 0
+//     padding: 0
+//     display: flex
+//     align-items: center
+//     flex-wrap: wrap
+//     justify-content: flex-end
+//     li
+//       margin-left: 5%
+//       > ul
+//         display: none
+
+//         li
+//           width: 100%
+//       &:hover > ul
+//         display: flex
+//   a
+//     display: block
+//     padding: 15px
+//     width: 100%
+//     color: white
+//     text-decoration: none
+//     text-align: center
+//     &:hover
+//       background: #87b672
+//       color: #FFF !important
+// #menu-toggle, .label-toggle
+//   display: none
   // .sub-menu
   //   li > a
   //     background: lightBlue
@@ -1298,6 +1314,35 @@ footer
 
 
 @media only screen and (max-width: 767px) and (min-width: 500px)
+  //Nav
+  .ui.secondary.menu
+    display: flex !important
+    flex-direction: row-reverse !important 
+  .label-toggle 
+    background: linear-gradient(to bottom, #b2b2b2 0%, #b2b2b2 20%, transparent 20%, transparent 40%, #b2b2b2 40%, #b2b2b2 60%, transparent 60%, transparent 80%, #b2b2b2 80%, #b2b2b2 100%)
+    cursor: pointer
+    display: block
+    float: right
+    height: 35px
+    margin-top: 1em
+    width: 35px
+  .navBar
+    display: flex
+    align-items: center
+    ul 
+      display: block
+      height: 0
+      list-style-type: none
+      opacity: 0
+      text-align: center
+      transition: all 1s ease
+      width: 100%
+      visibility: hidden
+  #menu-toggle:checked ~ ul
+    opacity: 1
+    height: 100vh
+    visibility: visible
+  // NAV END
   .form
     width: 100% !important
 

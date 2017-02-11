@@ -12,15 +12,14 @@ import { Link } from 'react-router'
 
 function Navigation() {
   return (
-    <nav className='mainmenu'>
+    <nav className="navBar">
+      <input type="checkbox" id="menu-toggle" />
+      <label htmlFor="menu-toggle" className="label-toggle"></label>
       <ul>
-        <li><Link to="/">Servicios</Link></li>
-        <li><Link to="/">Mi reserva</Link></li>
-        <li><Link to="/">Tu Viaje</Link></li>
-        <li><Link to="/">Inicia Sesion</Link></li>
-        <li className='liLogout'>
-          <Link className="logout" to=""> <i className='fa fa-sign-out' ></i> </Link>
-        </li>
+        <li><Link to='' >Servicios</Link></li>
+        <li><Link to='' >Mi Reserva</Link></li>
+        <li><Link to='' >Tu Viaje</Link></li>
+        <li><Link to='' >Inicia Sesion</Link></li>
       </ul>
     </nav>
       //   <nav className="navigation" id="main-navigation">
