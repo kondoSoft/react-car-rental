@@ -16,15 +16,97 @@ import {Container, Grid, Icon, Button} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation, commentsLoaded } from './actions'
 import Slider from 'react-slick'
 
+var gridCounter=0
+var gridAry=[]
+var aryComment=[
+    {
+        "id":1,
+        "Photo": "/static/images/imagesPerfil/person3.jpg",
+        "Comment": "A veces el color del auto no me gusta pero engeneral bien",
+        "FullName": "Luis Hernandez",
+        "Job": "Ing. Sistemas"
+    },
+    {
+        "id":2,
+        "Photo": "/static/images/imagesPerfil/person1.jpg",
+        "Comment": "Me gusta mucho la atencion al cliente",
+        "FullName": "Luis Hernandez",
+        "Job": "Ing industrial"
+    },
+    {
+        "id":3,
+        "Photo": "/static/images/imagesPerfil/person1.jpg",
+        "Comment": "No me gusto mucho porque me cambiaron el color del auto ",
+        "FullName": "Luis Hernandez",
+        "Job": "Lic. enfermeria"
+    },
+    {
+        "id":4,
+        "Photo": "/static/images/imagesPerfil/person2.png",
+        "Comment": "Siempre me ayudan en lo que necesito",
+        "FullName": "Luis Hernandez",
+        "Job": "Maestro"
+    },
+    {
+        "id":5,
+        "Photo": "/static/images/imagesPerfil/person3.jpg",
+        "Comment": "A veces el color del auto no me gusta pero engeneral bien",
+        "FullName": "Luis Hernandez",
+        "Job": "Ing. Sistemas"
+    },
+    {
+        "id":6,
+        "Photo": "/static/images/imagesPerfil/person1.jpg",
+        "Comment": "Me gusta mucho la atencion al cliente",
+        "FullName": "Luis Hernandez",
+        "Job": "Ing industrial"
+    },
+    {
+        "id":7,
+        "Photo": "/static/images/imagesPerfil/person1.jpg",
+        "Comment": "No me gusto mucho porque me cambiaron el color del auto ",
+        "FullName": "Luis Hernandez",
+        "Job": "Lic. enfermeria"
+    },
+    {
+        "id":8,
+        "Photo": "/static/images/imagesPerfil/person2.png",
+        "Comment": "Siempre me ayudan en lo que necesito",
+        "FullName": "Luis Hernandez",
+        "Job": "Nada"
+    }
+]
 
 export class HomePage extends React.PureComponent {
-  createComments(data,i){
+
+  createGrid(item,i){
     return(
-      <div key={'DivComment'+i}>
-      <Comments comment={data} key={'Comment'+i}/>
+      <Grid key={'Grid'+i}>
+        {item.map((comment) => { return this.createComments(comment)})}
+      </Grid>
+      )
+  }
+
+  createComments(data){
+    return(
+      <div key={'DivComment'+data.id}>
+       <Comments comment={data} key={'Comment'+data.id}/>
       </div>
     )
   }
+
+  createGrids(item, index){
+    gridAry.push(item)
+    var count=index+1
+    if (count % 4 == 0) {
+      var grid=this.createGrid(gridAry,index)
+      gridAry=[]
+      return(grid)
+    }
+  }
+
+
+
   componentDidMount(){
       this.props.commentsLoaded()
   }
@@ -83,12 +165,10 @@ export class HomePage extends React.PureComponent {
             <br/>
             <br/>
             <Slider {...settings}>
-
-              <Grid>{dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }</Grid>
-              <Grid>{dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }</Grid>
-
+              {aryComment.map((comment,i) => { return this.createGrids(comment,i)  }) }
             </Slider>
           </Container>
+            {console.log()}
       </div>
     );
   }

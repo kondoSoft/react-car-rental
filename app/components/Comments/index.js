@@ -10,9 +10,8 @@ import { Card, Image, Icon, Grid, Container } from 'semantic-ui-react'
 
 
 function Comments(props) {
-
+  console.log(props)
   return (
-
 
         <Grid.Column mobile={16} tablet={8} computer={4}>
           <Card className="backgroundCar spaceComillas">
