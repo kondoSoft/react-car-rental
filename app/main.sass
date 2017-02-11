@@ -536,65 +536,55 @@ i
   flex-direction: row
   flex-wrap: wrap
   justify-content: space-around
+  .contentFormReserves
+    flex: 1
+    max-width: 365px
+    .dataClient, .dataCard
+      margin: 1em 0
+  .contentReserveSingleCar
+    flex: 1
+    .formSingleCarReserve
+      margin-top: 1em
+      display: flex
+      .containerPlaceReserve
+        display: flex
+        flex-direction: row
+        flex-basis: 85%
+        .placeRentReserve, .placeReturnReserve
+          display: flex
+          flex: 1.1
+          padding: 1em 2em 0.5em 1em
+          flex-direction: column
+          border: 1px solid #ccc
+          h3
+            margin-bottom: 6px
+          .textUbication
+            color: #6d6d6d !important
+            margin-bottom: 2em
+            line-height: 1.2em
+          span
+            font-size: 12px
+            color: #b2b1b1
+            i
+              padding-right: 5px
+              font-size: 1.5em
+        .selectedRateReserve
+          display: flex
+          flex: 1
+          padding: 1em 2em 0.5em 1em
+          flex-direction: column
+          .textUbication
+            color: #6d6d6d !important
+            margin-bottom: 2em
+            line-height: 1.2em
+            margin-bottom: 5px
+            padding-right: 19px
+          .listText
+            margin-top: 0
+            font-size: 12px
+        .backReserve
+          background: #ebebeb
 
-.formSingleCarReserve
-  margin-top: 1em
-
-.contentReserveSingleCar
-  flex: 1
-
-.contentFormReserves
-  flex: 1
-  max-width: 365px
-
-.containerPlaceReserve
-  display: flex
-  flex-direction: row
-
-.placeRentReserve, .placeReturnReserve
-  display: flex
-  padding: 1em 0.55em 0.5em 1em
-  flex-direction: column
-  border: 1px solid #ccc
-
-.selectedRateReserve
-  display: flex
-  padding: 1em 2em 0.5em 1em
-  flex-direction: column
-  border: 1px solid #ccc
-
-.backReserve
-  background: #ebebeb
-
-.placeRentReserve h3, .placeReturnReserve h3
-  margin-bottom: 6px
-
-.placeRentReserve .textUbication, .placeReturnReserve .textUbication
-  color: #6d6d6d !important
-  margin-bottom: 2em
-  line-height: 1.2em
-
-.selectedRateReserve
-  .textUbication
-    color: #6d6d6d !important
-    margin-bottom: 2em
-    line-height: 1.2em
-    margin-bottom: 5px
-    padding-right: 19px
-  .listText
-    margin-top: 0
-    font-size: 12px
-
-.placeRentReserve span i, .placeReturnReserve span i
-  padding-right: 5px
-  font-size: 1.5em
-
-.placeRentReserve span, .placeReturnReserve span
-  font-size: 12px
-  color: #b2b1b1
-
-.dataClient, .dataCard
-  margin: 1em 0
 
 .dividerFormReserve
   width: 80% !important
@@ -681,9 +671,33 @@ i
 
 /*form-single car
 
+.containerReserve
+  .divSearchAvailable
+    order: 1
+    flex-basis: 100%
+  .contentReserveSingleCar
+    order: 2
+    flex: 1
+  .contentFormReserves
+    order: 3
+    flex: 4
+
+.containerQuotation,
+  display: flex !important
+  flex-wrap: wrap
+  .divSearchAvailable
+    order: 1
+    flex-basis: 100%
+  .contentSingleCar
+    order: 2
+    flex: 1
+  .formSingleCar
+    order: 3
+    flex: 4
 .contentSingleCar
   flex: 2
   /*height: 624px
+
 
 .formSingleCar
   flex: 1
@@ -713,7 +727,7 @@ i
   height: 40px
 
 .divSearchAvailable .newSearch
-  width: 400px
+  width: 365px
   position: absolute
   z-index: 2
 
@@ -1168,8 +1182,7 @@ footer
   flex-direction: column
   .singleCarContainer
     margin: 0 !important
-    width: 77.2% !important
-
+    width: 85%
 
 .singleCarReserveContainer
   border: 1px solid #E9F0F4
@@ -1284,6 +1297,12 @@ footer
 
 
 @media only screen and (max-width: 1199px) and (min-width: 320px)
+  .containerPlaceReserve
+    flex-basis: 95% !important
+  .contentReserveSingleCar
+    .singleCarContainer
+      margin: 0 !important
+      width: 95% !important
   .containerPlaceReserve, .contentReserveSingleCar
     flex-direction: column
 
@@ -1306,16 +1325,6 @@ footer
 
 /***********QUOTATION******************
 
-.containerQuotation
-  display: flex !important
-  flex-wrap: wrap-reverse
-
-@media only screen and (max-width: 999px) and (min-width: 768px)
-  .containerQuotation
-    flex-direction: row
-    width: 100% !important
-    padding-left: 15px !important
-    margin-right: 15px !important
 
 @media only screen and (max-width: 560px) and (min-width: 320px)
   .singleCarContainer .centralData
@@ -1355,17 +1364,14 @@ footer
   .containerQuotation
     .divSearchAvailable
       order: 1
+    .divSearchAvailable .newSearch
+      width: 305px !important
 
   .singleCarReserveContainer
     width: 98.3%
   .containerPlaceReserve
     margin-right: 10px
-  .contentReserveSingleCar
-    display: flex
-    flex-direction: column
-    .singleCarContainer
-      margin: 0 !important
-      width: 98.5% !important
+
 
   .divSearchAvailable
     width: 100%
@@ -1401,9 +1407,7 @@ footer
 
   .contentReserveSingleCar
     height: 718px
-    .singleCarContainer
-      margin: 0 !important
-      width: 100% !important
+
   .contentFormReserves
     margin-top: 15px !important
     width: 100%
@@ -1448,7 +1452,7 @@ footer
       border: none
     .newSearch
       width: 100% !important
-      z-index: 1000
+      z-index: 101
       .fadeSearchOpen
         height: 450px
       .gridAutocomplete
@@ -1461,31 +1465,29 @@ footer
     margin-left: 1em
     margin-right: 1em
     .singleCarContainer
-      width: 100% !important
+      // width: 100% !important
       margin: 0 0 0 0 !important
       max-height: none
   .contentFormReserves
     margin-right: 1em
     margin-top: 0 !important
-
-
-  .formSingleCar
-    max-width: 100% !important
-  .contentSingleCar
-    padding-right: .5em
-    padding-top: 1em
-  .singleCarContainer-title
-    max-height: 40px
-  .singleCarContainer-data
-    margin: 0 0 1.2em 0 !important
-    padding-left: .8em !important
-  .singleCarContainer-carImage > img
-    width: 190px !important
-    height: 120px !important
-  .price-row
-    margin-top: 1.5em
-  .km, .icon-km
-    visibility: hidden
+    .formSingleCar
+      max-width: 100% !important
+    .contentSingleCar
+      padding-right: .5em
+      padding-top: 1em
+    .singleCarContainer-title
+      max-height: 40px
+    .singleCarContainer-data
+      margin: 0 0 1.2em 0 !important
+      padding-left: .8em !important
+    .singleCarContainer-carImage > img
+      width: 190px !important
+      height: 120px !important
+    .price-row
+      margin-top: 1.5em
+    .km, .icon-km
+      visibility: hidden
 
   @keyframes fadeSearchOpen
       0%
@@ -1531,9 +1533,6 @@ footer
       margin-left: 0 !important
       margin-right: 0 !important
 
-  .containerQuotation
-    .divSearchAvailable
-      order: 1
 
   .select
     width: 70% !important
@@ -1543,6 +1542,9 @@ footer
   .contentFormReserves
     width: 100%
     max-width: none !important
+    .formReserveRight
+      margin-left: 1em
+      margin-right: 1em
 
 
   .contentReserveSingleCar
@@ -1602,6 +1604,7 @@ footer
       width: 100% !important
       position: absolute
       background-color: #2b5bac
+      z-index: 101
       .fadeSearchOpen
         height: 400px
     .selectFormSearchWhen
@@ -1657,6 +1660,107 @@ footer
     animation: 500ms fadeSearchClose
     h1
       display: none
+
+  .contentReserveSingleCar
+    margin-left: 1em
+    margin-right: 1em
+    .singleCarContainer
+      width: 100% !important
+      margin: 0 0 0 0 !important
+      max-height: none
+  .contentFormReserves
+    margin-right: 1em
+    margin-top: 0 !important
+
+  .price-row
+    margin-bottom: .6em
+    order: 1
+    flex-basis: 100%
+    .km
+      flex-basis: 11%
+    .icon-km
+      flex-basis: 2%
+    .three
+      flex-grow: 6
+
+@media only screen and (max-width: 991px)
+  .ui.container.containerQuotation
+    flex-direction: column
+    .divSearchAvailable
+      order: 1
+    .contentSingleCar
+      align-items: center
+      order: 2
+      margin-right: 1em
+    .formSingleCar
+      order: 3
+      margin: 0 auto
+
+  .containerReserve
+    flex-direction: column
+@media only screen and (max-width: 560px)
+  .containerQuotation
+    flex-wrap: column
+    .formSingleCar
+      order: 3
+      margin-right: 1em !important
+    .contentSingleCar
+      order: 2
+      .singleCarContainer
+        margin: 0
+        width: 100
+        max-height: none
+        .singleCarContainer-title
+          display: flex
+          justify-content: space-between
+    .formSingleCar
+      max-width: none
+      margin-right: 1em
+
+  .contentReserveSingleCar, .containerQuotation
+    margin-left: 1em
+    margin-right: 1em
+    .singleCarContainer-title
+      display: flex
+      flex-wrap: wrap
+      max-height: none
+      h2
+        margin-bottom: 0
+      img
+        height: 36px
+        margin-bottom: .7em
+    .singleCarContainer
+      width: 100% !important
+      .creatur-row
+        .singleCarContainer-carImage
+          justify-content: center
+          display: flex
+          order: 1
+        .singleCarContainer-data
+          order: 2
+          display: flex
+          flex-flow: wrap
+          margin: 1em 1em .8em 1em
+          padding-left: 0
+          .price-row
+            margin-bottom: .6em
+            order: 1
+            flex-basis: 100%
+            .km
+              flex-grow: 1
+            .icon-km
+              flex-grow: 1.5
+            .three
+              flex-grow: 9
+          .centralData
+            margin-top: 0 !important
+            order: 2
+            flex-basis: 55%
+          .contentIconSingleCar
+            order: 3
+            align-self: flex-end
+            flex-basis: 100%
+            justify-content: space-around
 
 @media only screen and (max-width: 500px)
   .contentAvailable
