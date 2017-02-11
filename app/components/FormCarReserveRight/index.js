@@ -6,16 +6,12 @@
 
 import React from 'react';
 import { Input,Divider, Form, options } from 'semantic-ui-react'
-import NewSearch from '../NewSearch'
 // import styled from 'styled-components';
 
 
 function FormCarReserveRight(props ) {
   return (
     <div className='formReserveRight'>
-      <div className="divSearch">
-        <NewSearch loading={props.loading} saveDate={props.saveDate} loadingTrue={props.loadingTrue}  saveLocation={props.saveLocation}/>
-      </div>
       <div className="dataClient">
         <div className='titleDataClient newSearch'>
           <span>Datos del arrendador</span>

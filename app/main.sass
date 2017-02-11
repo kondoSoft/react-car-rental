@@ -333,6 +333,7 @@ h1.ui.header
   width: 90%
 
 .selectFormSearch
+  height: 37px
   width: 93%
   overflow: hidden
   display: flex
@@ -400,10 +401,11 @@ h1.ui.header
           padding: 8px 0 12px
           -webkit-appearance: none
 
-.selectFormSearchWhen
-  .input-group-addon-standar
-    padding: .35em 1.1em
-    font-size: .95em
+.gridAutocomplete, .divWhen
+  .selectFormSearchWhen
+    .input-group-addon-standar
+      padding: .35em 1.1em !important
+      font-size: .95em  !important
 
 .input-group-addon-standar
   width: 40px
@@ -415,7 +417,6 @@ h1.ui.header
   color: #555
   text-align: center
   background-color: #87b672
-  border: 1px solid transparent
   i
     text-align: center
     width: 1.4em
@@ -703,7 +704,6 @@ i
   text-align: center
   min-height: 45px
   align-items: center
-
   i
     margin-left: 10px
     color: #c2c9e5
@@ -713,10 +713,9 @@ i
   height: 40px
 
 .divSearchAvailable .newSearch
-  width: 25% !important
+  width: 400px
   position: absolute
   z-index: 2
-  background-color: rgba(45, 72, 192, 0.9)
 
 // SLIDE
 .containerFormSearch
@@ -745,8 +744,6 @@ i
   justify-content: flex-end
   .form
     background: transparent
-  .newSearch
-    width: 100%
   #inputSearchDisplay
     height: 0
     overflow: hidden
@@ -761,7 +758,7 @@ i
     color: #555
     text-align: center
     background-color: #87b672
-    border: 1px solid #ccc
+    border: none
     i
       text-align: center
       width: 1.4em
@@ -943,6 +940,8 @@ i
 .cri-kilometraje:before, .cri-paloma:before, .cri-puerta:before, .cri-seguro:before, .cri-transmision:before
   display: inline
 
+.buttonCotizar
+  z-index: 100
 .singleCarContainer .buttonCotizar
   margin: 0
 
@@ -1318,31 +1317,6 @@ footer
     padding-left: 15px !important
     margin-right: 15px !important
 
-@media only screen and (max-width: 999px) and (min-width: 320px)
-  .formSingleCar
-    max-width: 100% !important
-  .contentSingleCar
-    padding-right: .5em
-    padding-top: 1em
-  .singleCarContainer
-    max-height: none !important
-    width: 100% !important
-    margin: 0 0 .5em 0 !important
-  .singleCarContainer-title
-    max-height: 40px
-  .singleCarContainer-data
-    margin: 0 0 1.2em 0 !important
-    padding-left: .8em !important
-  .singleCarContainer-carImage > img
-    width: 190px !important
-    height: 120px !important
-  .price-row
-    margin-top: 1.5em
-  .km, .icon-km
-    visibility: hidden
-  .menuNav
-    display: none !important
-
 @media only screen and (max-width: 560px) and (min-width: 320px)
   .singleCarContainer .centralData
     margin: 1em 0 1em 0 !important
@@ -1378,6 +1352,10 @@ footer
 
 // Small Monitor
 @media only screen and (min-width: 992px) and (max-width: 1199px)
+  .containerQuotation
+    .divSearchAvailable
+      order: 1
+
   .singleCarReserveContainer
     width: 98.3%
   .containerPlaceReserve
@@ -1389,11 +1367,40 @@ footer
       margin: 0 !important
       width: 98.5% !important
 
+  .divSearchAvailable
+    width: 100%
+    .newSearch
+      width: 365px !important
+      .fadeSearchOpen
+        height: 450px
+    .Select
+      width: 76.3%
+      left: 15.4%
 // Tablets
 @media only screen and (min-width: 768px) and (max-width: 991px)
+  .containerQuotation
+    .divSearchAvailable
+      order: 1
+
+  .ui.container
+    margin-right: 0 !important
+    margin-left: 0 !important
+    width: 100% !important
+
+  .ui.container.containerForm
+    margin-left: auto !important
+    margin-right: auto !important
+    width: 723px !important
+
+  .divAvailable
+    margin-left: 3em
+    margin-right: auto
+
+  .divTitleCar
+    padding-top: 25px
+
   .contentReserveSingleCar
-    display: flex
-    flex-direction: column
+    height: 718px
     .singleCarContainer
       margin: 0 !important
       width: 100% !important
@@ -1409,20 +1416,21 @@ footer
     margin-left: 0
     margin-right: 0
 
-  .gridAutocomplete
-    padding-left: 0 !important
-    padding-right: 0  !important
-    position: relative
-    right: 1.3%
+  .divSearch
+    .gridAutocomplete
+      padding-left: 0 !important
+      padding-right: 0  !important
+      position: relative
+      right: 1.3%
 
   .inner_toggle
     display: none
 
   .selectFormSearch
-    width: 85%
+    width: 90%
     .Select
-      width: 79.3%
-      left: 13.4%
+      width: 82%
+      left: 10.4%
   .selectFormSearchWhen
     justify-content: flex-start
     width: 96%
@@ -1436,14 +1444,48 @@ footer
 
   .divSearchAvailable
     width: 100%
+    .input-group-addon-standar
+      border: none
     .newSearch
-      width: 60% !important
+      width: 100% !important
+      z-index: 1000
       .fadeSearchOpen
         height: 450px
+      .gridAutocomplete
+        justify-content: flex-start
     .Select
       width: 76.3%
       left: 15.4%
 
+  .contentReserveSingleCar
+    margin-left: 1em
+    margin-right: 1em
+    .singleCarContainer
+      width: 100% !important
+      margin: 0 0 0 0 !important
+      max-height: none
+  .contentFormReserves
+    margin-right: 1em
+    margin-top: 0 !important
+
+
+  .formSingleCar
+    max-width: 100% !important
+  .contentSingleCar
+    padding-right: .5em
+    padding-top: 1em
+  .singleCarContainer-title
+    max-height: 40px
+  .singleCarContainer-data
+    margin: 0 0 1.2em 0 !important
+    padding-left: .8em !important
+  .singleCarContainer-carImage > img
+    width: 190px !important
+    height: 120px !important
+  .price-row
+    margin-top: 1.5em
+  .km, .icon-km
+    visibility: hidden
 
   @keyframes fadeSearchOpen
       0%
@@ -1469,6 +1511,9 @@ footer
     animation: 500ms fadeSearchClose
     h1
       display: none
+
+
+
 // Mobile
 @media only screen and (max-width: 767px)
   .ui.container
@@ -1486,15 +1531,22 @@ footer
       margin-left: 0 !important
       margin-right: 0 !important
 
+  .containerQuotation
+    .divSearchAvailable
+      order: 1
 
   .select
     width: 70% !important
-  .containerReserve
+  .ui.container.containerReserve
     flex-direction: column !important
 
   .contentFormReserves
     width: 100%
     max-width: none !important
+
+
+  .contentReserveSingleCar
+    margin-right: 1em
 
   .inner_toggle
     display: none
@@ -1513,14 +1565,14 @@ footer
 
   .gridAutocomplete
     justify-content: space-around
-    left: 25px
+    left: 30px
     position: relative
     width: 95.5%
     .selectFormSearch
       width: 95%
       .Select
         position: inherit
-        width: 80%
+        width: 82%
 
   .divWhen
     width: 76%
@@ -1537,25 +1589,49 @@ footer
   .ui.container.containerComments
     margin-left: 3em !important
 
-
+  .divSearchAvailable
+    margin-bottom: 50px
   .divSearch
     .newSearch
       position: relative !important
   .divSearchAvailable, .divSearch
     width: 100%
+    .input-group-addon-standar
+      border: none
     .newSearch
       width: 100% !important
       position: absolute
-      z-index: 2
-      background-color: rgba(45, 72, 192, 0.9)
+      background-color: #2b5bac
       .fadeSearchOpen
         height: 400px
     .selectFormSearchWhen
       .input-group-addon-standar
-        border: none
         i
           width: 1.6em
-          font-size: 1em
+
+  .contentAvailable
+    #rowAvailable
+      margin-left: 1.4em
+      margin-right: auto
+      .contentCardCar
+        .ui.card.cardCar
+          border-radius: 0 !important
+        .buttonCotizar
+          border-radius: 0 !important
+
+  .containerReserve
+    .singleCarContainer
+      width: 100%
+
+  .divTitleCar
+    border: 1px solid #ccc
+    height: 50px
+    margin-right: 15px
+    margin-left: 5px
+    h3
+      margin-left: 5px !important
+      margin-top: 5px !important
+      padding: 8px !important
 
   @keyframes fadeSearchOpen
       0%
@@ -1581,3 +1657,25 @@ footer
     animation: 500ms fadeSearchClose
     h1
       display: none
+
+@media only screen and (max-width: 500px)
+  .contentAvailable
+    #rowAvailable
+      margin-left: 1.4em
+      margin-right: 2.2em
+      flex-direction: column
+      .contentCardCar
+        width: 100% !important
+        .ui.card.cardCar
+          width: 100% !important
+          border-radius: 0 !important
+          height: 250px !important
+          .contentReserve
+            .contentCarPrice
+              .contentImgCar
+                flex: 5
+                .imgCar
+                  width: 220px
+            .contentIcon
+              margin-top: 5px
+              width: 100%

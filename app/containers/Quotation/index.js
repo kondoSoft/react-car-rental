@@ -14,6 +14,7 @@ import selectHomePageState from '../HomePage/selectors'
 import {Container} from 'semantic-ui-react'
 import SingleCar from '../../components/SingleCar'
 import FormCar from '../../components/FormCar'
+import NewSearch from '../../components/NewSearch'
 
 
 export class Quotation extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -44,12 +45,13 @@ export class Quotation extends React.PureComponent { // eslint-disable-line reac
             { name: 'description', content: 'Description of Quotation' },
           ]}
         />
+        <div className="divSearchAvailable">
+          <NewSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
+        </div>
+        <div className='contentSingleCar'>
+          {dataInitial.map((item,i)=>{return this.createQuotationType(item,i)})}
 
-
-         <div className='contentSingleCar'>
-         {dataInitial.map((item,i)=>{return this.createQuotationType(item,i)})}
-
-         </div>
+        </div>
          <FormCar location={dataLocation}/>
 
        </Container>
