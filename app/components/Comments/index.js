@@ -22,7 +22,7 @@ function Comments(props) {
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              <Image shape='circular' floated='left' size='mini' alt='User Photo' src={props.comment.Photo} />
+              <Image shape='circular' floated='left' size='mini' alt='User Photo' src={`http://187.217.208.8:8000${props.comment.Photo}`} />
               <a>
                 {props.comment.FullName}
               </a>

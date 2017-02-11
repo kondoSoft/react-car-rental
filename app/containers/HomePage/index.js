@@ -85,6 +85,7 @@ export class HomePage extends React.PureComponent {
             <Slider {...settings}>
 
               <Grid>{dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }</Grid>
+              <Grid>{dataInitial.map((comment,i) => { return this.createComments(comment,i)}) }</Grid>
 
             </Slider>
           </Container>
