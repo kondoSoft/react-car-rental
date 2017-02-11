@@ -168,7 +168,6 @@ export class HomePage extends React.PureComponent {
               {aryComment.map((comment,i) => { return this.createGrids(comment,i)  }) }
             </Slider>
           </Container>
-            {console.log()}
       </div>
     );
   }
