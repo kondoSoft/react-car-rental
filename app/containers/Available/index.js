@@ -38,8 +38,10 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
   createGridCarRow(type,i){
     const dataAry = this.props.HomePage.cars
     return(
-    <div key={'div'+i}>
-      <Header as="h3" className="titleCar" key={'Header'+i}>{type}</Header>
+    <div key={'div'+i} className='divAvailable'>
+      <div className='divTitleCar'>
+        <Header as="h3" className="titleCar" key={'Header'+i}>{type}</Header>
+      </div>
       <Grid columns={5} className="contentAvailable" key={'Grid'+i} >
         <Grid.Row id='rowAvailable' key={'GridRow'+i}>
           {dataAry[type].map((item, i,array)=>{ return this.createCardCar(item,i,array) })}

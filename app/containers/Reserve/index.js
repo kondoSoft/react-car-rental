@@ -16,6 +16,8 @@ import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
 import { selectHomePageState } from '../HomePage/selectors'
 import { loadCarReserve } from './actions'
+import NewSearch from '../../components/NewSearch'
+
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getCarId(car, i){
@@ -45,6 +47,9 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
               { name: 'description', content: 'Description of Reserve' },
             ]}
           />
+          <div className="divSearchAvailable">
+            <NewSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
+          </div>
           {dataInitial.map((car, i)=>{ return this.getCarItem(car, i)})}
           <div className='contentFormReserves'>
             <FormCarReserveRight loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
