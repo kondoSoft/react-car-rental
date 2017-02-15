@@ -13,35 +13,20 @@ import { Link } from 'react-router'
 function Navigation() {
   return (
     <nav className="navBar">
+    <nav className="wrapper">
+      <Link to="/">
+        <img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/creatuviaje-logo.png" />
+      </Link>
       <input type="checkbox" id="menu-toggle" />
-      <label htmlFor="menu-toggle" className="label-toggle"></label>
+        <label htmlFor="menu-toggle" className="label-toggle"></label>
       <ul>
-        <li><Link to='' >Servicios</Link></li>
-        <li><Link to='' >Mi Reserva</Link></li>
-        <li><Link to='' >Tu Viaje</Link></li>
-        <li><Link to='' >Inicia Sesion</Link></li>
+        <Link href="#"><li>Servicio</li></Link>
+        <Link href="#"><li>Mi Reserva</li></Link>
+        <Link href="#"><li>Tu Viaje</li></Link>
+        <Link href="#"><li>Inicia Sesion</li></Link>
       </ul>
     </nav>
-      //   <nav className="navigation" id="main-navigation">
-      //     <a className="navigation-toggle" href="#" id="nav-open">Nav</a>
-      //     <div>
-      //      <ul>
-      //        <li><Link className="" to="/">Servicios</Link></li>
-      //        <li><Link className="" to="/reserve">Mi Reserva</Link></li>
-      //        <li><Link className="" to="/available">Tu Viaje</Link></li>
-      //        <li><Link className="login" to='/login'>Inicia Sesion</Link></li>
-      //        {/* <li className='liTravel'>
-      //          <Link className="travel" to="">
-      //            <i className='fa fa-suitcase'></i>
-      //          </Link>
-      //        </li> */}
-      //        <li className='liLogout'>
-      //          <Link className="logout" to=""> <i className='fa fa-sign-out' ></i> </Link>
-      //        </li>
-      //      </ul>
-      //   </div>
-      //  </nav>
-
+  </nav>
   );
 }
 
