@@ -26,20 +26,20 @@ export function* getAPI(){
       headers:{
         'Content-Type':'application/json'
       },
-      body:JSON.stringify({
-        "pickUPLocation":"LAX",
-        "returnLocation":"LAX",
-        "pickUPDateTimte":"2017-02-17T10:00",
-        "returnDateTimte":"2017-02-20T11:00",
-        "SpecialEquip":0
-      })
       // body:JSON.stringify({
-      //   "pickUPLocation": cars.pickUPLocation,
-      //   "returnLocation": cars.returnLocation,
-      //   "pickUPDateTimte": cars.pickUpDate+cars.pickupTime,
-      //   "returnDateTimte": cars.returnDate+cars.returnTime,
-      //   "SpecialEquip":'0'
+      //   "pickUPLocation":"LAX",
+      //   "returnLocation":"LAX",
+      //   "pickUPDateTimte":"2017-02-20T10:00",
+      //   "returnDateTimte":"2017-02-22T11:00",
+      //   "SpecialEquip":0
       // })
+      body:JSON.stringify({
+        "pickUPLocation": cars.pickUPLocation,
+        "returnLocation": cars.returnLocation,
+        "pickUPDateTimte": cars.pickUpDate+cars.pickupTime,
+        "returnDateTimte": cars.returnDate+cars.returnTime,
+        "SpecialEquip":'0'
+      })
     },)
     yield put(carsLoaded(getcar))
     browserHistory.push('/available')

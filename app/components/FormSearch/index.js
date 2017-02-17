@@ -12,6 +12,7 @@ import FormAutocomplete from '../../components/FormAutocomplete'
 import LoadingSpin from '../../components/LoadingSpin'
 
 function FormSearch(props) {
+  // console.log(props.loading);
   return (
     <div id="inputSearchDisplay">
       <div className='ui form' >

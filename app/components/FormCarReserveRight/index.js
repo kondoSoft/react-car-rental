@@ -9,6 +9,7 @@ import { Input,Divider, Form, options } from 'semantic-ui-react'
 // import styled from 'styled-components';
 
 
+
 function FormCarReserveRight(props ) {
   return (
     <div className='formReserveRight'>
@@ -21,7 +22,7 @@ function FormCarReserveRight(props ) {
           <div className='spanFormData'>
             <span>Mail</span>
           </div>
-          <Input placeholder='tucorreo@aqui.com' size = 'small' className='inputFormSize'/>
+          <Input id='correo' placeholder='tucorreo@aqui.com' size = 'small' className='inputFormSize'/>
           <div className='spanFormData'>
             <span>Nombre(s)</span>
           </div>

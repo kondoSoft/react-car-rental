@@ -6,6 +6,7 @@
 
 import React from 'react';
 // import styled from 'styled-components';
+import { Link } from 'react-router'
 import { Container, Grid, Icon, Divider } from 'semantic-ui-react'
 
 
@@ -24,11 +25,11 @@ function Footer() {
                 <Icon link color='green' bordered name='twitter'></Icon>
               </Grid.Column>
               <Grid.Column mobile={16} tablet={16} computer={12} className="menuFooter">
-                <span className="trianguloDer"></span><a>INICIO</a>
-                <span className="trianguloDer"></span><a>SERVICIOS</a>
-                <span className="trianguloDer"></span><a>SOBRE NOSOTROS</a>
-                <span className="trianguloDer"></span><a>MI RESERVA</a>
-                <span className="trianguloDer"></span><a>TU VIAJE</a>
+                <span className="trianguloDer"></span><Link to='/'>INICIO</Link>
+                <span className="trianguloDer"></span><Link to=''>SERVICIOS</Link>
+                <span className="trianguloDer"></span><Link to=''>SOBRE NOSOTROS</Link>
+                <span className="trianguloDer"></span><Link to=''>MI RESERVA</Link>
+                <span className="trianguloDer"></span><Link to=''>TU VIAJE</Link>
 
               </Grid.Column>
             </Grid.Row>

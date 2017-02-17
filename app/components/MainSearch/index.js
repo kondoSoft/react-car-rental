@@ -17,7 +17,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
 function MainSearch(props) {
-
+console.log(props.loading);
+console.log(props.loadingTrue);
   return (
     <div>
       <Container fluid className='slider'>

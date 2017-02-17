@@ -47,6 +47,7 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 		});
 	}
   showReturn(e , data){
+    console.log(e);
     if( data.checked == true){
       this.setState({
         UI: {checkbox:''}
