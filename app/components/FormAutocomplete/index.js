@@ -75,9 +75,8 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                   placeholder = 'Donde recogera el auto?'
                   />
 
-
               </div>
-              <span className="validation">Error</span>
+              <span id='spanPickUp' className='out'>Error</span>
             </Grid.Row>
             <Grid.Row centered id='return'>
               <div className={`selectFormSearch ${this.state.UI.checkbox}`} >

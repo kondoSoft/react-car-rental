@@ -12,7 +12,9 @@ export function* getAPI(){
   const requestURL = `http://187.217.208.8:8000/consult/`
   if (cars.pickUPLocation==''){
     yield put(loadingFalse())
-    alert('Ingrese ubicacion')
+    var spanError = document.getElementById('spanPickUp')
+    spanError.classList.remove("out")
+    spanError.classList.add("validation")
   }
   else if (cars.pickUpDate==''){
     yield put(loadingFalse())

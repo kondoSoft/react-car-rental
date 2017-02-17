@@ -12,12 +12,21 @@ body
 /* ANIMATIONS */
 .activeReturn
   display: none !important
+.out
+  display: none
 .validation
+  display:inherit
   position: relative
+  z-index: 2
   top: 10px
-  left: 
+  left:
   color: white
-
+  animation: fadein 2s
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
 @keyframes fadeSearchOpen
     0%
       height: 0px
