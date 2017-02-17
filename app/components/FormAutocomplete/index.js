@@ -47,7 +47,6 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
 		});
 	}
   showReturn(e , data){
-    console.log(e);
     if( data.checked == true){
       this.setState({
         UI: {checkbox:''}
@@ -76,7 +75,9 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                   placeholder = 'Donde recogera el auto?'
                   />
 
+
               </div>
+              <span className="validation">Error</span>
             </Grid.Row>
             <Grid.Row centered id='return'>
               <div className={`selectFormSearch ${this.state.UI.checkbox}`} >

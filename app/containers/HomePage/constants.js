@@ -5,6 +5,7 @@
  */
 
 export const SET_LOADING_TRUE = 'app/HomePage/SET_LOADING_TRUE'
+export const SET_LOADING_FALSE = 'app/HomePage/SET_LOADING_FALSE'
 export const LOAD_CARS_SUCCESS = 'app/HomePage/LOAD_CARS_SUCCESS'
 export const LOAD_COMMENTS = 'app/HomePage/LOAD_COMMENTS'
 export const LOAD_COMMENTS_SUCCESS = 'app/HomePage/LOAD_COMMENTS_SUCCESS'
