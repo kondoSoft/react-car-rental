@@ -8,20 +8,26 @@ body
 #app
   background: #FFF !important
 /*semantic css OVERWRITE
-
-/* ANIMATIONS */
-.activeReturn
-  display: none !important
+/* Validations */
+.buttonDisabled
+  
 .out
   display: none
 .validation
   display:inherit
   position: relative
   z-index: 2
-  top: 10px
-  left:
-  color: white
+  top: 4px
+  right: 43px
+  color: #87b672
+  text-shadow: 1px 1px 1px black
   animation: fadein 2s
+  font-size: 15px
+
+/* ANIMATIONS */
+.activeReturn
+  display: none !important
+
 @keyframes fadein
   from
     opacity: 0
@@ -684,6 +690,8 @@ i
 // SLIDE
 .containerFormSearch
   height: 540px
+  .is-open
+    z-index: 105
 .containerFormSearch .slick-list
   height: 540px
 

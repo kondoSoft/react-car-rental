@@ -104,6 +104,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
                 onChange={this.handleChange}
               />
             </div>
+            <span id='spanPickUpDate' className='out validation'>Selecciona ubicacion</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -115,6 +116,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             />
           </div>
         </div>
+        <span id='spanPickUpTime' className='out validation'>Selecciona ubicacion</span>
         <div className="divLabelDate">
           <span className="spanWhite">Cuando lo va a entregar?</span>
         </div>
@@ -127,6 +129,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
                 onChange={this.handleChangeReturn}
               />
             </div>
+            <span id='spanreturnDate' className='out validation'>Selecciona ubicacion</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -138,6 +141,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             />
           </div>
         </div>
+        <span id='spanreturnTime' className='out validation'>Selecciona ubicacion</span>
       </div>
     );
   }

@@ -13,7 +13,7 @@ import MainSearch from '../../components/MainSearch'
 // import Comments from '../../components/Comments'
 import Comments from '../../components/CommentSlide'
 import {Container, Grid, Icon, Button} from 'semantic-ui-react'
-import { loadingTrue, saveDate, saveLocation, commentsLoaded } from './actions'
+import { loadingTrue, saveDate, saveLocation, commentsLoaded, validationData} from './actions'
 import Slider from 'react-slick'
 
 var gridCounter=0
@@ -158,7 +158,7 @@ export class HomePage extends React.PureComponent {
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-          <MainSearch loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
+          <MainSearch validation={this.props.validationData} loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
           <Container className="containerComments">
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
@@ -194,6 +194,9 @@ function mapDispatchToProps(dispatch) {
     },
     commentsLoaded:(type)=>{
       dispatch(commentsLoaded(type))
+    },
+    validationData:(type)=>{
+      dispatch(validationData(type))
     },
     dispatch,
   };

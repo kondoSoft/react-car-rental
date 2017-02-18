@@ -15,6 +15,7 @@ import {
   LOAD_COMMENTS_SUCCESS,
   SAVE_LOCATION,
   SAVE_DATE,
+  SET_VALIDATION,
 } from './constants';
 
 const initialState = fromJS({
@@ -32,7 +33,9 @@ const initialState = fromJS({
     "returnDate":"",
     "returnTime":"",
     "SpecialEquip":'0',
-  }
+  },
+  'validation': false,
+
 });
 
 function homePageReducer(state = initialState, action)
@@ -52,6 +55,8 @@ function homePageReducer(state = initialState, action)
       return state.setIn(['values', action.data[1]], action.data[0])
     case SAVE_LOCATION:
       return state.setIn(['values', action.location[1]], action.location[0])
+    case SET_VALIDATION:
+      return state.set('validation', true)
     default:
       return state;
   }

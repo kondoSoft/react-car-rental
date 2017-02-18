@@ -23,7 +23,8 @@ function FormSearch(props) {
           <Divider className='dividerForm' />
           <DatePickerForm  saveDate={props.saveDate} />
           <Grid.Row centered className='divButtonGreeen'>
-            <Button className="buttonGreen" onClick={props.loadingTrue} >BUSCAR EL MEJOR PRECIO!</Button>
+            {console.log(props)}
+            <Button className="buttonGreen" onClick={props.loadingTrue} disabled>BUSCAR EL MEJOR PRECIO!</Button>
           </Grid.Row>
         </Grid>
       </div>

@@ -24,9 +24,9 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
   onChange (value ) {
     //TO DO
     //al tercer dato, realizar el request
-		this.setState({
-      startLocation: value,
-		});
+      this.setState({
+        startLocation: value,
+      });
     this.props.saveLocation([value.Code, 'pickUPLocation'])
 	}
   onChangeReturn (valueReturn){
@@ -76,7 +76,7 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                   />
 
               </div>
-              <span id='spanPickUp' className='out'>Error</span>
+              <span id='spanPickUpLocation' className='out validation'>Selecciona ubicacion</span>
             </Grid.Row>
             <Grid.Row centered id='return'>
               <div className={`selectFormSearch ${this.state.UI.checkbox}`} >
@@ -101,7 +101,6 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                   defaultChecked
                   label={<label className="spanWhite checkboxForm">Entregar en la misma ubicacion</label>}
                 />
-
               </Grid.Column>
             </Grid.Row>
           </Grid>

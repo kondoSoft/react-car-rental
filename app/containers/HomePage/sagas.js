@@ -10,33 +10,38 @@ import { makeSelectCars, makeSelectComments } from './selectors'
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
-  if (cars.pickUPLocation==''){
-    yield put(loadingFalse())
-    var spanError = document.getElementById('spanPickUp')
-    spanError.classList.remove("out")
-    spanError.classList.add("validation")
-  }
-  else if (cars.pickUpDate==''){
-    yield put(loadingFalse())
-    alert('Seleccione Fecha de Recogida')
-  }
-  else if (cars.pickupTime==''){
-    yield put(loadingFalse())
-    alert('Seleccione Hora de Recogida')
-  }
-  else if (cars.returnDate==''){
-    yield put(loadingFalse())
-    alert('Seleccione Fecha de Entrega')
-  }
-  else if (cars.returnTime==''){
-    yield put(loadingFalse())
-    alert('Seleccione Hora de Entrega')
-  }
-  else {
-    console.log(cars);
-    // const requestURL = `http://jsonplaceholder.typicode.com/posts`
+  // if (cars.pickUPLocation==''){
+  //   yield put(loadingFalse())
+  //   var spanError = document.getElementById('spanPickUpLocation')
+  //   spanError.classList.remove("out")
+  //   spanError.classList.add("validation")
+  // }
+  // else if (cars.pickUpDate==''){
+  //   yield put(loadingFalse())
+  //   var spanError = document.getElementById('spanPickUpDate')
+  //   spanError.classList.remove("out")
+  //   spanError.classList.add("validation")
+  // }
+  // else if (cars.pickupTime==''){
+  //   yield put(loadingFalse())
+  //   var spanError = document.getElementById('spanPickUpTime')
+  //   spanError.classList.remove("out")
+  //   spanError.classList.add("validation")
+  // }
+  // else if (cars.returnDate==''){
+  //   yield put(loadingFalse())
+  //   var spanError = document.getElementById('spanreturnDate')
+  //   spanError.classList.remove("out")
+  //   spanError.classList.add("validation")
+  // }
+  // else if (cars.returnTime==''){
+  //   yield put(loadingFalse())
+  //   var spanError = document.getElementById('spanreturnTime')
+  //   spanError.classList.remove("out")
+  //   spanError.classList.add("validation")
+  // }
+  // else {
     try {
-      // yield currentLocation()
       const getcar = yield call(request, requestURL, {
         method:'POST',
         headers:{
@@ -69,8 +74,7 @@ export function* getAPI(){
       console.log(err);
     }
   }
-
-}
+// }
 export function* getAPIComments(){
   const requestURL = `http://187.217.208.8:8000/commentsApi/`
   try{
