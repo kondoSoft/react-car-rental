@@ -67,13 +67,13 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
 		this.setState({
 			startHour: value
 		});
-  this.props.saveDate([value, 'pickupTime'])
+  this.props.saveDate([value+"-06:00", 'pickupTime'])
 	}
   onChangeEndHour(valueEndHour) {
     this.setState({
       endHour: valueEndHour
     });
-  this.props.saveDate([valueEndHour,'returnTime'])
+  this.props.saveDate([valueEndHour+"-06:00",'returnTime'])
   }
   handleChange(date) {
     this.setState({

@@ -12,8 +12,21 @@ body
 /* ANIMATIONS */
 .activeReturn
   display: none !important
-
-
+.out
+  display: none
+.validation
+  display:inherit
+  position: relative
+  z-index: 2
+  top: 10px
+  left:
+  color: white
+  animation: fadein 2s
+@keyframes fadein
+  from
+    opacity: 0
+  to
+    opacity: 1
 @keyframes fadeSearchOpen
     0%
       height: 0px
@@ -75,11 +88,12 @@ nav
       text-decoration: none
       transition: all .5s ease
       padding: 10px 20px
-      &:hover
-        color: #FFF !important
-        background-color: #87b672
+
   li
     display: inline-block
+    &:hover
+      color: #FFF !important
+      background-color: #87b672
   #menu-toggle, .label-toggle
     display: none
   .wrapper
@@ -88,7 +102,14 @@ nav
     justify-content: space-between
 
 @media screen and (max-width: 768px)
+  header
+    .ui.container
+      margin-left: 0 !important
+
   nav
+    .aLogo
+      display: flex
+      justify-content: center
     ul
       display: block
       height: 0
@@ -107,18 +128,21 @@ nav
       padding: 2em 0
     #menu-toggle:checked ~ ul
       opacity: 1
-      height: 100vh
+      height: 85vh
       visibility: visible
+      padding-left: 0
     .label-toggle
-      background: linear-gradient(to bottom, #E84545 0%, #E84545 20%, transparent 20%, transparent 40%, #E84545 40%, #E84545 60%, transparent 60%, transparent 80%, #E84545 80%, #E84545 100%)
+      background: linear-gradient(to bottom, #b2b2b2 0%, #b2b2b2 20%, transparent 20%, transparent 40%, #b2b2b2 40%, #b2b2b2 60%, transparent 60%, transparent 80%, #b2b2b2 80%, #b2b2b2 100%)
       cursor: pointer
       display: block
-      float: right
+      float: left
       height: 35px
-      margin-top: 2em
+      margin-top: -3em
       width: 35px
+      margin-left: 1em
     .wrapper
       display: block
+
 
 /******* End Navigation ********/
 
@@ -1710,3 +1734,9 @@ footer
             .contentIcon
               margin-top: 5px
               width: 100%
+
+  nav
+    .aLogo
+      img
+       width: 70%
+       height: 80%

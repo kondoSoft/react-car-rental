@@ -76,6 +76,7 @@ class FormAutocomplete extends React.PureComponent { // eslint-disable-line reac
                   />
 
               </div>
+              <span id='spanPickUp' className='out'>Error</span>
             </Grid.Row>
             <Grid.Row centered id='return'>
               <div className={`selectFormSearch ${this.state.UI.checkbox}`} >

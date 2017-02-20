@@ -9,6 +9,7 @@ import { fromJS } from 'immutable';
 
 import {
   SET_LOADING_TRUE,
+  SET_LOADING_FALSE,
   LOAD_CARS_SUCCESS,
   LOAD_COMMENTS,
   LOAD_COMMENTS_SUCCESS,
@@ -39,6 +40,8 @@ function homePageReducer(state = initialState, action)
   switch (action.type) {
     case SET_LOADING_TRUE:
       return state.setIn(['UI','Loading'], true)
+    case SET_LOADING_FALSE:
+      return state.setIn(['UI','Loading'],false)
     case LOAD_CARS_SUCCESS:
       return state.setIn(['UI','Loading'], false).set('cars', action.cars)
     case LOAD_COMMENTS:

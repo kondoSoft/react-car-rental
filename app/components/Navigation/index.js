@@ -14,7 +14,7 @@ function Navigation() {
   return (
     <nav className="navBar">
     <nav className="wrapper">
-      <Link to="/">
+      <Link className="aLogo" to="/">
         <img src="https://s3-us-west-2.amazonaws.com/projuv-data/creatuviaje/images/creatuviaje-logo.png" />
       </Link>
       <input type="checkbox" id="menu-toggle" />

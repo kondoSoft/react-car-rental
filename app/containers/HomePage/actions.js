@@ -11,12 +11,19 @@ import {
   LOAD_COMMENTS_SUCCESS,
   SAVE_LOCATION,
   SAVE_DATE,
+  SET_LOADING_FALSE,
 } from './constants';
 
 export function loadingTrue(){
   return {
     type: SET_LOADING_TRUE,
   }
+}
+
+export function loadingFalse(){
+    return {
+      type:SET_LOADING_FALSE,
+    }
 }
 
 export function carsLoaded(cars){
