@@ -9,8 +9,7 @@ body
   background: #FFF !important
 /*semantic css OVERWRITE
 /* Validations */
-.buttonDisabled
-  
+
 .out
   display: none
 .validation
@@ -18,12 +17,22 @@ body
   position: relative
   z-index: 2
   top: 4px
-  right: 43px
+  right: 30px
   color: #87b672
   text-shadow: 1px 1px 1px black
   animation: fadein 2s
-  font-size: 15px
+  font-size: 1em
 
+.validationTime
+  display:block
+  position: relative
+  z-index: 2
+  top: 30px
+  right: 5px
+  color: #87b672
+  text-shadow: 1px 1px 1px black
+  animation: fadein 2s
+  font-size: 0.8em
 /* ANIMATIONS */
 .activeReturn
   display: none !important
@@ -681,11 +690,11 @@ i
 
 .divSearchAvailable
   height: 40px
-
+  z-index: 102
 .divSearchAvailable .newSearch
   width: 365px
   position: absolute
-  z-index: 2
+  z-index: 102
 
 // SLIDE
 .containerFormSearch

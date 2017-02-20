@@ -12,7 +12,6 @@ import {
   SAVE_LOCATION,
   SAVE_DATE,
   SET_LOADING_FALSE,
-  SET_VALIDATION,
 } from './constants';
 
 export function loadingTrue(){
@@ -56,9 +55,5 @@ export function saveDate(data, input){
     data,
     input,
   }
-}
-export function validationData(){
-  return{
-    type: SET_VALIDATION,
-  }
+
 }

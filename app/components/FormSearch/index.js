@@ -12,7 +12,6 @@ import FormAutocomplete from '../../components/FormAutocomplete'
 import LoadingSpin from '../../components/LoadingSpin'
 
 function FormSearch(props) {
-  // console.log(props.loading);
   return (
     <div id="inputSearchDisplay">
       <div className='ui form' >
@@ -21,10 +20,9 @@ function FormSearch(props) {
           <LoadingSpin loading={props.loading}/>
           <FormAutocomplete saveLocation={props.saveLocation}/>
           <Divider className='dividerForm' />
-          <DatePickerForm  saveDate={props.saveDate} />
+          <DatePickerForm saveDate={props.saveDate} />
           <Grid.Row centered className='divButtonGreeen'>
-            {console.log(props)}
-            <Button className="buttonGreen" onClick={props.loadingTrue} disabled>BUSCAR EL MEJOR PRECIO!</Button>
+            <Button className="buttonGreen" onClick={props.loadingTrue}>BUSCAR EL MEJOR PRECIO!</Button>
           </Grid.Row>
         </Grid>
       </div>
