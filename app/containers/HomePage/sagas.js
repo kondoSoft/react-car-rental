@@ -10,33 +10,53 @@ import { makeSelectCars, makeSelectComments } from './selectors'
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
+  var spanPickUpLocation = document.getElementById('spanPickUpLocation')
+  var spanPickUpDate = document.getElementById('spanPickUpDate')
+  var spandPickUpTime = document.getElementById('spanPickUpTime')
+  var spanReturnDate = document.getElementById('spanreturnDate')
+  var spanReturnTime = document.getElementById('spanreturnTime')
+
   if (cars.pickUPLocation==''){
     yield put(loadingFalse())
-    var spanError = document.getElementById('spanPickUp')
-    spanError.classList.remove("out")
-    spanError.classList.add("validation")
-  }
-  else if (cars.pickUpDate==''){
+    spanPickUpLocation.classList.remove("out")
+    spanPickUpLocation.classList.add("validation")
+    }else{
+      spanPickUpLocation.classList.add("out")
+      spanPickUpLocation.classList.remove("validation")
+    }
+  if (cars.pickUpDate==''){
     yield put(loadingFalse())
-    alert('Seleccione Fecha de Recogida')
+    spanPickUpDate.classList.remove("out")
+    spanPickUpDate.classList.add("validation")
+  }else{
+    spanPickUpDate.classList.add("out")
+    spanPickUpDate.classList.remove("validation")
   }
-  else if (cars.pickupTime==''){
+  if (cars.pickupTime==''){
     yield put(loadingFalse())
-    alert('Seleccione Hora de Recogida')
+    spandPickUpTime.classList.remove("out")
+    spandPickUpTime.classList.add("validationTime")
+  }else{
+    spandPickUpTime.classList.add("out")
+    spandPickUpTime.classList.remove("validationTime")
   }
-  else if (cars.returnDate==''){
+  if (cars.returnDate==''){
     yield put(loadingFalse())
-    alert('Seleccione Fecha de Entrega')
+    spanReturnDate.classList.remove("out")
+    spanReturnDate.classList.add("validation")
+  }else{
+    spanReturnDate.classList.add("out")
+    spanReturnDate.classList.remove("validation")
   }
-  else if (cars.returnTime==''){
+  if (cars.returnTime==''){
     yield put(loadingFalse())
-    alert('Seleccione Hora de Entrega')
-  }
-  else {
-    console.log(cars);
-    // const requestURL = `http://jsonplaceholder.typicode.com/posts`
+    spanReturnTime.classList.remove("out")
+    spanReturnTime.classList.add("validationTime")
+  }else{
+    spanReturnTime.classList.add("out")
+    spanReturnTime.classList.remove("validationTime")
+
     try {
-      // yield currentLocation()
       const getcar = yield call(request, requestURL, {
         method:'POST',
         headers:{
@@ -59,7 +79,6 @@ export function* getAPI(){
       },)
       if(getcar.source){
         yield put(loadingFalse())
-        alert(getcar.source)
       }
       else{
         yield put(carsLoaded(getcar))
@@ -69,8 +88,7 @@ export function* getAPI(){
       console.log(err);
     }
   }
-
-}
+  }
 export function* getAPIComments(){
   const requestURL = `http://187.217.208.8:8000/commentsApi/`
   try{
