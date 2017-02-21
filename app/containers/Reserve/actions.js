@@ -9,6 +9,7 @@ import {
   LOAD_CAR_RESERVE,
   SAVE_CLIENT,
   SET_CAR,
+  GET_RESERVE,
 } from './constants';
 
 export function defaultAction() {
@@ -27,8 +28,15 @@ export function saveClient(data){
     data
   }
 }
-export function setCar(){
+export function setCar(data){
   return {
     type:SET_CAR,
+    data
+  }
+}
+export function getReserve(data){
+  return{
+    type:GET_RESERVE,
+    data
   }
 }

@@ -4,34 +4,41 @@ import { loadCars, carsLoaded, commentsSucces, loadingFalse } from './actions'
 import { browserHistory } from 'react-router'
 
 import request from 'utils/request'
-import { makeSelectCars, makeSelectComments } from './selectors'
+import { makeSelectCars } from './selectors'
 
 
 export function* getAPI(){
+
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
+
   if (cars.pickUPLocation==''){
     yield put(loadingFalse())
     var spanError = document.getElementById('spanPickUp')
     spanError.classList.remove("out")
     spanError.classList.add("validation")
   }
+
   else if (cars.pickUpDate==''){
     yield put(loadingFalse())
     alert('Seleccione Fecha de Recogida')
   }
+
   else if (cars.pickupTime==''){
     yield put(loadingFalse())
     alert('Seleccione Hora de Recogida')
   }
+
   else if (cars.returnDate==''){
     yield put(loadingFalse())
     alert('Seleccione Fecha de Entrega')
   }
+
   else if (cars.returnTime==''){
     yield put(loadingFalse())
     alert('Seleccione Hora de Entrega')
   }
+
   else {
     // const requestURL = `http://jsonplaceholder.typicode.com/posts`
     try {
@@ -56,22 +63,27 @@ export function* getAPI(){
           "SpecialEquip":"0"
         })
       },)
+
       if(getcar.source){
         yield put(loadingFalse())
         alert(getcar.source)
       }
+
       else{
         yield put(carsLoaded(getcar))
         browserHistory.push('/available')
       }
+
     }catch(err){
       console.log(err);
     }
   }
-
 }
+
 export function* getAPIComments(){
+
   const requestURL = `http://187.217.208.8:8000/commentsApi/`
+
   try{
     const getcomment = yield call(request, requestURL)
     yield put(commentsSucces(getcomment))

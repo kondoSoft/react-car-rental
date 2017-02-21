@@ -104,10 +104,8 @@ export class HomePage extends React.PureComponent {
     }
   }
 
-
-
   componentDidMount(){
-      this.props.commentsLoaded()
+    this.props.commentsLoaded()
   }
 
   render() {

@@ -65,7 +65,7 @@ function SingleCar(props) {
         <img src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.cars.PictureURL}`} alt="Auto"/>
       </div>
     </div>
-    <Button primary className='buttonCotizar' onClick={() => browserHistory.push('/reserve')} ><span>Reservar</span></Button>
+    <Button primary className='buttonCotizar' onClick={ props.loadingTrue } ><span>Reservar</span></Button>
     </div>
 
   );

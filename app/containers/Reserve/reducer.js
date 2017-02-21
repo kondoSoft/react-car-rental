@@ -12,16 +12,18 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-	'cars': {
-    "vendor":"",
-    "ID":"",
+  'car':{
+
+  },
+  'UI':{
+    Loading: false,
   },
   'client':{
     "name":"",
     "lastName":"",
     "email":"",
     "address":"",
-    "cityName":"",
+    "cityName":"Villahermosa",
     "CP":"",
     "CountryName":"MX",
   }
@@ -34,8 +36,7 @@ function reserveReducer(state = initialState, action) {
     case SAVE_CLIENT:
       return state.setIn(['client', action.data.id], action.data.value);
     case SET_CAR:
-      console.log(action,'ss');
-      // return state.setIn('cars',action.data)
+      return state.setIn(['car'],action.data )
     default:
       return state;
   }

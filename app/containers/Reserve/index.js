@@ -14,14 +14,17 @@ import FormCarReserveClient from '../../components/FormCarReserveClient'
 import SingleCar from '../../components/SingleCar'
 import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
-import { saveClient } from './actions'
+import { saveClient, loadCarReserve, setCar } from './actions'
 import { selectHomePageState } from '../HomePage/selectors'
-import { loadCarReserve } from './actions'
 import NewSearch from '../../components/NewSearch'
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  constructor(props){
+    super(props)
+  }
   getCarId(car, i){
     if(car.ID == this.props.params.carId){
+      this.props.setCar(car)
       return(
         <div className='contentReserveSingleCar'>
             <FormCarReserve car={car} key={`form-${i}`}/>
@@ -30,7 +33,6 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
       )
     }
   }
-
   getCarItem(type, i){
     const dataAry = this.props.HomePage.cars
     return(
@@ -40,7 +42,6 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
 
   render() {
     const dataInitial = Object.keys(this.props.HomePage.cars)
-
     return (
         <Container className='containerReserve'>
           <Helmet
@@ -87,6 +88,9 @@ function mapDispatchToProps(dispatch) {
     },
     saveClient:(type)=>{
       dispatch(saveClient(type))
+    },
+    setCar:(type)=>{
+      dispatch(setCar(type))
     },
     dispatch,
   };

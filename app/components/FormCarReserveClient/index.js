@@ -13,12 +13,10 @@ import Select from 'react-select';
 class FormCarReserveClient extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   constructor(props){
-    console.log(props);
     super(props)
     this.onChange =this.onChange.bind(this)
   }
-  componentDidMount(){
-  }
+
   onChange(input,data){
     this.props.saveClient(data)
   }
