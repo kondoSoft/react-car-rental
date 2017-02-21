@@ -8,9 +8,7 @@ import React from 'react';
 import { Input,Divider, Form, options } from 'semantic-ui-react'
 // import styled from 'styled-components';
 
-
-
-function FormCarReserveRight(props ) {
+function FormCarReserveRight(props) {
   return (
     <div className='formReserveRight'>
       <div className="dataClient">
@@ -22,7 +20,7 @@ function FormCarReserveRight(props ) {
           <div className='spanFormData'>
             <span>Mail</span>
           </div>
-          <Input id='correo' placeholder='tucorreo@aqui.com' size = 'small' className='inputFormSize'/>
+          <Input id='correo' placeholder='tucorreo@aqui.com' size = 'small' className='inputFormSize' onChange={onChange()}/>
           <div className='spanFormData'>
             <span>Nombre(s)</span>
           </div>

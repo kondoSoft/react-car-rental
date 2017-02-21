@@ -34,7 +34,6 @@ const initialState = fromJS({
     "SpecialEquip":'0',
   }
 });
-
 function homePageReducer(state = initialState, action)
   {
   switch (action.type) {

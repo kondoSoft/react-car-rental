@@ -33,7 +33,6 @@ export function* getAPI(){
     alert('Seleccione Hora de Entrega')
   }
   else {
-    console.log(cars);
     // const requestURL = `http://jsonplaceholder.typicode.com/posts`
     try {
       // yield currentLocation()

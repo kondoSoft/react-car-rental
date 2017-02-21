@@ -10,14 +10,14 @@ import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectReserve from './selectors';
 import FormCarReserve from '../../components/FormCarReserve'
-import FormCarReserveRight from '../../components/FormCarReserveRight'
+import FormCarReserveClient from '../../components/FormCarReserveClient'
 import SingleCar from '../../components/SingleCar'
 import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
+import { saveClient } from './actions'
 import { selectHomePageState } from '../HomePage/selectors'
 import { loadCarReserve } from './actions'
 import NewSearch from '../../components/NewSearch'
-
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   getCarId(car, i){
@@ -37,8 +37,10 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
       dataAry[type].map((item, i, array)=>{return this.getCarId(item, i)})
     )
   }
+
   render() {
     const dataInitial = Object.keys(this.props.HomePage.cars)
+
     return (
         <Container className='containerReserve'>
           <Helmet
@@ -52,8 +54,7 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
           </div>
           {dataInitial.map((car, i)=>{ return this.getCarItem(car, i)})}
           <div className='contentFormReserves'>
-            <FormCarReserveRight loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
-
+            <FormCarReserveClient loading={this.props.HomePage.UI.Loading} loadingTrue={this.props.loadingTrue} saveClient={this.props.saveClient}  />
           </div>
         </Container>
 
@@ -78,11 +79,14 @@ function mapDispatchToProps(dispatch) {
     loadingTrue: (type)=>{
       dispatch(loadingTrue(type))
     },
-    saveDate:(type)=>{
+    saveLocation: (type)=>{
+      dispatch(saveLocation(type))
+    },
+    saveDate: (type)=>{
       dispatch(saveDate(type))
     },
-    saveLocation:(type)=>{
-      dispatch(saveLocation(type))
+    saveClient:(type)=>{
+      dispatch(saveClient(type))
     },
     dispatch,
   };
