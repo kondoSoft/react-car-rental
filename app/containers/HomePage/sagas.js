@@ -8,7 +8,7 @@ import { makeSelectCars } from './selectors'
 
 
 export function* getAPI(){
-
+  console.log('ejecutando saga HomePage');
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
 

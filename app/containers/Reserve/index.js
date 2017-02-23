@@ -1,4 +1,4 @@
-/*
+ /*
  *
  * Reserve
  *
@@ -11,24 +11,21 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectReserve from './selectors';
 import FormCarReserve from '../../components/FormCarReserve'
 import FormCarReserveClient from '../../components/FormCarReserveClient'
-import SingleCar from '../../components/SingleCar'
+import CarSingle from '../../components/CarSingle'
 import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
-import { saveClient, loadCarReserve, setCar } from './actions'
+import { saveClient, loadCarReserve, loadingTrueReserve, setCarReserve } from './actions'
 import { selectHomePageState } from '../HomePage/selectors'
 import NewSearch from '../../components/NewSearch'
 
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
-    super(props)
-  }
+
   getCarId(car, i){
     if(car.ID == this.props.params.carId){
-      this.props.setCar(car)
       return(
         <div className='contentReserveSingleCar'>
             <FormCarReserve car={car} key={`form-${i}`}/>
-            <SingleCar cars={car} key={i}/>
+            <CarSingle cars={car} key={i} loadingTrueReserve={this.props.loadingTrueReserve} setCarReserve={this.props.setCarReserve} />
         </div>
       )
     }
@@ -55,10 +52,9 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
           </div>
           {dataInitial.map((car, i)=>{ return this.getCarItem(car, i)})}
           <div className='contentFormReserves'>
-            <FormCarReserveClient loading={this.props.HomePage.UI.Loading} loadingTrue={this.props.loadingTrue} saveClient={this.props.saveClient}  />
+            <FormCarReserveClient saveClient={this.props.saveClient}  />
           </div>
         </Container>
-
     );
   }
 }
@@ -89,8 +85,11 @@ function mapDispatchToProps(dispatch) {
     saveClient:(type)=>{
       dispatch(saveClient(type))
     },
-    setCar:(type)=>{
-      dispatch(setCar(type))
+    loadingTrueReserve:(type)=>{
+      dispatch(loadingTrueReserve(type))
+    },
+    setCarReserve:(type)=>{
+      dispatch(setCarReserve(type))
     },
     dispatch,
   };

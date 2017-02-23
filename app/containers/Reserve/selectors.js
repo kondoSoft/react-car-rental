@@ -24,15 +24,16 @@ const makeSelectClient = ()=> createSelector(
   (state) => state.get('client').toJS(),
 )
 
-const makeSelectCar = () =>createSelector(
+const makeSelectCarReserve = ()=> createSelector(
   selectReserveDomain(),
-  (state) => state.get('car').toJS(),
+  (state) => state.get('selectedCar').toJS(),
 )
 
 export default makeSelectReserve;
+
 export {
-  makeSelectClient,
-  makeSelectCar,
   selectReserveDomain,
   selectReserveState,
+  makeSelectClient,
+  makeSelectCarReserve,
 };
