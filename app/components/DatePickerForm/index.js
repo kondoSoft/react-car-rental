@@ -16,7 +16,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
     super(props)
       this.state = {
         startDate: moment(),
-        endDate: moment(),
+        endDate:moment().add(1, "days"),
         startHour: null,
         endHour: null,
         options: [
@@ -46,7 +46,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
           {value: "T20:30", label: '20:30'},
           {value: "T21:00", label: '21:00'},
           {value: "T21:30", label: '21:30'},
-          {value: "T22:00", label: '22:00'},
+          {value: "T22:00", label: '2startDate2:00'},
           {value: "T22:30", label: '22:30'},
           {value: "T23:00", label: '23:00'},
           {value: "T23:30", label: '23:30'}
@@ -76,8 +76,10 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
   this.props.saveDate([valueEndHour+"-06:00",'returnTime'])
   }
   handleChange(date) {
+    console.log(this.state);
     this.setState({
-      startDate: date
+      startDate: date,
+      endDate:date
     })
   this.props.saveDate([date.format('YYYY-MM-DD'), 'pickUpDate'])
   }
@@ -99,12 +101,12 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
               <DatePicker
+
                 selected={this.state.startDate}
                 onChange={this.handleChange}
-                id= "1"
+                minDate={moment()}
               />
             </div>
-            <span id='spanPickUpDate' className='out '>Seleccione una fecha</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -114,8 +116,6 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               value={this.state.startHour}
               placeholder = {this.state.options[0].label}
             />
-            <span id='spanPickUpTime' className='out'>Seleccione hora</span>
-
           </div>
         </div>
         <div className="divLabelDate">
@@ -126,12 +126,12 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
               <DatePicker
+                placeholderText='Seleccione..'
                 selected={this.state.endDate}
                 onChange={this.handleChangeReturn}
-                id= "2"
+                minDate={moment(this.state.startDate)}
               />
             </div>
-            <span id='spanreturnDate' className='out '>Seleccione una fecha</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -141,8 +141,6 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               value={this.state.endHour}
               placeholder = {this.state.options[0].label}
             />
-            <span id='spanreturnTime' className='out '>Seleccione hora</span>
-
           </div>
         </div>
       </div>
