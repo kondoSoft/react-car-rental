@@ -14,7 +14,7 @@ import FormCarReserveClient from '../../components/FormCarReserveClient'
 import CarSingle from '../../components/CarSingle'
 import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
-import { saveClient, loadCarReserve, loadingTrueReserve, setCarReserve } from './actions'
+import { saveClient, loadCarReserve, loadingTrueReserve, saveCar } from './actions'
 import { selectHomePageState } from '../HomePage/selectors'
 import NewSearch from '../../components/NewSearch'
 
@@ -25,7 +25,7 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
       return(
         <div className='contentReserveSingleCar'>
             <FormCarReserve car={car} key={`form-${i}`}/>
-            <CarSingle cars={car} key={i} loadingTrueReserve={this.props.loadingTrueReserve} setCarReserve={this.props.setCarReserve} />
+            <CarSingle cars={car} key={i} loadingTrueReserve={this.props.loadingTrueReserve} saveCar={this.props.saveCar}  />
         </div>
       )
     }
@@ -85,11 +85,11 @@ function mapDispatchToProps(dispatch) {
     saveClient:(type)=>{
       dispatch(saveClient(type))
     },
+    saveCar:(type)=>{
+      dispatch(saveCar(type))
+    },
     loadingTrueReserve:(type)=>{
       dispatch(loadingTrueReserve(type))
-    },
-    setCarReserve:(type)=>{
-      dispatch(setCarReserve(type))
     },
     dispatch,
   };

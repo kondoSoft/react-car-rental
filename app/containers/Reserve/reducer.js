@@ -8,20 +8,18 @@ import { fromJS } from 'immutable';
 import {
   LOAD_ACTION,
   SAVE_CLIENT,
+  SAVE_CAR_RESERVE,
   SET_LOADING_TRUE_RESERVE,
-  GET_RESERVE,
-  SET_CAR,
 } from './constants';
 
 const initialState = fromJS({
   'response':{
   },
-  'selectedCar':{
-  },
   'UI':{
     Loading: false,
   },
   'client':{
+    "car":{},
     "name":"",
     "lastName":"",
     "email":"",
@@ -38,13 +36,10 @@ function reserveReducer(state = initialState, action) {
       return state;
     case SAVE_CLIENT:
       return state.setIn(['client', action.data.id], action.data.value);
+    case SAVE_CAR_RESERVE:
+      return state.setIn(['client','car'],action.data)
     case SET_LOADING_TRUE_RESERVE:
       return state.setIn(['UI','Loading'],true)
-    case GET_RESERVE:
-      return state.setIn(['response'],action.data)
-    case SET_CAR:
-      console.log('ejecutando set car');
-      return state.setIn(['selectedCar'], action.data)
     default:
       return state;
   }

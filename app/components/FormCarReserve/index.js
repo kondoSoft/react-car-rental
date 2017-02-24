@@ -14,8 +14,7 @@ function FormCarReserve(props) {
   function formatDate(data,type){
     if (type) {
       var format = data.substring(0,10)
-      var newDate = new Date(format)
-      return newDate
+      return format
     }
     else{
       var format = data.substring(11,16)

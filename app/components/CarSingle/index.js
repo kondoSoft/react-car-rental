@@ -9,9 +9,21 @@ import { Button, Icon } from 'semantic-ui-react'
 
 
 class CarSingle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  componentDidMount(){
-    this.props.setCarReserve(this.props.cars)
+  constructor(props){
+    super(props)
+    this.state={
+      "ID":this.props.cars.ID,
+      "vendor":this.props.cars.Vendor,
+      "pickUPLocation":this.props.cars.PickUpLocation_Code,
+      "returnLocation":this.props.cars.ReturnLocation_Code,
+      "pickUPDateTime":this.props.cars.PickUp_Date,
+      "returnDateTime":this.props.cars.Return_Date,
+    }
   }
+  componentDidMount(){
+    this.props.saveCar(this.state)
+  }
+
   render() {
     return (
       <div className='singleCarContainer'>
