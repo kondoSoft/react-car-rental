@@ -5,24 +5,38 @@
 */
 
 import React from 'react';
+
 // import styled from 'styled-components';
 
 
 function FormCarReserve(props) {
+  var Month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+  function formatDate(data,type){
+    if (type) {
+      var format = data.substring(0,10)
+      var newDate = new Date(format)
+      return newDate
+    }
+    else{
+      var format = data.substring(11,16)
+      return format
+    }
+  }
+
   return (
     <div className='formSingleCarReserve'>
       <div className='containerPlaceReserve'>
         <div className='placeRentReserve'>
           <h3 className='colorBlue'>Lugar de Renta</h3>
           <span className='textUbication'>{props.car.PickUpLocation_Code}</span>
-          <span><i className='fa fa-calendar colorGreen'></i>{props.car.PickUp_Date}</span>
-          <span><i className='fa fa-clock-o colorGreen'></i>{props.car.PickUp_Date}</span>
+          <span><i className='fa fa-calendar colorGreen'></i>{ formatDate(props.car.PickUp_Date,'date') }</span>
+          <span><i className='fa fa-clock-o colorGreen'></i>{ formatDate(props.car.PickUp_Date) }</span>
         </div>
         <div className='placeReturnReserve'>
           <h3 className='colorBlue'>Lugar de Retorno</h3>
           <span className='textUbication'>{props.car.ReturnLocation_Code}</span>
-          <span><i className='fa fa-calendar colorGreen'></i>{props.car.Return_Date}</span>
-          <span><i className='fa fa-clock-o colorGreen'></i>{props.car.Return_Date}</span>
+          <span><i className='fa fa-calendar colorGreen'></i>{ formatDate(props.car.Return_Date,'date') }</span>
+          <span><i className='fa fa-clock-o colorGreen'></i>{ formatDate(props.car.Return_Date)}</span>
         </div>
         <div className='selectedRateReserve backReserve'>
           <h3 className='colorBlue'>Tarifa Seleccionada</h3>
