@@ -8,7 +8,7 @@ const selectReserveDomain = () => (state) => state.get('reserve');
 /**
  * Other specific selectors
  */
-
+const selectReserveState = () => (state) => state.get('reserve').toJS();
 
 /**
  * Default selector used by Reserve
@@ -17,9 +17,18 @@ const selectReserveDomain = () => (state) => state.get('reserve');
 const makeSelectReserve = () => createSelector(
   selectReserveDomain(),
   (substate) => substate.toJS()
-);
+)
+
+const makeSelectClient = ()=> createSelector(
+  selectReserveDomain(),
+  (state) => state.get('client').toJS(),
+)
+
 
 export default makeSelectReserve;
+
 export {
   selectReserveDomain,
+  selectReserveState,
+  makeSelectClient,
 };

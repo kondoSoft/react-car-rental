@@ -46,7 +46,7 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
           {value: "T20:30", label: '20:30'},
           {value: "T21:00", label: '21:00'},
           {value: "T21:30", label: '21:30'},
-          {value: "T22:00", label: '2startDate2:00'},
+          {value: "T22:00", label: '22:00'},
           {value: "T22:30", label: '22:30'},
           {value: "T23:00", label: '23:00'},
           {value: "T23:30", label: '23:30'}
@@ -76,7 +76,6 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
   this.props.saveDate([valueEndHour+"-06:00",'returnTime'])
   }
   handleChange(date) {
-    console.log(this.state);
     this.setState({
       startDate: date,
       endDate:date

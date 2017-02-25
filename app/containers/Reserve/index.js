@@ -1,4 +1,4 @@
-/*
+ /*
  *
  * Reserve
  *
@@ -10,33 +10,33 @@ import Helmet from 'react-helmet';
 import { createStructuredSelector } from 'reselect';
 import makeSelectReserve from './selectors';
 import FormCarReserve from '../../components/FormCarReserve'
-import FormCarReserveRight from '../../components/FormCarReserveRight'
-import SingleCar from '../../components/SingleCar'
+import FormCarReserveClient from '../../components/FormCarReserveClient'
+import CarSingle from '../../components/CarSingle'
 import {Container} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation } from '../HomePage/actions'
+import { saveClient, loadCarReserve, loadingTrueReserve, saveCar } from './actions'
 import { selectHomePageState } from '../HomePage/selectors'
-import { loadCarReserve } from './actions'
 import NewSearch from '../../components/NewSearch'
 
-
 export class Reserve extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
   getCarId(car, i){
     if(car.ID == this.props.params.carId){
       return(
         <div className='contentReserveSingleCar'>
             <FormCarReserve car={car} key={`form-${i}`}/>
-            <SingleCar cars={car} key={i}/>
+            <CarSingle cars={car} key={i} loadingTrueReserve={this.props.loadingTrueReserve} saveCar={this.props.saveCar}  />
         </div>
       )
     }
   }
-
   getCarItem(type, i){
     const dataAry = this.props.HomePage.cars
     return(
       dataAry[type].map((item, i, array)=>{return this.getCarId(item, i)})
     )
   }
+
   render() {
     const dataInitial = Object.keys(this.props.HomePage.cars)
     return (
@@ -52,11 +52,9 @@ export class Reserve extends React.PureComponent { // eslint-disable-line react/
           </div>
           {dataInitial.map((car, i)=>{ return this.getCarItem(car, i)})}
           <div className='contentFormReserves'>
-            <FormCarReserveRight loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
-
+            <FormCarReserveClient saveClient={this.props.saveClient}  />
           </div>
         </Container>
-
     );
   }
 }
@@ -78,11 +76,20 @@ function mapDispatchToProps(dispatch) {
     loadingTrue: (type)=>{
       dispatch(loadingTrue(type))
     },
-    saveDate:(type)=>{
+    saveLocation: (type)=>{
+      dispatch(saveLocation(type))
+    },
+    saveDate: (type)=>{
       dispatch(saveDate(type))
     },
-    saveLocation:(type)=>{
-      dispatch(saveLocation(type))
+    saveClient:(type)=>{
+      dispatch(saveClient(type))
+    },
+    saveCar:(type)=>{
+      dispatch(saveCar(type))
+    },
+    loadingTrueReserve:(type)=>{
+      dispatch(loadingTrueReserve(type))
     },
     dispatch,
   };

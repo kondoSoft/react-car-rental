@@ -9,7 +9,6 @@ import request from 'utils/request'
 
 function* getState(){
   const cars = yield select(selectHomePageState())
-
 }
 
 export function* getCars() {
