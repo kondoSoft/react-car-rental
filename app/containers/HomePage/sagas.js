@@ -8,7 +8,6 @@ import { makeSelectCars } from './selectors'
 
 
 export function* getAPI(){
-  console.log('ejecutando saga HomePage');
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
 
@@ -58,7 +57,7 @@ export function* getAPI(){
   }else{
     spanReturnTime.classList.add("out")
     spanReturnTime.classList.remove("validationTime")
-    
+
     try {
       const getcar = yield call(request, requestURL, {
         method:'POST',
@@ -93,7 +92,6 @@ export function* getAPI(){
     }catch(err){
       console.log(err);
     }
-  }
 }
 export function* getAPIComments(){
 
