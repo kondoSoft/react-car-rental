@@ -99,11 +99,12 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
             <div className='selectFormSearchWhen'>
               <span className="input-group-addon-standar"><i className="fa fa-calendar"></i></span>
               <DatePicker
-
                 selected={this.state.startDate}
                 onChange={this.handleChange}
+                id= "1"
               />
             </div>
+            <span id='spanPickUpDate' className='out '>Seleccione una fecha</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -113,6 +114,8 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               value={this.state.startHour}
               placeholder = {this.state.options[0].label}
             />
+            <span id='spanPickUpTime' className='out'>Seleccione hora</span>
+
           </div>
         </div>
         <div className="divLabelDate">
@@ -125,8 +128,10 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               <DatePicker
                 selected={this.state.endDate}
                 onChange={this.handleChangeReturn}
+                id= "2"
               />
             </div>
+            <span id='spanreturnDate' className='out '>Seleccione una fecha</span>
           </div>
           <div className="selectDivHour">
             <Select className="selectHour"
@@ -136,6 +141,8 @@ class DatePickerForm extends React.Component { // eslint-disable-line react/pref
               value={this.state.endHour}
               placeholder = {this.state.options[0].label}
             />
+            <span id='spanreturnTime' className='out '>Seleccione hora</span>
+
           </div>
         </div>
       </div>

@@ -15,6 +15,7 @@ import {
   LOAD_COMMENTS_SUCCESS,
   SAVE_LOCATION,
   SAVE_DATE,
+
 } from './constants';
 
 const initialState = fromJS({
@@ -32,7 +33,9 @@ const initialState = fromJS({
     "returnDate":"",
     "returnTime":"",
     "SpecialEquip":'0',
-  }
+  },
+
+
 });
 function homePageReducer(state = initialState, action)
   {
