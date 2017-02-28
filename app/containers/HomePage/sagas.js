@@ -93,6 +93,7 @@ export function* getAPI(){
       console.log(err);
     }
 }
+}
 export function* getAPIComments(){
 
   const requestURL = `http://187.217.208.8:8000/commentsApi/`
