@@ -20,7 +20,7 @@ function CardCar(props) {
   }
   function getCarCheck(e, data){
     props.addCarChecked(props.car.ID, data.checked)
-    
+
   }
   return (
     <Grid.Column className='contentCardCar'>

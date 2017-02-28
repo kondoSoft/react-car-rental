@@ -78,7 +78,6 @@ var aryComment=[
 ]
 
 export class HomePage extends React.PureComponent {
-
   createGrid(item,i){
     return(
       <Grid key={'Grid'+i}>
@@ -105,10 +104,8 @@ export class HomePage extends React.PureComponent {
     }
   }
 
-
-
   componentDidMount(){
-      this.props.commentsLoaded()
+    this.props.commentsLoaded()
   }
 
   render() {
@@ -149,7 +146,6 @@ export class HomePage extends React.PureComponent {
       }]
     }
     const dataInitial = this.props.HomePage.comments
-
     return (
       <div>
         <Helmet

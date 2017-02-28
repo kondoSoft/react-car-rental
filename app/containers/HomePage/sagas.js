@@ -4,12 +4,14 @@ import { loadCars, carsLoaded, commentsSucces, loadingFalse } from './actions'
 import { browserHistory } from 'react-router'
 
 import request from 'utils/request'
-import { makeSelectCars, makeSelectComments } from './selectors'
+import { makeSelectCars } from './selectors'
 
 
 export function* getAPI(){
+  console.log('ejecutando saga HomePage');
   const cars = yield select(makeSelectCars())
   const requestURL = `http://187.217.208.8:8000/consult/`
+
   var spanPickUpLocation = document.getElementById('spanPickUpLocation')
   var spanPickUpDate = document.getElementById('spanPickUpDate')
   var spandPickUpTime = document.getElementById('spanPickUpTime')
@@ -48,6 +50,7 @@ export function* getAPI(){
     spanReturnDate.classList.add("out")
     spanReturnDate.classList.remove("validation")
   }
+
   if (cars.returnTime==''){
     yield put(loadingFalse())
     spanReturnTime.classList.remove("out")
@@ -55,7 +58,7 @@ export function* getAPI(){
   }else{
     spanReturnTime.classList.add("out")
     spanReturnTime.classList.remove("validationTime")
-
+    
     try {
       const getcar = yield call(request, requestURL, {
         method:'POST',
@@ -77,20 +80,25 @@ export function* getAPI(){
           "SpecialEquip":"0"
         })
       },)
+
       if(getcar.source){
         yield put(loadingFalse())
       }
+
       else{
         yield put(carsLoaded(getcar))
         browserHistory.push('/available')
       }
+
     }catch(err){
       console.log(err);
     }
   }
-  }
+}
 export function* getAPIComments(){
+
   const requestURL = `http://187.217.208.8:8000/commentsApi/`
+
   try{
     const getcomment = yield call(request, requestURL)
     yield put(commentsSucces(getcomment))

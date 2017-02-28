@@ -1,4 +1,7 @@
-/**
+/**          <div className='contentReserveSingleCar'>
+              <FormCarReserve car={car} key={`form-${i}`}/>
+              <SingleCar cars={car} key={i} loadingTrueReserve={this.props.loadingTrueReserve}/>
+          </div>
 *
 * SingleCar
 *
@@ -10,6 +13,7 @@ import { Button, Icon } from 'semantic-ui-react'
 import { browserHistory } from 'react-router'
 
 function SingleCar(props) {
+
   return (
     <div className='singleCarContainer'>
       <div className='singleCarContainer-title'>
@@ -65,9 +69,8 @@ function SingleCar(props) {
         <img src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.cars.PictureURL}`} alt="Auto"/>
       </div>
     </div>
-    <Button primary className='buttonCotizar' onClick={() => browserHistory.push('/reserve')} ><span>Reservar</span></Button>
+    <Button primary className='buttonCotizar' onClick={  ()=>props.loadingTrueReserve(props.cars) } ><span>Reservar</span></Button>
     </div>
-
   );
 }
 
