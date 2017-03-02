@@ -11,17 +11,6 @@ import { Button, Icon } from 'semantic-ui-react'
 class CarSingle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
     super(props)
-    this.state={
-      "ID":this.props.cars.ID,
-      "vendor":this.props.cars.Vendor,
-      "pickUPLocation":this.props.cars.PickUpLocation_Code,
-      "returnLocation":this.props.cars.ReturnLocation_Code,
-      "pickUPDateTime":this.props.cars.PickUp_Date,
-      "returnDateTime":this.props.cars.Return_Date,
-    }
-  }
-  componentDidMount(){
-    this.props.saveCar(this.state)
   }
 
   render() {
@@ -80,7 +69,7 @@ class CarSingle extends React.PureComponent { // eslint-disable-line react/prefe
           <img src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${this.props.cars.PictureURL}`} alt="Auto"/>
         </div>
       </div>
-      <Button primary className='buttonCotizar' onClick={  ()=>this.props.loadingTrueReserve(this.props.cars) } ><span>Reservar</span></Button>
+      <Button primary className='buttonCotizar' onClick={  ()=>this.props.setCarReserve(this.props.cars) } ><span>Reservar</span></Button>
       </div>
     );
   }

@@ -27,13 +27,13 @@ function FormCarReserve(props) {
       <div className='containerPlaceReserve'>
         <div className='placeRentReserve'>
           <h3 className='colorBlue'>Lugar de Renta</h3>
-          <span className='textUbication'>{props.car.PickUpLocation_Code}</span>
+          <span className='textUbication'>{props.car.PickUpLocation_City}</span>
           <span><i className='fa fa-calendar colorGreen'></i>{ formatDate(props.car.PickUp_Date,'date') }</span>
           <span><i className='fa fa-clock-o colorGreen'></i>{ formatDate(props.car.PickUp_Date) }</span>
         </div>
         <div className='placeReturnReserve'>
           <h3 className='colorBlue'>Lugar de Retorno</h3>
-          <span className='textUbication'>{props.car.ReturnLocation_Code}</span>
+          <span className='textUbication'>{props.car.ReturnLocation_City}</span>
           <span><i className='fa fa-calendar colorGreen'></i>{ formatDate(props.car.Return_Date,'date') }</span>
           <span><i className='fa fa-clock-o colorGreen'></i>{ formatDate(props.car.Return_Date)}</span>
         </div>

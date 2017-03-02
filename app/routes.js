@@ -118,6 +118,26 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/reservetable',
+      name: 'reserveTable',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          import('containers/ReserveTable/reducer'),
+          import('containers/ReserveTable/sagas'),
+          import('containers/ReserveTable'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('reserveTable', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

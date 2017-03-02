@@ -21,9 +21,8 @@ const makeSelectReserve = () => createSelector(
 
 const makeSelectClient = ()=> createSelector(
   selectReserveDomain(),
-  (state) => state.get('client').toJS(),
+  (state) => state.get('request').toJS(),
 )
-
 
 export default makeSelectReserve;
 
