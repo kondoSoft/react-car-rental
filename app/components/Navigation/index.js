@@ -21,7 +21,7 @@ function Navigation() {
         <label htmlFor="menu-toggle" className="label-toggle"></label>
       <ul>
         <Link href="#"><li>Servicio</li></Link>
-        <Link href="#"><li>Mi Reserva</li></Link>
+        <Link href="/reserve-list"><li>Mi Reserva</li></Link>
         <Link href="#"><li>Tu Viaje</li></Link>
         <Link href="#"><li>Inicia Sesion</li></Link>
       </ul>

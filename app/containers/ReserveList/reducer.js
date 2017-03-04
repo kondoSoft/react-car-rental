@@ -1,17 +1,19 @@
 /*
  *
- * ReserveTable reducer
+ * ReserveList reducer
  *
  */
 
 import { fromJS } from 'immutable';
+import Pre from '../../data/prereserve'
 import {
   DEFAULT_ACTION,
 } from './constants';
 
-const initialState = fromJS({});
-
-function reserveTableReducer(state = initialState, action) {
+const initialState = fromJS({
+  preReserve:Pre
+});
+function reserveListReducer(state = initialState, action) {
   switch (action.type) {
     case DEFAULT_ACTION:
       return state;
@@ -20,4 +22,4 @@ function reserveTableReducer(state = initialState, action) {
   }
 }
 
-export default reserveTableReducer;
+export default reserveListReducer;

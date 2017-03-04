@@ -1,6 +1,6 @@
 /*
  *
- * ReserveTable actions
+ * ReserveList actions
  *
  */
 
