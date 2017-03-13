@@ -57,7 +57,7 @@ class FormCarReserveClient extends React.PureComponent { // eslint-disable-line 
     if (!email) {
       return Promise.resolve({ options: [] });
     }
-    return fetch(`http://187.217.208.8:8000/autocomplete/client/?term=${email}`)
+    return fetch(`http://localhost:8000/autocomplete/client/?term=${email}`)
     .then((response) => response.json())
     .then((json) => {
       if (json.length != 1) {

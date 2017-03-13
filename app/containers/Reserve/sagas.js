@@ -8,7 +8,7 @@ import request from 'utils/request'
 export function* getAPIReserve(){
 
   const client = yield select(makeSelectClient())
-  const requestURL = `http://187.217.208.8:8000/reserve/`
+  const requestURL = `http://localhost:8000/reserve/`
   console.log(client);
 
  //  try {

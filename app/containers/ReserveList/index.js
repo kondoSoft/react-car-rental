@@ -11,16 +11,21 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectReserveList from './selectors';
 import { Container, Table, Input } from 'semantic-ui-react'
 import TableReserve from '../../components/TableReserve'
+import { loadReserveList, cancelReserve, authorizationReserve, deleteReserve } from './actions'
+import moment from 'moment'
 
 export class ReserveList extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+
   createRowList(list,i){
     return(
-      <TableReserve data={list} key={'row'+i} />
+      <TableReserve data={list} key={'row'+i} cancelReserve={this.props.cancelReserve} authorizationReserve={this.props.authorizationReserve} deleteReserve={this.props.deleteReserve}/>
     )
   }
-  onChange(e,data){
-    console.log(data)
+  componentDidMount(){
+    this.props.loadReserveList()
   }
+
+
   render() {
     const list = this.props.ReserveList.preReserve
     return (
@@ -32,7 +37,7 @@ export class ReserveList extends React.PureComponent { // eslint-disable-line re
           ]}
         />
       <div>
-        <Input onChange={this.onChange} action='Buscar' placeholder='Buscar...' />
+        <Input action='Buscar' placeholder='Buscar...' />
       </div>
       <Table celled selectable>
         <Table.Header>
@@ -42,9 +47,9 @@ export class ReserveList extends React.PureComponent { // eslint-disable-line re
             <Table.HeaderCell>Apellido</Table.HeaderCell>
             <Table.HeaderCell>Correo</Table.HeaderCell>
             <Table.HeaderCell>Auto</Table.HeaderCell>
-            <Table.HeaderCell>Fechas de Renta</Table.HeaderCell>
+            <Table.HeaderCell>Fecha Renta</Table.HeaderCell>
             <Table.HeaderCell>Precio</Table.HeaderCell>
-            <Table.HeaderCell>Arrendadora</Table.HeaderCell>
+            <Table.HeaderCell>Proveedor</Table.HeaderCell>
             <Table.HeaderCell>Estatus</Table.HeaderCell>
             <Table.HeaderCell>Acción</Table.HeaderCell>
           </Table.Row>
@@ -68,6 +73,18 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
+    loadReserveList:(type)=>{
+      dispatch(loadReserveList(type))
+    },
+    cancelReserve:(type)=>{
+      dispatch(cancelReserve(type))
+    },
+    authorizationReserve:(type)=>{
+      dispatch(authorizationReserve(type))
+    },
+    deleteReserve:(type)=>{
+      dispatch(deleteReserve(type))
+    },
     dispatch,
   };
 }
