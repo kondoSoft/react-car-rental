@@ -143,7 +143,7 @@ nav
       padding: 2em 0
     #menu-toggle:checked ~ ul
       opacity: 1
-      height: 85vh
+      height: 40vh
       visibility: visible
       padding-left: 0
     .label-toggle
@@ -180,11 +180,14 @@ button, .button
 .underline
   text-decoration: underline !important
 
+h1 span
+  color: black !important
+
 .colorGreen
-  color: #87b672
+  color: #87b672 !important
 
 .colorBlue
-  color: #2b5bad
+  color: #2b5bad !important
 
 .grid
   margin-top: 0 !important
@@ -1333,7 +1336,7 @@ footer
     .divSearchAvailable
       order: 1
     .divSearchAvailable .newSearch
-      width: 305px !important
+      width: 365px !important
 
   .singleCarReserveContainer
     width: 98.3%
@@ -1355,6 +1358,11 @@ footer
   .containerQuotation
     .divSearchAvailable
       order: 1
+
+  .Select-menu-outer
+    position: absolute
+    width: 82.8%
+    top: 80%
 
   .ui.container
     margin-right: 0 !important
@@ -1403,6 +1411,8 @@ footer
     .Select
       width: 82%
       left: 10.4%
+
+
   .selectFormSearchWhen
     justify-content: flex-start
     width: 96%
@@ -1416,8 +1426,6 @@ footer
 
   .divSearchAvailable
     width: 100%
-    .input-group-addon-standar
-      border: none
     .newSearch
       width: 100% !important
       z-index: 101
@@ -1425,9 +1433,14 @@ footer
         height: 450px
       .gridAutocomplete
         justify-content: flex-start
-    .Select
-      width: 76.3%
-      left: 15.4%
+        .selectFormSearch
+          .input-group-addon-standar
+            position: inherit
+          .Select
+            position: inherit
+            width: 92%
+
+
 
   .contentReserveSingleCar
     margin-left: 1em
@@ -1542,7 +1555,12 @@ footer
       width: 95%
       .Select
         position: inherit
-        width: 82%
+        width: 80%
+  .Select-menu-outer
+    position: absolute
+    width: 75.8%
+    top: 80%
+
 
   .divWhen
     width: 76%
@@ -1671,7 +1689,6 @@ footer
     flex-wrap: column
     .formSingleCar
       order: 3
-      margin-right: 1em !important
     .contentSingleCar
       order: 2
       .singleCarContainer
@@ -1751,6 +1768,10 @@ footer
             .contentIcon
               margin-top: 5px
               width: 100%
+
+  .containerQuotation
+    .formSingleCar
+      margin-right: 1em !important
 
   nav
     .aLogo
