@@ -9,7 +9,7 @@ import { makeSelectCars } from './selectors'
 
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
-  const requestURL = `http://187.217.208.8:8000/consult/`
+  const requestURL = `http://localhost:8000/consult/`
 
   var spanPickUpLocation = document.getElementById('spanPickUpLocation')
   var spanPickUpDate = document.getElementById('spanPickUpDate')
@@ -96,7 +96,7 @@ export function* getAPI(){
 }
 export function* getAPIComments(){
 
-  const requestURL = `http://187.217.208.8:8000/commentsApi/`
+  const requestURL = `http://localhost:8000/commentsApi/`
 
   try{
     const getcomment = yield call(request, requestURL)

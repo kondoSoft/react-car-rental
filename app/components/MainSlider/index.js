@@ -48,12 +48,12 @@ class MainSlider extends React.PureComponent { // eslint-disable-line react/pref
     }
     return (
       <Slider {...settings}>
-        <div><img src="http://lorempixel.com/1200/540/people/1/" /></div>
-        <div><img src="http://lorempixel.com/1200/540/people/2/" /></div>
-        <div><img src="http://lorempixel.com/1200/540/people/3/" /></div>
-        <div><img src="http://lorempixel.com/1200/540/people/4/" /></div>
-        <div><img src="http://lorempixel.com/1200/540/people/5/" /></div>
-        <div><img src="http://lorempixel.com/1200/540/people/6/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/8/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/7/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/3/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/4/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/5/" /></div>
+        <div><img src="http://lorempixel.com/1200/540/transport/10/" /></div>
       </Slider>
     );
   }
