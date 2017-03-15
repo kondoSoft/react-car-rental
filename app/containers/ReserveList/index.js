@@ -23,6 +23,7 @@ export class ReserveList extends React.PureComponent { // eslint-disable-line re
   }
   componentDidMount(){
     this.props.loadReserveList()
+    
   }
 
 
