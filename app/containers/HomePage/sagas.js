@@ -64,13 +64,6 @@ export function* getAPI(){
         headers:{
           'Content-Type':'application/json'
         },
-        // body:JSON.stringify({
-        //   "pickUPLocation":"LAX",
-        //   "returnLocation":"LAX",
-        //   "pickUPDateTime":"2017-03-19T13:30-06:00",
-        //   "returnDateTime":"2017-03-28T13:30-06:00",
-        //   "SpecialEquip":"7"
-        // })
         body:JSON.stringify({
           "pickUPLocation": cars.pickUPLocation,
           "returnLocation": cars.returnLocation,
@@ -79,7 +72,7 @@ export function* getAPI(){
           "SpecialEquip":"0"
         })
       },)
-
+      console.log(getcar);
       if(getcar.source){
         yield put(loadingFalse())
       }

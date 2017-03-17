@@ -26,11 +26,13 @@ function TableReserve(props) {
 
   }
   function setButton(data)
+
   {
+      // onClick={()=>{ props.printReserve(props.data.idPrebooking)}}
     if (data == 'Aprovado') {
       return(
         <Table.Cell>
-          <button className='buttonPen' onClick={()=>{console.log('log')}}><Icon name='print' size='small'/></button>
+          <Link className='printButton' to={`http://localhost:8000/print_voucher/${props.data.idPrebooking}`} target='_black'><Icon name='print' size='small'/></Link>
           <button className='buttonPen' onClick={()=>{ validation('cancel')}}><Icon name='ban' size='small'/></button>
         </Table.Cell>
       )

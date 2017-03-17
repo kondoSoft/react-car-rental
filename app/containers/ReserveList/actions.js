@@ -12,6 +12,7 @@ import {
   CANCEL_RESERVE,
   AUTHORIZATION_RESERVE,
   DELETE_RESERVE_DB,
+  PRINT_VOUCHER,
 } from './constants';
 
 export function defaultAction() {
@@ -57,6 +58,13 @@ export function authorizationReserve(data){
 export function deleteReserve(data){
   return {
     type:DELETE_RESERVE_DB,
+    data
+  }
+}
+
+export function printReserve(data){
+  return {
+    type: PRINT_VOUCHER,
     data
   }
 }

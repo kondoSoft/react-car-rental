@@ -11,19 +11,19 @@ import { createStructuredSelector } from 'reselect';
 import makeSelectReserveList from './selectors';
 import { Container, Table, Input } from 'semantic-ui-react'
 import TableReserve from '../../components/TableReserve'
-import { loadReserveList, cancelReserve, authorizationReserve, deleteReserve } from './actions'
+import { loadReserveList, cancelReserve, authorizationReserve, deleteReserve, printReserve } from './actions'
 import moment from 'moment'
+import ReactPaginate from 'react-paginate';
 
 export class ReserveList extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount(){
+    this.props.loadReserveList()
+  }
 
   createRowList(list,i){
     return(
-      <TableReserve data={list} key={'row'+i} cancelReserve={this.props.cancelReserve} authorizationReserve={this.props.authorizationReserve} deleteReserve={this.props.deleteReserve}/>
+      <TableReserve data={list} key={'row'+i} printReserve={this.props.printReserve} cancelReserve={this.props.cancelReserve} authorizationReserve={this.props.authorizationReserve} deleteReserve={this.props.deleteReserve}/>
     )
-  }
-  componentDidMount(){
-    this.props.loadReserveList()
-    
   }
 
 
@@ -85,6 +85,9 @@ function mapDispatchToProps(dispatch) {
     },
     deleteReserve:(type)=>{
       dispatch(deleteReserve(type))
+    },
+    printReserve:(type)=>{
+      dispatch(printReserve(type))
     },
     dispatch,
   };

@@ -16,7 +16,7 @@ import {Container, Grid, Icon, Button} from 'semantic-ui-react'
 import { loadingTrue, saveDate, saveLocation, commentsLoaded} from './actions'
 import Slider from 'react-slick'
 
-var gridCounter=0
+
 var gridAry=[]
 var aryComment=[
     {
@@ -106,7 +106,7 @@ export class HomePage extends React.PureComponent {
 
   componentDidMount(){
     this.props.commentsLoaded()
-  }
+    }
 
   render() {
     const settings = {

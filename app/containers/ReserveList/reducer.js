@@ -12,6 +12,7 @@ import {
   CANCEL_RESERVE,
   AUTHORIZATION_RESERVE,
   DELETE_RESERVE_DB,
+  PRINT_VOUCHER,
 } from './constants';
 
 const initialState = fromJS({
@@ -36,6 +37,8 @@ function reserveListReducer(state = initialState, action) {
       return state.setIn(['request','AprovedID'],action.data)
     case DELETE_RESERVE_DB:
       return state.setIn(['request','DeleteID'],action.data)
+    case PRINT_VOUCHER:
+      return state.setIn(['request','AprovedID'],action.data)
     default:
       return state;
   }

@@ -24,7 +24,7 @@ class CarSingle extends React.PureComponent { // eslint-disable-line react/prefe
           <div className='singleCarContainer-data'>
             <div className='ct-row price-row'>
               <span className='three'>
-                <span className='ct-price'>$ {this.props.cars.Amount}</span>
+                <span className='ct-price'>$ {this.props.cars.EstimatedTotalAmount}</span>
                 <span className='ct-usd'> USD</span>
               </span>
               <span className='one km'>

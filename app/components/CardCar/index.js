@@ -33,10 +33,10 @@ function CardCar(props) {
           <div className='contentCarPrice'>
 
             <div className='contentImgCar'>
-              <img className='imgCar' alt='car' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.car.PictureURL}`}/>
+              <img className='imgCar' alt='car' width='200' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.car.PictureURL}`}/>
             </div>
             <div className='contentPrice'>
-              <h2 className='colorBlue'>${props.car.Amount}</h2>
+              <h2 className='colorBlue'>${props.car.EstimatedTotalAmount}</h2>
               <h4>USD</h4>
               <Checkbox className='checkboxAvail' label='Cotizar' onChange={getCarCheck.bind(this)}/>
             </div>
