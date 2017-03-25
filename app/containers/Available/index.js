@@ -52,6 +52,7 @@ export class Available extends React.PureComponent { // eslint-disable-line reac
   }
 
   render() {
+    console.log('Renderizando');
     const dataInitial = Object.keys(this.props.HomePage.cars);
     return (
       <div>

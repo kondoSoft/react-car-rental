@@ -31,7 +31,6 @@ function CardCar(props) {
             {ShortName()}
           </Card.Header>
           <div className='contentCarPrice'>
-
             <div className='contentImgCar'>
               <img className='imgCar' alt='car' width='200' src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.car.PictureURL}`}/>
             </div>

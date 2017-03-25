@@ -24,7 +24,7 @@ function MainSearch(props) {
         <Container className= 'containerFormSearch' fluid>
           <MainSlider />
           <div className='ui container containerForm'>
-            <FormSearch title="Bienvenido" dataUI={props.dataUI} loading={props.loading} loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
+            <FormSearch title="Bienvenido" dataUI={props.dataUI} loading={props.loading} resetState={props.resetState} loadingTrue={props.loadingTrue}  saveDate={props.saveDate} saveLocation={props.saveLocation}/>
           </div>
         </Container>
       </Container>

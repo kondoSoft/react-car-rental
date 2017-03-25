@@ -13,7 +13,7 @@ import MainSearch from '../../components/MainSearch'
 // import Comments from '../../components/Comments'
 import Comments from '../../components/CommentSlide'
 import {Container, Grid, Icon, Button} from 'semantic-ui-react'
-import { loadingTrue, saveDate, saveLocation, commentsLoaded} from './actions'
+import { loadingTrue, saveDate, saveLocation, commentsLoaded, resetState} from './actions'
 import Slider from 'react-slick'
 
 
@@ -78,6 +78,7 @@ var aryComment=[
 ]
 
 export class HomePage extends React.PureComponent {
+
   createGrid(item,i){
     return(
       <Grid key={'Grid'+i}>
@@ -104,7 +105,7 @@ export class HomePage extends React.PureComponent {
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.commentsLoaded()
     }
 
@@ -145,6 +146,7 @@ export class HomePage extends React.PureComponent {
         }
       }]
     }
+    console.log('Renderizando Home');
     const dataInitial = this.props.HomePage.comments
     return (
       <div>
@@ -154,7 +156,7 @@ export class HomePage extends React.PureComponent {
             { name: 'description', content: 'Description of HomePage' },
           ]}
         />
-          <MainSearch dataUI={this.props.HomePage}  loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
+      <MainSearch dataUI={this.props.HomePage} resetState={this.props.resetState}  loading={this.props.HomePage.UI.Loading} saveDate={this.props.saveDate} loadingTrue={this.props.loadingTrue}  saveLocation={this.props.saveLocation}/>
           <Container className="containerComments">
             <h2>CLIENTES</h2>
             <span>Que dicen nuestros clientes</span>
@@ -190,6 +192,9 @@ function mapDispatchToProps(dispatch) {
     },
     commentsLoaded:(type)=>{
       dispatch(commentsLoaded(type))
+    },
+    resetState:(type)=>{
+      dispatch(resetState(type))
     },
     dispatch,
   };

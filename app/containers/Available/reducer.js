@@ -15,7 +15,6 @@ function availableReducer(state = initialState, action){
       return state
     case ADD_CAR_CHECKED:
       return state.setIn(['car', action.id], action.state)
-
     default:
       return state
 

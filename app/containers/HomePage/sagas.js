@@ -1,6 +1,6 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import { SET_LOADING_TRUE, LOAD_COMMENTS, LOAD_COMMENTS_SUCCESS, SET_LOADING_FALSE } from './constants'
-import { loadCars, carsLoaded, commentsSucces, loadingFalse } from './actions'
+import { loadCars, carsLoaded, commentsSucces, loadingFalse, resetState } from './actions'
 import { browserHistory } from 'react-router'
 
 import request from 'utils/request'
@@ -9,6 +9,7 @@ import { makeSelectCars } from './selectors'
 
 export function* getAPI(){
   const cars = yield select(makeSelectCars())
+
   const requestURL = `http://localhost:8000/consult/`
 
   var spanPickUpLocation = document.getElementById('spanPickUpLocation')
@@ -21,7 +22,7 @@ export function* getAPI(){
     yield put(loadingFalse())
     spanPickUpLocation.classList.remove("out")
     spanPickUpLocation.classList.add("validation")
-    }else{
+  }else{
       spanPickUpLocation.classList.add("out")
       spanPickUpLocation.classList.remove("validation")
     }
@@ -72,12 +73,17 @@ export function* getAPI(){
           "SpecialEquip":"0"
         })
       },)
-      console.log(getcar);
       if(getcar.source){
         yield put(loadingFalse())
       }
-
       else{
+        try{
+          var datos=Object.keys(cars)
+          datos.map((item)=>{ put(resetState(item)) })
+          }
+        catch(error){
+          console.log(error);
+        }
         yield put(carsLoaded(getcar))
         browserHistory.push('/available')
       }
@@ -107,6 +113,8 @@ export function* getCars() {
 
 export function* getComments(){
   const watcher = yield takeLatest(LOAD_COMMENTS, getAPIComments)
+  yield take(LOAD_COMMENTS_SUCCESS)
+  yield cancel(watcher)
 }
 
 // All sagas to be loaded

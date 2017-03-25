@@ -10,7 +10,6 @@ export function* getAPIReserve(){
 
   const client = yield select(makeSelectClient())
   const requestURL = `http://localhost:8000/save/prebooking`
-  console.log(client);
 
   try {
     const getReserve = yield call(request, requestURL, {

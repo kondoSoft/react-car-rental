@@ -24,7 +24,7 @@ function SingleCar(props) {
         <div className='singleCarContainer-data'>
           <div className='ct-row price-row'>
             <span className='three'>
-              <span className='ct-price'>$ {props.cars.Amount}</span>
+              <span className='ct-price'>$ {props.cars.EstimatedTotalAmount}</span>
               <span className='ct-usd'> USD</span>
             </span>
             <span className='one km'>
@@ -69,7 +69,7 @@ function SingleCar(props) {
         <img src={`https://s3-us-west-2.amazonaws.com/projuv-data/static/FleetImages/${props.cars.PictureURL}`} alt="Auto"/>
       </div>
     </div>
-    <Button primary className='buttonCotizar' onClick={  ()=>props.loadingTrueReserve(props.cars) } ><span>Reservar</span></Button>
+    <Button primary className='buttonCotizar' onClick={  ()=> alert('hola')} ><span>Reservar</span></Button>
     </div>
   );
 }

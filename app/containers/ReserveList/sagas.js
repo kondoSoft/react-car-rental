@@ -1,6 +1,7 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import request from 'utils/request'
-import { LOAD_LIST,CANCEL_RESERVE, AUTHORIZATION_RESERVE, DELETE_RESERVE_DB, PRINT_VOUCHER } from './constants'
+import { LOCATION_CHANGE } from 'react-router-redux';
+import { LOAD_LIST,CANCEL_RESERVE, SET_RESERVE_LIST, AUTHORIZATION_RESERVE, DELETE_RESERVE_DB, PRINT_VOUCHER } from './constants'
 import { makeSelectRequest } from './selectors'
 import {loadReserveList, setReserveList} from './actions'
 
@@ -11,7 +12,6 @@ export function* getAPIReserveList() {
   try{
     const getreserveList = yield call(request, requestURL)
     var count=getreserveList.PreBookings.length
-    console.log(count);
     yield put(setReserveList(getreserveList))
   }catch(err){
     console.log(err);
@@ -45,7 +45,6 @@ export function* getAPIAuthorizationReserve(){
   const requestURL = `http://localhost:8000/autorization/booking`
   const getData = yield select(makeSelectRequest())
 
-  console.log(getData.getAuthorization);
    try {
      const getAuthorization = yield call(request, requestURL, {
        method:'POST',
@@ -108,6 +107,8 @@ export function* getAPIPrintReserve(){
 
 export function* getList(){
   const watcher = yield takeLatest(LOAD_LIST, getAPIReserveList)
+  yield take(SET_RESERVE_LIST)
+  yield cancel(watcher)
 }
 export function* getCancelReserve(){
   const watcher = yield takeLatest(CANCEL_RESERVE, getAPICancelReserve)
