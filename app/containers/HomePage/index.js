@@ -146,7 +146,7 @@ export class HomePage extends React.PureComponent {
         }
       }]
     }
-    console.log('Renderizando Home');
+
     const dataInitial = this.props.HomePage.comments
     return (
       <div>

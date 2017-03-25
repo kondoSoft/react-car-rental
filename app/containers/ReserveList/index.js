@@ -37,9 +37,7 @@ export class ReserveList extends React.PureComponent { // eslint-disable-line re
             { name: 'description', content: 'Description of ReserveList' },
           ]}
         />
-      <div>
-        <Input action='Buscar' placeholder='Buscar...' />
-      </div>
+
       <Table celled selectable>
         <Table.Header>
           <Table.Row>
